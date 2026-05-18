@@ -6,5 +6,15 @@
         {
             Console.WriteLine("Hello, World!");
         }
+
+        public static void Scene1()
+        {
+
+        }
+
+        public static void Inventory()
+        {
+
+        }
     }
 }
