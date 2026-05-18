@@ -63,5 +63,15 @@ namespace PB
             
 
         }
+
+        public static void Scene1()
+        {
+
+        }
+
+        public static void Inventory()
+        {
+
+        }
     }
 }
