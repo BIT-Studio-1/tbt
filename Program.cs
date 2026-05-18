@@ -8,7 +8,6 @@ namespace PB
         static void Main(string[] args)
         {
             Intro();
-            Cell();
         }
 
         static void Intro()
@@ -19,7 +18,8 @@ namespace PB
             Console.WriteLine("");
             Console.WriteLine("      -------------Outcast Juvenile Holding Center-------------");
             Console.WriteLine("");
-            Thread.Sleep(3000);
+            Thread.Sleep(8000);
+            Cell();
         }
 
         public static void Cell()
@@ -79,5 +79,11 @@ namespace PB
         {
 
         }
+        public static void Yard()
+        {
+            Console.WriteLine("You enter the Yard");
+            Console.WriteLine(""
+        }
     }
+
 }
