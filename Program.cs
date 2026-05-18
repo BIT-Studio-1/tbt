@@ -82,7 +82,7 @@ namespace PB
         public static void Yard()
         {
             Console.WriteLine("You enter the Yard");
-            Console.WriteLine(""
+            Console.WriteLine("");
         }
     }
 
