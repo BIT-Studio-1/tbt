@@ -102,25 +102,25 @@ namespace PB
                         {
                             case 1:
                                 {
-                                    Fight_Jamal()
-                                    break
+                                    Fight_Jamal();
+                                    break;
                             }
                             case 2:
                                 {
-                                    break
+                                    break;
                             }
                             case 3:
                                 {
-                                    Gift_jamal()
-                                    break
+                                    Gift_jamal();
+                                    break;
                             }
                         }
-                        break
+                        break;
                 }
                 case 2:
                     {
-                        Cell()
-                        break
+                        Cell();
+                        break;
                 }
             }
         }
