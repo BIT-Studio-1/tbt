@@ -55,7 +55,7 @@ namespace PB
             }
             if (celldec == 2)
             {
-                //SceneYard();
+                Yard();
             }
             if (celldec == 3)
             {
@@ -113,6 +113,7 @@ namespace PB
                                 {
                                     Gift_jamal();
                                     break;
+                                }
                             }
                         }
                         break;
@@ -121,6 +122,7 @@ namespace PB
                     {
                         Cell();
                         break;
+                    }
                 }
             }
         }
