@@ -14,9 +14,9 @@ namespace PB
         {
             Console.WriteLine("You haver been convicted of watching anime on an illegal website.");
                 Thread.Sleep(1000);
-            Console.WriteLine("The Judge has commited you 25 life sentences due to your severe crime")
+            Console.WriteLine("The Judge has commited you 25 life sentences due to your severe crime");
             Console.WriteLine("");
-            Console.WriteLine("      -------------Outcast Juvenile Holding Center-------------")
+            Console.WriteLine("      -------------Outcast Juvenile Holding Center-------------");
             Console.WriteLine("");
             Thread.Sleep(3000);
         }
@@ -26,7 +26,7 @@ namespace PB
             string celltemp;
             
             int celldec;
-            Console.WriteLine("You arrive in your cell, a cramped cold and dirty cell")
+            Console.WriteLine("You arrive in your cell, a cramped cold and dirty cell");
                 celldec = 0;
             if (celldec == 0) {
                 Console.WriteLine("What would you like to do");
