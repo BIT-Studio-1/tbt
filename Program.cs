@@ -81,8 +81,48 @@ namespace PB
         }
         public static void Yard()
         {
+            int action_1 = 0, action_2 = 0;
             Console.WriteLine("You enter the Yard");
-            Console.WriteLine("");
+            Console.WriteLine("You see look around and see another inmate");
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1:\tConfront Jamal");
+            Console.WriteLine("2:\tExit Yard");
+            action_1 = Convert.ToInt32(Console.ReadLine());
+            switch (action_1)
+            {
+                case 1:
+                    {
+                        Console.WriteLine("You approach Jamal");
+                        Console.WriteLine("What would you like to do?");
+                        Console.WriteLine("1:\tFight Jamal");
+                        Console.WriteLine("2:\tTalk to Jamal");
+                        Console.WriteLine("3:\tGive Jamal a gift");
+                        action_2 = Convert.ToInt32(Console.ReadLine());
+                        switch (action_2)
+                        {
+                            case 1:
+                                {
+                                    Fight_Jamal()
+                                    break
+                            }
+                            case 2:
+                                {
+                                    break
+                            }
+                            case 3:
+                                {
+                                    Gift_jamal()
+                                    break
+                            }
+                        }
+                        break
+                }
+                case 2:
+                    {
+                        Cell()
+                        break
+                }
+            }
         }
 
 
