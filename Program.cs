@@ -84,6 +84,72 @@ namespace PB
             Console.WriteLine("You enter the Yard");
             Console.WriteLine("");
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public static void Cafeteria()
+        {
+            int action_1 = 0;
+            Console.WriteLine("You enter the Cafeteria and look around.");
+            Console.WriteLine("You see Crack Head Joe sitting at one of the tables.");
+            Console.WriteLine("You also see the chow line.");
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1:\tTalk to Crack Head Joe.");
+            Console.WriteLine("2:\tEnter the Chow Line.");
+            Console.WriteLine("3:\tExit Cafeteria.");
+            action_1 = Convert.ToInt32(Console.ReadLine());
+            switch (action_1)
+            {
+                case 1:
+                    {
+                        Console.WriteLine("You walk up to Crack Head Joe.");
+                        Console.WriteLine("'Hmmm... I could really use some pudding right now' he mutters.");
+                        break;
+                    }
+                    
+
+                case 2:
+                    {
+
+
+
+                        break;
+                    }
+
+
+            }
+        }
     }
 
 }
