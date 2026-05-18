@@ -13,7 +13,7 @@ namespace PB
         static void Intro()
         {
             Console.WriteLine("You haver been convicted of watching anime on an illegal website.");
-                Thread.Sleep(1000);
+            Thread.Sleep(1000);
             Console.WriteLine("The Judge has commited you 25 life sentences due to your severe crime");
             Console.WriteLine("");
             Console.WriteLine("      -------------Outcast Juvenile Holding Center-------------");
