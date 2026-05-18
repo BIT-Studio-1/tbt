@@ -7,7 +7,8 @@ namespace PB
     {
         static void Main(string[] args)
         {
-
+            Intro();
+            Cell();
         }
 
         static void Intro()
@@ -41,7 +42,7 @@ namespace PB
             {
                 Console.WriteLine();
                 Console.WriteLine("You look around your cell");
-                Console.WriteLine("It contains the basic things you would expect to find in a cell")
+                Console.WriteLine("It contains the basic things you would expect to find in a cell");
                     Console.WriteLine("A bed, a desk, a toilet, as well as a window to see the outside");
                 Console.WriteLine("Probably there to tease prisoners");
                 Console.WriteLine("What do you want to do");
@@ -54,15 +55,15 @@ namespace PB
             }
             if (celldec == 2)
             {
-                SceneYard();
+                //SceneYard();
             }
             if (celldec == 3)
             {
-                SceneCafeteria();
+                //SceneCafeteria();
             }
             if (celldec == 4) 
             {
-                SceneOC();
+                //SceneOC();
             }
 
             
