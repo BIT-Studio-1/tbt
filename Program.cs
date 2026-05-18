@@ -43,7 +43,7 @@ namespace PB
                 Console.WriteLine();
                 Console.WriteLine("You look around your cell");
                 Console.WriteLine("It contains the basic things you would expect to find in a cell");
-                    Console.WriteLine("A bed, a desk, a toilet, as well as a window to see the outside");
+                Console.WriteLine("A bed, a desk, a toilet, as well as a window to see the outside");
                 Console.WriteLine("Probably there to tease prisoners");
                 Console.WriteLine("What do you want to do");
                 Console.WriteLine("1. Look at bed");
