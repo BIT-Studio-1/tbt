@@ -79,72 +79,85 @@ namespace PB
         {
 
         }
+        static bool flowers = false;
+        static bool screwdriver = false;
         //Richie start
         public static void Yard()
         {
-            int action_1 = 0, action_2 = 0;
-            bool flowers = false;
-            Console.WriteLine("You enter the Yard");
-            Console.WriteLine("You see look around and see another inmate");
-            Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1:\tConfront Jamal");
-            Console.WriteLine("2:\tExit Yard");
-            action_1 = Convert.ToInt32(Console.ReadLine());
-            switch (action_1)
+            bool inYard = true;
+            while (inYard)
             {
-                case 1:
-                    {
-                        Console.WriteLine("You approach Jamal");
-                        Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("1:\tFight Jamal");
-                        Console.WriteLine("2:\tTalk to Jamal");
-                        Console.WriteLine("3:\tGive Jamal a gift");
-                        Console.WriteLine("4:\tCheck the Yard");
-                        action_2 = Convert.ToInt32(Console.ReadLine());
-                        switch (action_2)
-                        {
-                            case 1:
-                            {
-                                    //Fight_Jamal(); 
-                                    break;
-                            }
-                            case 2:
-                            {
-                                    Console.WriteLine("Hmmm, I could really use some flowers right now");
-                                    Yard();
-                                    break;
-                            }
-                            case 3:
-                            {
-                                    Gift_jamal();
-                                    break;
-                                
-                            }
-                            case 4:
-                            {
-                                    Console.WriteLine("You check around the yard and came accross a batch of flowers");
-                                    Console.WriteLine("You pick up the batch of flowers");
-                                    flowers = true;
-                                    Yard();
-                                    break;
-                            }
-                        }
-                        break;
-                }
-                case 2:
+                int action_1 = 0, action_2 = 0;
+                Console.WriteLine("You enter the Yard");
+                Console.WriteLine("You see look around and see another inmate");
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("1:\tConfront Jamal");
+                Console.WriteLine("2:\tExit Yard");
+                action_1 = Convert.ToInt32(Console.ReadLine());
+                switch (action_1)
                 {
-                        Cell();
-                        break;
-                
+                    case 1:
+                        {
+                            Console.WriteLine("You approach Jamal");
+                            Console.WriteLine("What would you like to do?");
+                            Console.WriteLine("1:\tFight Jamal");
+                            Console.WriteLine("2:\tTalk to Jamal");
+                            Console.WriteLine("3:\tGive Jamal a gift");
+                            Console.WriteLine("4:\tCheck the Yard");
+                            action_2 = Convert.ToInt32(Console.ReadLine());
+                            switch (action_2)
+                            {
+                                case 1:
+                                    {
+                                        //Fight_Jamal(); 
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        Console.WriteLine("JAMAL:\t'Hmmm, I could really use some flowers right now'");
+                                        break;
+                                    }
+                                case 3:
+                                    {
+                                        Gift_Jamal();
+                                        break;
+
+                                    }
+                                case 4:
+                                    {
+                                        Console.WriteLine("You check around the yard and came accross a batch of flowers");
+                                        Console.WriteLine("You pick up the batch of flowers");
+                                        flowers = true;
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                    case 2:
+                        {
+                            Console.WriteLine("You leave the Yard");
+                            inYard = false;
+                            Cell();
+                            break;
+
+                        }
                 }
             }
+            
         }
         public static void Gift_Jamal()
         {
-            //if (shiv)
+            if (flowers)
             {
-
+                Console.WriteLine("JAMAL:\t'Aww flowers, thank you so much. Here's a screwdriver");
+                screwdriver = true;
+                flowers = false;
             }
+            else
+            {
+                Console.WriteLine("you don't have anything to give Jamal");
+            }
+            Yard();
         }
         //richie
 
