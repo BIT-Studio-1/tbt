@@ -12,7 +12,7 @@ namespace PB
 
         static void Intro()
         {
-            Console.WriteLine("You haver been convicted of watching anime on an illegal website.");
+            Console.WriteLine("You have been convicted of watching anime on an illegal website.");
             Thread.Sleep(1000);
             Console.WriteLine("The Judge has commited you 25 life sentences due to your severe crime");
             Console.WriteLine("");
@@ -83,6 +83,7 @@ namespace PB
         public static void Yard()
         {
             int action_1 = 0, action_2 = 0;
+            bool flowers = false;
             Console.WriteLine("You enter the Yard");
             Console.WriteLine("You see look around and see another inmate");
             Console.WriteLine("What would you like to do?");
@@ -104,22 +105,27 @@ namespace PB
                         {
                             case 1:
                             {
-                                    Fight_Jamal(); 
+                                    //Fight_Jamal(); 
                                     break;
                             }
                             case 2:
                             {
+                                    Console.WriteLine("Hmmm, I could really use some flowers right now");
+                                    Yard();
                                     break;
                             }
                             case 3:
                             {
-                                    //Gift_jamal();
+                                    Gift_jamal();
                                     break;
                                 
                             }
                             case 4:
                             {
-
+                                    Console.WriteLine("You check around the yard and came accross a batch of flowers");
+                                    Console.WriteLine("You pick up the batch of flowers");
+                                    flowers = true;
+                                    Yard();
                                     break;
                             }
                         }
@@ -133,9 +139,9 @@ namespace PB
                 }
             }
         }
-        public static void Fight_Jamal()
+        public static void Gift_Jamal()
         {
-            if (shiv)
+            //if (shiv)
             {
 
             }
