@@ -79,6 +79,7 @@ namespace PB
         {
 
         }
+        //Richie start
         public static void Yard()
         {
             int action_1 = 0, action_2 = 0;
@@ -101,31 +102,32 @@ namespace PB
                         switch (action_2)
                         {
                             case 1:
-                                {
-                                    Fight_Jamal();
+                            {
+                                    //Fight_Jamal(); HELLO
                                     break;
                             }
                             case 2:
-                                {
+                            {
                                     break;
                             }
                             case 3:
-                                {
-                                    Gift_jamal();
+                            {
+                                    //Gift_jamal();
                                     break;
-                                }
+                                
                             }
                         }
                         break;
                 }
                 case 2:
-                    {
+                {
                         Cell();
                         break;
-                    }
+                
                 }
             }
         }
+        //richie
 
 
 
