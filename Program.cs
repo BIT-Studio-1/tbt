@@ -98,12 +98,13 @@ namespace PB
                         Console.WriteLine("1:\tFight Jamal");
                         Console.WriteLine("2:\tTalk to Jamal");
                         Console.WriteLine("3:\tGive Jamal a gift");
+                        Console.WriteLine("4:\tCheck the Yard");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
                             case 1:
                             {
-                                    //Fight_Jamal(); HELLO
+                                    Fight_Jamal(); 
                                     break;
                             }
                             case 2:
@@ -116,6 +117,11 @@ namespace PB
                                     break;
                                 
                             }
+                            case 4:
+                            {
+
+                                    break;
+                            }
                         }
                         break;
                 }
@@ -125,6 +131,13 @@ namespace PB
                         break;
                 
                 }
+            }
+        }
+        public static void Fight_Jamal()
+        {
+            if (shiv)
+            {
+
             }
         }
         //richie
