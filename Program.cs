@@ -34,6 +34,7 @@ namespace PB
 
                 Console.ResetColor();
 
+                Console.WriteLine("Hello human, welcome to our game!");
 
 
                 Console.WriteLine();
