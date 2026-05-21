@@ -171,7 +171,7 @@ namespace PB
             Console.WriteLine("What do you want to do");
             Console.WriteLine("1. Look at bed");
             Console.WriteLine("2. Look at toilet");
-            Console.WriteLine("3. Look at desk");
+            Console.WriteLine("3. Look inside desk");
             Console.WriteLine("4. Look through window");
             Console.WriteLine("5. Exit");
             celltemp = Console.ReadLine();
@@ -185,7 +185,7 @@ namespace PB
                     celldec = 6;
                     break;
                 case 3:
-                    celldec = 7;
+                    inventory();
                     break;
                 case 4:
                     Window();
@@ -207,6 +207,39 @@ namespace PB
             Console.WriteLine("You look out the window just to see a solid concrete wall, how ironic...");
             Thread.Sleep(1500);
             Look();
+        }
+        public static void inventory()
+        {
+            Console.WriteLine("\tInventory");
+            Console.ReadLine();
+            Look();
+        }
+        public static void toilet() {
+            int cellchoice;
+            Console.WriteLine("There's a toilet in the corner of the cell, it seems to be connected by some screws");
+            Console.WriteLine("1. Remove toilet from wall (Screwdriver needed)");
+            Console.WriteLine("2. Leave toilet");
+            cellchoice = Convert.ToInt32(Console.ReadLine());
+            switch (cellchoice)
+            {
+                case 1:
+                    if (screwdriver = true)
+                    {
+                        Console.WriteLine("You unscrew the screws from the toilet.");
+                        Console.WriteLine("You remove the toilet from the wall to see a hole that leads to behind the cell.");
+                        Console.WriteLine("Inside, you see a ladder that seems to lead to the roof.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You need a screwdriver");
+                        Thread.Sleep(1000);
+                        Look();
+                    }
+                        break;
+                    case 2:
+                    Look();
+                    break;
+            }
         }
 
         // =========================
