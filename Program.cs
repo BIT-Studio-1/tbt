@@ -103,8 +103,9 @@ namespace PB
         public static void Cell()
         {
             string celltemp;
+
             
-            int celldec;
+            int celldec, cellchoice;
             Console.WriteLine("You arrive in your cell, a cramped cold and dirty cell");
             celldec = 0;
 
@@ -117,6 +118,25 @@ namespace PB
                 Console.WriteLine("4. Go to outside of cell");
                 celltemp = Console.ReadLine();
                 celldec = Convert.ToInt32(celltemp);
+                switch (celldec)
+                {
+                    case 1:
+                        Look();
+                        break;
+                    case 2:
+                        celldec = 6;
+                        break;
+                    case 3:
+                        celldec = 7;
+                        break;
+                    case 4:
+                        celldec = 8;
+                        break;
+                    case 5:
+                        celldec = 9;
+                        break;
+
+                }
             }
 
             if (celldec == 1)
@@ -147,7 +167,7 @@ namespace PB
                         celldec = 8;
                         break;
                         case 5:
-                        celldec = 9;
+                        Cell();
                         break;
                     
                 }
@@ -173,11 +193,47 @@ namespace PB
                 //SceneOC();
             }
         }
+
+        public static void Look()
+        {
+            string celltemp;
+            int celldec, cellchoice;
+            Console.WriteLine();
+            Console.WriteLine("You look around your cell");
+            Console.WriteLine("It contains a bed, desk, toilet, and a window.");
+            Console.WriteLine("What do you want to do");
+            Console.WriteLine("1. Look at bed");
+            Console.WriteLine("2. Look at toilet");
+            Console.WriteLine("3. Look at desk");
+            Console.WriteLine("4. Look through window");
+            Console.WriteLine("5. Exit");
+            celltemp = Console.ReadLine();
+            cellchoice = Convert.ToInt32(celltemp);
+            switch (cellchoice)
+            {
+                case 1:
+                    Bed();
+                    break;
+                case 2:
+                    celldec = 6;
+                    break;
+                case 3:
+                    celldec = 7;
+                    break;
+                case 4:
+                    celldec = 8;
+                    break;
+                case 5:
+                    celldec = 9;
+                    break;
+
+            }
+        }
         public static void Bed()
         {
             Console.WriteLine("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
             Thread.Sleep(1500);
-            Cell();
+            Look();
         }
 
         // =========================
