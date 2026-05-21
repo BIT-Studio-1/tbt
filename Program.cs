@@ -53,16 +53,41 @@ namespace PB
                 Console.WriteLine("5. Exit");
                 celltemp = Console.ReadLine();
                 cellchoice = Convert.ToInt32(celltemp);
-                if (cellchoice = 1)
+                switch (cellchoice)
                 {
-                    celldec = 5;
+                    case 1:
+                        celldec = 5;
+                        break;
+                        case 2:
+                        celldec = 6;
+                        break;
+                        case 3:
+                        celldec = 7;
+                        break;
+                        case 4:
+                        celldec = 8;
+                        break;
+                        case 5:
+                        celldec = 9;
+                        break;
+                    case default:
+                        Console.WriteLine("Not valid option");
+                        Thread.Sleep(500);
+                        celldec = 1;
+                             break;
                 }
             }
-            if ((celldec == 5){
+            if (celldec == 5){
             
                 Console.WriteLine("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
-                Thread.Sleep(1500)
+                Thread.Sleep(1500);
                     celldec = 1;
+            }
+            if (celldec == 6)
+            {
+                Console.WriteLine("You look out the window just to see a solid concrete wall, how ironic...");
+                Thread.Sleep(1500);
+                celldec = 1;
             }
             if (celldec == 2)
             {
