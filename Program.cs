@@ -89,7 +89,10 @@ namespace PB
                         break;
 
                     case "2":
+                        Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("Closing Game...");
+                        Console.ResetColor();
+
                         Thread.Sleep(1000);
                         running = false;
                         break;
