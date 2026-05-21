@@ -140,73 +140,17 @@ namespace PB
                         Look();
                         break;
                     case 2:
-                        celldec = 6;
+                        Yard();
                         break;
                     case 3:
-                        celldec = 7;
+                        Cafeteria();
                         break;
                     case 4:
                         celldec = 8;
                         break;
-                    case 5:
-                        celldec = 9;
-                        break;
-
-                }
-            }
-
-            if (celldec == 1)
-            {
-                Console.WriteLine();
-                Console.WriteLine("You look around your cell");
-                Console.WriteLine("It contains a bed, desk, toilet, and a window.");
-                Console.WriteLine("What do you want to do");
-                Console.WriteLine("1. Look at bed");
-                Console.WriteLine("2. Look at toilet");
-                Console.WriteLine("3. Look at desk");
-                Console.WriteLine("4. Look through window");
-                Console.WriteLine("5. Exit");
-                celltemp = Console.ReadLine();
-                cellchoice = Convert.ToInt32(celltemp);
-                switch (cellchoice)
-                {
-                    case 1:
-                        Bed();
-                        break;
-                        case 2:
-                        celldec = 6;
-                        break;
-                        case 3:
-                        celldec = 7;
-                        break;
-                        case 4:
-                        celldec = 8;
-                        break;
-                        case 5:
-                        Cell();
-                        break;
                     
-                }
-            }
-            
-            if (celldec == 6)
-            {
-                Console.WriteLine("You look out the window just to see a solid concrete wall, how ironic...");
-                Thread.Sleep(1500);
-                celldec = 1;
-            }
 
-            if (celldec == 2)
-            {
-                Yard();
-            }
-            if (celldec == 7)
-            {
-                Cafeteria();
-            }
-            if (celldec == 4)
-            {
-                //SceneOC();
+                }
             }
         }
 
@@ -237,10 +181,10 @@ namespace PB
                     celldec = 7;
                     break;
                 case 4:
-                    celldec = 8;
+                    Window();
                     break;
                 case 5:
-                    celldec = 9;
+                    Cell();
                     break;
 
             }
@@ -248,6 +192,12 @@ namespace PB
         public static void Bed()
         {
             Console.WriteLine("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
+            Thread.Sleep(1500);
+            Look();
+        }
+        public static void Window()
+        {
+            Console.WriteLine("You look out the window just to see a solid concrete wall, how ironic...");
             Thread.Sleep(1500);
             Look();
         }
