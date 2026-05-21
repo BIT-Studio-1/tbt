@@ -215,7 +215,7 @@ namespace PB
             Look();
         }
         public static void toilet() {
-            int cellchoice;
+            int cellchoice, cellchoice2;
             Console.WriteLine("There's a toilet in the corner of the cell, it seems to be connected by some screws");
             Console.WriteLine("1. Remove toilet from wall (Screwdriver needed)");
             Console.WriteLine("2. Leave toilet");
@@ -228,6 +228,20 @@ namespace PB
                         Console.WriteLine("You unscrew the screws from the toilet.");
                         Console.WriteLine("You remove the toilet from the wall to see a hole that leads to behind the cell.");
                         Console.WriteLine("Inside, you see a ladder that seems to lead to the roof.");
+                        Console.WriteLine("1. Go to roof");
+                        Console.WriteLine("2. Return to cell");
+                        cellchoice2 = Convert.ToInt32(Console.ReadLine());
+                        switch (cellchoice2)
+                        {
+                            case 1:
+                                Roof();
+                                break;
+                            case 2:
+                                Console.WriteLine("You go back to your cell and screw the toilet back to the wall");
+                                Look();
+                                break;
+                        }
+
                     }
                     else
                     {
@@ -375,6 +389,10 @@ namespace PB
                 case 2:
                     break;
             }
+        }
+        public static void Roof()
+        {
+            Console.WriteLine();
         }
     }
 }
