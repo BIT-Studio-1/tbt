@@ -5,11 +5,86 @@ namespace PB
 {
     internal class Program
     {
+        static bool flowers = false;
+        static bool screwdriver = false;
+
+        // =========================
+        // MAIN ENTRY POINT
+        // =========================
         static void Main(string[] args)
         {
-            Intro();
+            MainMenu();
         }
 
+        // =========================
+        // MAIN MENU
+        // =========================
+        static void MainMenu()
+        {
+            bool running = true;
+
+            while (running)
+            {
+                Console.Clear();
+
+                Console.WriteLine("====================================");
+                Console.WriteLine(" PRISON BREAK");
+                Console.WriteLine("====================================");
+                Console.WriteLine();
+                Console.WriteLine("1. Start Game");
+                Console.WriteLine("2. Exit Game");
+                Console.WriteLine();
+                Console.Write("Choose an option: ");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        Console.Clear();
+                        Console.WriteLine("Starting Game...");
+                        Console.WriteLine();
+                        Console.Write("Loading ");
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            Thread.Sleep(400);
+                            Console.Write(".");
+                        }
+
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("[");
+
+                        for (int i = 0; i < 20; i++)
+                        {
+                            Thread.Sleep(100);
+                            Console.Write("■");
+                        }
+
+                        Console.WriteLine("]");
+                        Thread.Sleep(1000);
+                        Console.Clear();
+                        Intro();
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Closing Game...");
+                        Thread.Sleep(1000);
+                        running = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid Option");
+                        Thread.Sleep(1000);
+                        break;
+                }
+            }
+        }
+
+        // =========================
+        // INTRO SCENE
+        // =========================
         static void Intro()
         {
             Console.WriteLine("You have been convicted of watching anime on an illegal website.");
@@ -22,14 +97,19 @@ namespace PB
             Cell();
         }
 
+        // =========================
+        // CELL SCENE
+        // =========================
         public static void Cell()
         {
             string celltemp;
-            
             int celldec;
+
             Console.WriteLine("You arrive in your cell, a cramped cold and dirty cell");
-                celldec = 0;
-            if (celldec == 0) {
+            celldec = 0;
+
+            if (celldec == 0)
+            {
                 Console.WriteLine("What would you like to do");
                 Console.WriteLine("1. Check cell");
                 Console.WriteLine("2. Go to yard");
@@ -38,13 +118,12 @@ namespace PB
                 celltemp = Console.ReadLine();
                 celldec = Convert.ToInt32(celltemp);
             }
+
             if (celldec == 1)
             {
                 Console.WriteLine();
                 Console.WriteLine("You look around your cell");
-                Console.WriteLine("It contains the basic things you would expect to find in a cell");
-                Console.WriteLine("A bed, a desk, a toilet, as well as a window to see the outside");
-                Console.WriteLine("Probably there to tease prisoners");
+                Console.WriteLine("It contains a bed, desk, toilet, and a window.");
                 Console.WriteLine("What do you want to do");
                 Console.WriteLine("1. Look at bed");
                 Console.WriteLine("2. Look at toilet");
@@ -53,179 +132,124 @@ namespace PB
                 celltemp = Console.ReadLine();
                 celldec = Convert.ToInt32(celltemp);
             }
+
             if (celldec == 2)
             {
                 Yard();
             }
             if (celldec == 3)
             {
-                //SceneCafeteria();
+                Cafeteria();
             }
-            if (celldec == 4) 
+            if (celldec == 4)
             {
                 //SceneOC();
             }
-
-            
-
         }
 
-        public static void Scene1()
-        {
-
-        }
-
-        public static void Inventory()
-        {
-
-        }
-        static bool flowers = false;
-        static bool screwdriver = false;
-        //Richie start
+        // =========================
+        // YARD SCENE
+        // =========================
         public static void Yard()
         {
             bool inYard = true;
+
             while (inYard)
             {
                 int action_1 = 0, action_2 = 0;
+
                 Console.WriteLine("You enter the Yard");
-                Console.WriteLine("You see look around and see another inmate");
+                Console.WriteLine("You look around and see another inmate");
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("1:\tConfront Jamal");
                 Console.WriteLine("2:\tExit Yard");
+
                 action_1 = Convert.ToInt32(Console.ReadLine());
+
                 switch (action_1)
                 {
                     case 1:
-                        {
-                            Console.WriteLine("You approach Jamal");
-                            Console.WriteLine("What would you like to do?");
-                            Console.WriteLine("1:\tFight Jamal");
-                            Console.WriteLine("2:\tTalk to Jamal");
-                            Console.WriteLine("3:\tGive Jamal a gift");
-                            Console.WriteLine("4:\tCheck the Yard");
-                            action_2 = Convert.ToInt32(Console.ReadLine());
-                            switch (action_2)
-                            {
-                                case 1:
-                                    {
-                                        //Fight_Jamal(); 
-                                        break;
-                                    }
-                                case 2:
-                                    {
-                                        Console.WriteLine("JAMAL:\t'Hmmm, I could really use some flowers right now'");
-                                        break;
-                                    }
-                                case 3:
-                                    {
-                                        Gift_Jamal();
-                                        break;
+                        Console.WriteLine("You approach Jamal");
+                        Console.WriteLine("What would you like to do?");
+                        Console.WriteLine("1:\tFight Jamal");
+                        Console.WriteLine("2:\tTalk to Jamal");
+                        Console.WriteLine("3:\tGive Jamal a gift");
+                        Console.WriteLine("4:\tCheck the Yard");
 
-                                    }
-                                case 4:
-                                    {
-                                        Console.WriteLine("You check around the yard and came accross a batch of flowers");
-                                        Console.WriteLine("You pick up the batch of flowers");
-                                        flowers = true;
-                                        break;
-                                    }
-                            }
-                            break;
+                        action_2 = Convert.ToInt32(Console.ReadLine());
+
+                        switch (action_2)
+                        {
+                            case 1:
+                                break;
+
+                            case 2:
+                                Console.WriteLine("JAMAL:\t'Hmmm, I could really use some flowers right now'");
+                                break;
+
+                            case 3:
+                                Gift_Jamal();
+                                break;
+
+                            case 4:
+                                Console.WriteLine("You check around the yard and find a batch of flowers.");
+                                flowers = true;
+                                break;
                         }
+                        break;
+
                     case 2:
-                        {
-                            Console.WriteLine("You leave the Yard");
-                            inYard = false;
-                            Cell();
-                            break;
-
-                        }
+                        Console.WriteLine("You leave the Yard");
+                        inYard = false;
+                        Cell();
+                        break;
                 }
             }
-            
         }
+
         public static void Gift_Jamal()
         {
             if (flowers)
             {
-                Console.WriteLine("JAMAL:\t'Aww flowers, thank you so much. Here's a screwdriver");
+                Console.WriteLine("JAMAL:\t'Aww flowers, thank you so much. Here's a screwdriver'");
                 screwdriver = true;
                 flowers = false;
             }
             else
             {
-                Console.WriteLine("you don't have anything to give Jamal");
+                Console.WriteLine("You don't have anything to give Jamal");
             }
+
             Yard();
         }
-        //richie
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // =========================
+        // CAFETERIA
+        // =========================
         public static void Cafeteria()
         {
             int action_1 = 0;
+
             Console.WriteLine("You enter the Cafeteria and look around.");
-            Console.WriteLine("You see Crack Head Joe sitting at one of the tables.");
+            Console.WriteLine("You see Crack Head Joe sitting at a table.");
             Console.WriteLine("You also see the chow line.");
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1:\tTalk to Crack Head Joe.");
             Console.WriteLine("2:\tEnter the Chow Line.");
             Console.WriteLine("3:\tExit Cafeteria.");
+
             action_1 = Convert.ToInt32(Console.ReadLine());
+
             switch (action_1)
             {
                 case 1:
-                    {
-                        Console.WriteLine("You walk up to Crack Head Joe.");
-                        Console.WriteLine("'Hmmm... I could really use some pudding right now' he mutters.");
-                        break;
-                    }
-                    
+                    Console.WriteLine("You walk up to Crack Head Joe.");
+                    Console.WriteLine("'Hmmm... I could really use some pudding right now' he mutters.");
+                    break;
 
                 case 2:
-                    {
-
-
-
-                        break;
-                    }
-
-
+                    break;
             }
         }
     }
-
 }
