@@ -44,6 +44,7 @@ namespace PB
                 Console.ResetColor();
 
                 Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.BackgroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("2. Exit Game");
                 Console.ResetColor();
 
