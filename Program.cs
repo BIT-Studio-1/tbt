@@ -39,6 +39,7 @@ namespace PB
                 Console.WriteLine();
 
                 Console.ForegroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.White;
                 Console.WriteLine("1. Start Game");
                 Console.ResetColor();
 
