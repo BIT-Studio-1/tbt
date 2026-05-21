@@ -18,7 +18,7 @@ namespace PB
             Console.WriteLine("");
             Console.WriteLine("      -------------Outcast Juvenile Holding Center-------------");
             Console.WriteLine("");
-            Thread.Sleep(8000);
+            Thread.Sleep(3000);
             Cell();
         }
 
@@ -56,7 +56,7 @@ namespace PB
                 switch (cellchoice)
                 {
                     case 1:
-                        celldec = 5;
+                        Bed();
                         break;
                         case 2:
                         celldec = 6;
@@ -70,19 +70,10 @@ namespace PB
                         case 5:
                         celldec = 9;
                         break;
-                    case default:
-                        Console.WriteLine("Not valid option");
-                        Thread.Sleep(500);
-                        celldec = 1;
-                             break;
+                    
                 }
             }
-            if (celldec == 5){
             
-                Console.WriteLine("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
-                Thread.Sleep(1500);
-                    celldec = 1;
-            }
             if (celldec == 6)
             {
                 Console.WriteLine("You look out the window just to see a solid concrete wall, how ironic...");
@@ -104,6 +95,12 @@ namespace PB
 
             
 
+        }
+        public static void Bed()
+        {
+            Console.WriteLine("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
+            Thread.Sleep(1500);
+            Cell();
         }
 
         public static void Scene1()
