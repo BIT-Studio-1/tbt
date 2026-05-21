@@ -26,7 +26,7 @@ namespace PB
         {
             string celltemp;
             
-            int celldec;
+            int celldec, cellchoice;
             Console.WriteLine("You arrive in your cell, a cramped cold and dirty cell");
                 celldec = 0;
             if (celldec == 0) {
@@ -50,8 +50,19 @@ namespace PB
                 Console.WriteLine("2. Look at toilet");
                 Console.WriteLine("3. Look at desk");
                 Console.WriteLine("4. Look through window");
+                Console.WriteLine("5. Exit");
                 celltemp = Console.ReadLine();
-                celldec = Convert.ToInt32(celltemp);
+                cellchoice = Convert.ToInt32(celltemp);
+                if (cellchoice = 1)
+                {
+                    celldec = 5;
+                }
+            }
+            if ((celldec == 5){
+            
+                Console.WriteLine("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
+                Thread.Sleep(1500)
+                    celldec = 1;
             }
             if (celldec == 2)
             {
