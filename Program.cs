@@ -184,7 +184,7 @@ namespace PB
             {
                 Yard();
             }
-            if (celldec == 3)
+            if (celldec == 7)
             {
                 Cafeteria();
             }
@@ -315,10 +315,11 @@ namespace PB
         // =========================
         // CAFETERIA
         // =========================
+        static bool pudding;
         public static void Cafeteria()
         {
             int action_1 = 0;
-
+            int action_2 = 0;
             Console.WriteLine("You enter the Cafeteria and look around.");
             Console.WriteLine("You see Crack Head Joe sitting at a table.");
             Console.WriteLine("You also see the chow line.");
@@ -334,6 +335,19 @@ namespace PB
                 case 1:
                     Console.WriteLine("You walk up to Crack Head Joe.");
                     Console.WriteLine("'Hmmm... I could really use some pudding right now' he mutters.");
+                    if (pudding != true)
+                    {
+                        Console.WriteLine("What would you like to do?");
+                        Console.WriteLine("1:\tGo Back.");
+                        action_2 = Convert.ToInt32(Console.ReadLine());
+                        switch (action_2)
+                        {
+                            case 1:
+                                Cafeteria();
+                                break;
+                        }
+                            
+                    }
                     break;
 
                 case 2:
