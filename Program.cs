@@ -103,8 +103,8 @@ namespace PB
         public static void Cell()
         {
             string celltemp;
+            
             int celldec;
-
             Console.WriteLine("You arrive in your cell, a cramped cold and dirty cell");
             celldec = 0;
 
@@ -129,8 +129,44 @@ namespace PB
                 Console.WriteLine("2. Look at toilet");
                 Console.WriteLine("3. Look at desk");
                 Console.WriteLine("4. Look through window");
+                Console.WriteLine("5. Exit");
                 celltemp = Console.ReadLine();
-                celldec = Convert.ToInt32(celltemp);
+                cellchoice = Convert.ToInt32(celltemp);
+                switch (cellchoice)
+                {
+                    case 1:
+                        celldec = 5;
+                        break;
+                        case 2:
+                        celldec = 6;
+                        break;
+                        case 3:
+                        celldec = 7;
+                        break;
+                        case 4:
+                        celldec = 8;
+                        break;
+                        case 5:
+                        celldec = 9;
+                        break;
+                    case default:
+                        Console.WriteLine("Not valid option");
+                        Thread.Sleep(500);
+                        celldec = 1;
+                             break;
+                }
+            }
+            if (celldec == 5){
+            
+                Console.WriteLine("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
+                Thread.Sleep(1500);
+                    celldec = 1;
+            }
+            if (celldec == 6)
+            {
+                Console.WriteLine("You look out the window just to see a solid concrete wall, how ironic...");
+                Thread.Sleep(1500);
+                celldec = 1;
             }
 
             if (celldec == 2)
