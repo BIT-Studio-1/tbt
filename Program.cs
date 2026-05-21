@@ -60,6 +60,8 @@ namespace PB
                         Console.Clear();
                         Console.WriteLine("Starting Game...");
                         Console.WriteLine();
+
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.Write("Loading ");
 
                         for (int i = 0; i < 5; i++)
@@ -79,6 +81,8 @@ namespace PB
                         }
 
                         Console.WriteLine("]");
+                        Console.ResetColor();
+
                         Thread.Sleep(1000);
                         Console.Clear();
                         Intro();
