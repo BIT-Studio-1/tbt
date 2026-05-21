@@ -321,7 +321,23 @@ namespace PB
                         }
                             
                     }
-                    break;
+                    else
+                    {
+                        Console.WriteLine("What would you like to do?");
+                        Console.WriteLine("1:\tGo Back.");
+                        Console.WriteLine("1:\tGive Jamal Pudding.");
+                        action_2 = Convert.ToInt32(Console.ReadLine());
+                        switch (action_2)
+                        {
+                            case 1:
+                                Cafeteria();
+                                break;
+                            case 2:
+                                Console.WriteLine("Thanks kid heres a shiv");
+                                break;
+                        }
+                    }
+                        break;
 
                 case 2:
                     break;
