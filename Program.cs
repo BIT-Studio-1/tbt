@@ -576,7 +576,10 @@ namespace PB
 
         public static void YardDeath()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
+            Console.ResetColor();
+
             Console.WriteLine("1: Continue from last checkpoint.");
             Console.WriteLine("2: Exit to menu.");
             int action = Convert.ToInt32(Console.ReadLine());
