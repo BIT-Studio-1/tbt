@@ -184,7 +184,7 @@ namespace PB
                     Bed();
                     break;
                 case 2:
-                    celldec = 6;
+                    toilet();
                     break;
                 case 3:
                     inventory();
@@ -394,7 +394,27 @@ namespace PB
         }
         public static void Roof()
         {
-            Console.WriteLine();
+            int cellchoice = 0;
+            Console.WriteLine("You find yourself ontop of the prison roof. There seem to be 2 possible ways to go");
+            Console.WriteLine("1. Jump to the next building");
+            Console.WriteLine("2. Move tpo the other sid eof roof");
+            cellchoice = Convert.ToInt32(Console.ReadLine());
+            if (cellchoice == 1)
+            {
+                Jump();
+            }
+            if (cellchoice == 2)
+            {
+                Move();
+            }
+        }
+        public static void Jump()
+        {
+
+        }
+        public static void Move()
+        {
+
         }
     }
 }
