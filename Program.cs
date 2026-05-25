@@ -337,7 +337,7 @@ namespace PB
         // =========================
         // CAFETERIA
         // =========================
-        static bool pudding;
+        static bool pudding = false;
         public static void Cafeteria()
         {
             int action_1 = 0;
@@ -400,8 +400,20 @@ namespace PB
                             Cafeteria();
                             break;
                         case 2:
-                            Console.WriteLine("Thanks kid heres a shiv");
+                            if (pudding != true)
+                            {
+                                Console.WriteLine("You have recieved pudding!");
+                                pudding = true;
+                  
+                            }
+                            else
+                            {
+                                Console.WriteLine("You've already got your pudding!");
+                            }
+                            Cafeteria();
                             break;
+
+
                     }
                     break;
             }
