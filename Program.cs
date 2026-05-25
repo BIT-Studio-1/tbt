@@ -54,10 +54,10 @@ namespace PB
                 foreach (string line in title)
                 {
                     Console.WriteLine(line);
-                    Thread.Sleep(80);
+                    Thread.Sleep(50);
                 }
 
-                Thread.Sleep(250);
+                Thread.Sleep(100);
             }
 
             Console.ResetColor();
@@ -139,6 +139,7 @@ namespace PB
 
                         Thread.Sleep(1000);
                         running = false;
+                        Environment.Exit(0);
                         break;
 
                     default:
@@ -174,7 +175,7 @@ namespace PB
             foreach (char c in text)
             {
                 Console.Write(c);
-                Thread.Sleep(30);
+                Thread.Sleep(10);
             }
 
             Console.WriteLine();
@@ -330,54 +331,79 @@ namespace PB
                 Console.WriteLine("You enter the Yard");
                 Console.WriteLine("You look around and see another inmate");
                 Console.WriteLine("What would you like to do?");
-                Console.WriteLine("1:\tConfront Jamal");
+                if (screwdriver != true)
+                {
+                    Console.WriteLine("1:\tConfront Jamal");
+                }
+         
                 Console.WriteLine("2:\tExit Yard");
 
                 action_1 = Convert.ToInt32(Console.ReadLine());
 
-                switch (action_1)
+                if (screwdriver != true)
                 {
-                    case 1:
-                        Console.WriteLine("You approach Jamal");
-                        Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("1:\tFight Jamal");
-                        Console.WriteLine("2:\tTalk to Jamal");
-                        Console.WriteLine("3:\tGive Jamal a gift");
-                        Console.WriteLine("4:\tCheck the Yard");
+                    switch (action_1)
+                    {
+                        case 1:
+                            Console.WriteLine("You approach Jamal");
+                            Console.WriteLine("What would you like to do?");
+                            Console.WriteLine("1:\tFight Jamal");
+                            Console.WriteLine("2:\tTalk to Jamal");
+                            Console.WriteLine("3:\tGive Jamal a gift");
+                            Console.WriteLine("4:\tCheck the Yard");
 
-                        action_2 = Convert.ToInt32(Console.ReadLine());
+                            action_2 = Convert.ToInt32(Console.ReadLine());
 
-                        switch (action_2)
-                        {
-                            case 1:
-                                if (shiv != true)
-                                {
-                                    Console.WriteLine("You walk to jamal and take a swing. He bashes you on the skull, instantly killing you.");
-                                    Console.WriteLine("You are dead. Sending back to Yard.");
-                                    YardDeath();
-                                }
-                                break;
+                            switch (action_2)
+                            {
+                                case 1:
+                                    if (shiv != true)
+                                    {
+                                        Console.WriteLine("You walk to jamal and take a swing. He bashes you on the skull, instantly killing you.");
+                                        Console.WriteLine("You are dead. Sending back to Yard.");
+                                        YardDeath();
+                                    }
+                                    if (shiv == true)
+                                    {
+                                        Console.WriteLine("You walk to jamal and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
+                                        Console.WriteLine("You pick it up.");
+                                        screwdriver = true;
+                                        Cell();
+                                    }
+                                    break;
 
-                            case 2:
-                                Console.WriteLine("JAMAL:\t'Hmmm, I could really use some flowers right now'");
-                                break;
+                                case 2:
+                                    Console.WriteLine("JAMAL:\t'Hmmm, I could really use some flowers right now'");
+                                    break;
 
-                            case 3:
-                                Gift_Jamal();
-                                break;
+                                case 3:
+                                    Gift_Jamal();
+                                    break;
 
-                            case 4:
-                                Console.WriteLine("You check around the yard and find a batch of flowers.");
-                                flowers = true;
-                                break;
-                        }
-                        break;
+                                case 4:
+                                    Console.WriteLine("You check around the yard and find a batch of flowers.");
+                                    flowers = true;
+                                    break;
+                            }
+                            break;
 
-                    case 2:
-                        Console.WriteLine("You leave the Yard");
-                        inYard = false;
-                        Cell();
-                        break;
+                        case 2:
+                            Console.WriteLine("You leave the Yard");
+                            inYard = false;
+                            Cell();
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (action_1)
+                    {
+                        case 2:
+                            Console.WriteLine("You leave the Yard");
+                            inYard = false;
+                            Cell();
+                            break;
+                    }
                 }
             }
         }
@@ -490,6 +516,9 @@ namespace PB
 
 
                     }
+                    break;
+                    case 3: 
+                    Cell();
                     break;
             }
         }
