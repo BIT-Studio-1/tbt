@@ -8,6 +8,7 @@ namespace PB
         static bool flowers = false;
         static bool screwdriver = false;
         static bool shiv = false;
+        static bool soap = false;
 
         // =========================
         // MAIN ENTRY POINT
@@ -141,7 +142,7 @@ namespace PB
                 Console.WriteLine("1. Check cell");
                 Console.WriteLine("2. Go to yard");
                 Console.WriteLine("3. Go to cafeteria");
-                Console.WriteLine("4. Go to outside of cell");
+                Console.WriteLine("4. Go to showers");
                 celltemp = Console.ReadLine();
                 celldec = Convert.ToInt32(celltemp);
                 switch (celldec)
@@ -156,7 +157,7 @@ namespace PB
                         Cafeteria();
                         break;
                     case 4:
-                        celldec = 8;
+                        Showers();
                         break;
                     
 
@@ -452,6 +453,31 @@ namespace PB
         }
         public static void Move()
         {
+
+        }
+        public static void Showers()
+        {
+            int cellchoice;
+            Console.WriteLine("The showers are all empty, the only thing you see is a bar of soap on the floor");
+            if (soap != true)
+            {
+                Console.WriteLine("1. Pick up Soap");
+            }
+            Console.WriteLine("2. Leave showers");
+            cellchoice = Convert.ToInt32(Console.ReadLine());
+            if (soap != true)
+            {
+                if (cellchoice == 1)
+                {
+                    Console.WriteLine("You pick up the soap");
+                    soap = true;
+                    Showers();
+                }
+            }
+            if (cellchoice == 2)
+            {
+                Cell();
+            }
 
         }
     }
