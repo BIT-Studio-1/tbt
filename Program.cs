@@ -154,9 +154,9 @@ namespace PB
         // =========================
         static void Intro()
         {
-            Console.WriteLine("You have been convicted of watching anime on an illegal website.");
-            Thread.Sleep(1000);
-            Console.WriteLine("The Judge has commited you 25 life sentences due to your severe crime");
+            TypeText("You have been convicted of watching anime on an illegal website.");
+            TypeText("The Judge has committed you to 25 life sentences due to your severe crime");
+
             Thread.Sleep(1000);
             Console.WriteLine("");
             Console.WriteLine("");
@@ -164,6 +164,20 @@ namespace PB
             Console.WriteLine("");
             Thread.Sleep(3000);
             Cell();
+        }
+
+        // =========================
+        // TYPEWRITER EFFECT
+        // =========================
+        public static void TypeText(string text)
+        {
+            foreach (char c in text)
+            {
+                Console.Write(c);
+                Thread.Sleep(30);
+            }
+
+            Console.WriteLine();
         }
 
         // =========================
