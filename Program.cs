@@ -47,7 +47,7 @@ namespace PB
 
             for (int flash = 0; flash < 5; flash++)
             {
-                Console.Clear();
+                Console.SetCursorPosition(0, 0);
 
                 Console.ForegroundColor = colors[flash % colors.Length];
 
@@ -58,6 +58,7 @@ namespace PB
                 }
 
                 Thread.Sleep(100);
+
             }
 
             Console.ResetColor();
