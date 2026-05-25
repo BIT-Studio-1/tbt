@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
 namespace PB
 {
     internal class Program
     {
+
+        
         static bool flowers = false;
         static bool screwdriver = false;
         static bool shiv = false;
@@ -294,6 +297,12 @@ namespace PB
                         switch (action_2)
                         {
                             case 1:
+                                if (shiv != true)
+                                {
+                                    Console.WriteLine("You walk to jamal and take a swing. He bashes you on the skull, instantly killing you.");
+                                    Console.WriteLine("You are dead. Sending back to Yard.");
+                                    YardDeath();
+                                }
                                 break;
 
                             case 2:
@@ -479,6 +488,28 @@ namespace PB
                 Cell();
             }
 
+        }
+
+        public static void YardDeath()
+        {
+            Console.WriteLine("PlaceHolder GameOver");
+            Console.WriteLine("1: Continue from last checkpoint.");
+            Console.WriteLine("2: Exit to menu.");
+            int action = Convert.ToInt32(Console.ReadLine());
+            switch (action)
+            {
+                case 1:
+                    break;
+
+                    case 2:
+                    flowers = false;
+                    screwdriver = false;
+                    shiv = false;
+                    soap = false;
+                    pudding = false;
+                    MainMenu();
+                    break;
+            }
         }
     }
 }
