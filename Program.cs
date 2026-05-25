@@ -7,6 +7,7 @@ namespace PB
     {
         static bool flowers = false;
         static bool screwdriver = false;
+        static bool shiv = false;
 
         // =========================
         // MAIN ENTRY POINT
@@ -338,6 +339,7 @@ namespace PB
         // CAFETERIA
         // =========================
         static bool pudding = false;
+
         public static void Cafeteria()
         {
             int action_1 = 0;
@@ -374,7 +376,7 @@ namespace PB
                     {
                         Console.WriteLine("What would you like to do?");
                         Console.WriteLine("1:\tGo Back.");
-                        Console.WriteLine("2:\tGive Jamal Pudding.");
+                        Console.WriteLine("2:\tGive Crack Head Joe Pudding.");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
@@ -382,7 +384,17 @@ namespace PB
                                 Cafeteria();
                                 break;
                             case 2:
-                                Console.WriteLine("Thanks kid heres a shiv");
+                                if (shiv != true)
+                                {
+                                    Console.WriteLine("Thanks kid heres a shiv");
+                                    shiv = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Bro You already tried that go away.");
+                                }
+
+                                    Cafeteria();
                                 break;
                         }
                     }
