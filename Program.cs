@@ -374,7 +374,7 @@ namespace PB
                     {
                         Console.WriteLine("What would you like to do?");
                         Console.WriteLine("1:\tGo Back.");
-                        Console.WriteLine("1:\tGive Jamal Pudding.");
+                        Console.WriteLine("2:\tGive Jamal Pudding.");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
@@ -389,6 +389,20 @@ namespace PB
                         break;
 
                 case 2:
+                    Console.WriteLine("You enter the chow line. Today they are serving pudding. ONE PER INMATE.");
+                    Console.WriteLine("What would you like to do?");
+                    Console.WriteLine("1:\tGo Back.");
+                    Console.WriteLine("2:\tGet some pudding.");
+                    action_2 = Convert.ToInt32(Console.ReadLine());
+                    switch (action_2)
+                    {
+                        case 1:
+                            Cafeteria();
+                            break;
+                        case 2:
+                            Console.WriteLine("Thanks kid heres a shiv");
+                            break;
+                    }
                     break;
             }
         }
