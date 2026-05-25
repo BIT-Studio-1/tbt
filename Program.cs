@@ -49,6 +49,7 @@ namespace PB
             {
                 Console.SetCursorPosition(0, 0);
 
+
                 Console.ForegroundColor = colors[flash % colors.Length];
 
                 foreach (string line in title)
@@ -575,7 +576,7 @@ namespace PB
 
         public static void YardDeath()
         {
-            Console.WriteLine("PlaceHolder GameOver");
+            Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
             Console.WriteLine("1: Continue from last checkpoint.");
             Console.WriteLine("2: Exit to menu.");
             int action = Convert.ToInt32(Console.ReadLine());
