@@ -274,6 +274,28 @@ namespace PB
         public static void inventory()
         {
             Console.WriteLine("\tInventory");
+            Console.WriteLine("");
+            if (flowers)
+            {
+                Console.WriteLine("\tFlowers");
+                Console.WriteLine("");
+            }
+            if (shiv)
+            {
+                Console.WriteLine("Shiv");
+                Console.WriteLine("");
+            }
+            if (screwdriver)
+            {
+                Console.WriteLine("Screwdriver");
+                Console.WriteLine("");
+            }
+            if (soap)
+            {
+                Console.WriteLine("Soap");
+                Console.WriteLine("");
+            }
+            Console.WriteLine("Press 'Enter' to exit");
             Console.ReadLine();
             Look();
         }
@@ -286,7 +308,7 @@ namespace PB
             switch (cellchoice)
             {
                 case 1:
-                    if (screwdriver = true)
+                    if (screwdriver == true)
                     {
                         Console.WriteLine("You unscrew the screws from the toilet.");
                         Console.WriteLine("You remove the toilet from the wall to see a hole that leads to behind the cell.");
