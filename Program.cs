@@ -549,16 +549,23 @@ namespace PB
         {
             int cellchoice = 0;
             Console.WriteLine("You find yourself ontop of the prison roof. There seem to be 2 possible ways to go");
-            Console.WriteLine("1. Jump to the next building");
-            Console.WriteLine("2. Move to the other side of the roof");
+            Console.WriteLine("1: Jump to the next building");
+            Console.WriteLine("2: Move to the other side of the roof");
+            Console.WriteLine("3: Go back to cell");
             cellchoice = Convert.ToInt32(Console.ReadLine());
-            if (cellchoice == 1)
+            switch (cellchoice)
             {
-                Jump();
-            }
-            if (cellchoice == 2)
-            {
-                Move();
+                case 1:
+                    Jump();
+                    break;
+
+                case 2:
+                    Move();
+                    break;
+                
+                case 3:
+                    Cell();
+                    break;
             }
         }
         public static void Jump()
