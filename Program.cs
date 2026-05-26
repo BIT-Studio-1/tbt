@@ -361,6 +361,7 @@ namespace PB
                 }
          
                 Console.WriteLine("2:\tExit Yard");
+                Console.WriteLine("3:\tCheck the Yard");
 
                 action_1 = Convert.ToInt32(Console.ReadLine());
 
@@ -374,7 +375,6 @@ namespace PB
                             Console.WriteLine("1:\tFight Jamal");
                             Console.WriteLine("2:\tTalk to Jamal");
                             Console.WriteLine("3:\tGive Jamal a gift");
-                            Console.WriteLine("4:\tCheck the Yard");
 
                             action_2 = Convert.ToInt32(Console.ReadLine());
 
@@ -403,11 +403,6 @@ namespace PB
                                 case 3:
                                     Gift_Jamal();
                                     break;
-
-                                case 4:
-                                    Console.WriteLine("You check around the yard and find a batch of flowers.");
-                                    flowers = true;
-                                    break;
                             }
                             break;
 
@@ -415,6 +410,10 @@ namespace PB
                             Console.WriteLine("You leave the Yard");
                             inYard = false;
                             Cell();
+                            break;
+                        case 3:
+                            Console.WriteLine("You check around the yard and find a batch of flowers.");
+                            flowers = true;
                             break;
                     }
                 }
@@ -551,7 +550,7 @@ namespace PB
             int cellchoice = 0;
             Console.WriteLine("You find yourself ontop of the prison roof. There seem to be 2 possible ways to go");
             Console.WriteLine("1. Jump to the next building");
-            Console.WriteLine("2. Move tpo the other sid eof roof");
+            Console.WriteLine("2. Move to the other side of the roof");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             if (cellchoice == 1)
             {
