@@ -563,7 +563,30 @@ namespace PB
         }
         public static void Jump()
         {
+            Console.WriteLine("You start running and get ready to jump to the other building but your foot slips and you fall, spliting your head open");
+            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
+            Console.ResetColor();
 
+            Console.WriteLine("1: Continue from last checkpoint.");
+            Console.WriteLine("2: Exit to menu.");
+            int action = Convert.ToInt32(Console.ReadLine());
+            switch (action)
+            {
+                case 1:
+                    Roof();
+                    break;
+
+                case 2:
+                    flowers = false;
+                    screwdriver = false;
+                    shiv = false;
+                    soap = false;
+                    pudding = false;
+                    MainMenu();
+                    break;
+            }
         }
         public static void Move()
         {
