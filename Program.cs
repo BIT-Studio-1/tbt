@@ -164,7 +164,11 @@ namespace PB
             Thread.Sleep(1000);
             Console.WriteLine("");
             Console.WriteLine("");
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("      -------------Outcast Juvenile Holding Center-------------");
+            Console.ResetColor();
+
             Console.WriteLine("");
             Thread.Sleep(3000);
             Cell();
