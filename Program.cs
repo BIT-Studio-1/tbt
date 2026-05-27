@@ -12,6 +12,7 @@ namespace PB
         static bool screwdriver = false;
         static bool shiv = false;
         static bool soap = false;
+        static int strength = 0;
 
         // =========================
         // MAIN ENTRY POINT
@@ -282,19 +283,22 @@ namespace PB
             }
             if (shiv)
             {
-                Console.WriteLine("Shiv");
+                Console.WriteLine("\tShiv");
                 Console.WriteLine("");
             }
             if (screwdriver)
             {
-                Console.WriteLine("Screwdriver");
+                Console.WriteLine("\tScrewdriver");
                 Console.WriteLine("");
             }
             if (soap)
             {
-                Console.WriteLine("Soap");
+                Console.WriteLine("\tSoap");
                 Console.WriteLine("");
             }
+            Console.WriteLine($"\tStrentgh = {strength}");
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine("Press 'Enter' to exit");
             Console.ReadLine();
             Look();
@@ -447,10 +451,12 @@ namespace PB
                     flowers = true;
                     break;
                 case 2:
-                    Console.WriteLine(
+                    //Console.WriteLine(
                     break;
                 case 3:
-                    Console.WriteLine(
+                    Console.WriteLine("You go to check out the gym and work out");
+                    Console.WriteLine("You gained 1 strentgh");
+                    strength++;
                     break;
                 case 4:
                     Yard();
