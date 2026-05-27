@@ -7,7 +7,9 @@ namespace PB
     internal class Program
     {
 
-        
+        static ConsoleColor mainColor = ConsoleColor.Gray;
+
+
         static bool flowers = false;
         static bool screwdriver = false;
         static bool shiv = false;
@@ -22,7 +24,7 @@ namespace PB
             MainMenu();
         }
 
-         // =========================
+        // =========================
         // ANIMATED TITLE
         // =========================
         public static void AnimatedTitle()
@@ -195,7 +197,7 @@ namespace PB
         {
             string celltemp;
 
-            
+
             int celldec, cellchoice;
             Console.WriteLine("You arrive in your cell, a cramped cold and dirty cell");
             celldec = 0;
@@ -234,7 +236,7 @@ namespace PB
                     case 4:
                         Showers();
                         break;
-                    
+
 
                 }
             }
@@ -318,7 +320,8 @@ namespace PB
             Console.ReadLine();
             Look();
         }
-        public static void toilet() {
+        public static void toilet()
+        {
             int cellchoice, cellchoice2;
             Console.WriteLine("There's a toilet in the corner of the cell, it seems to be connected by some screws");
             Console.WriteLine("1. Remove toilet from wall (Screwdriver needed)");
@@ -353,8 +356,8 @@ namespace PB
                         Thread.Sleep(1000);
                         Look();
                     }
-                        break;
-                    case 2:
+                    break;
+                case 2:
                     Look();
                     break;
             }
@@ -378,7 +381,7 @@ namespace PB
                 {
                     Console.WriteLine("1:\tConfront the inmate");
                 }
-         
+
                 Console.WriteLine("2:\tCheck the Yard");
                 Console.WriteLine("3:\tExit the Yard");
 
@@ -404,6 +407,24 @@ namespace PB
                                     {
                                         Console.WriteLine("You walk to jamal and take a swing. He bashes you on the skull, instantly killing you.");
                                         Console.WriteLine("You are dead. Sending back to Yard.");
+
+                                        string[] frames =
+    {
+        "(-_- )    ( •_•)",
+        "( -_-)>⌐■-■   ( •_•)",
+        "(⌐■_■)    (x_x)"
+    };
+
+                                        foreach (string frame in frames)
+                                        {
+                                            Console.Clear();
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.WriteLine(frame);
+                                            Console.ResetColor();
+
+                                            Thread.Sleep(500);
+                                        }
+
                                         YardDeath();
                                     }
                                     if (shiv == true)
@@ -531,7 +552,7 @@ namespace PB
                                 Cafeteria();
                                 break;
                         }
-                            
+
                     }
                     else
                     {
@@ -555,11 +576,11 @@ namespace PB
                                     Console.WriteLine("Bro You already tried that go away.");
                                 }
 
-                                    Cafeteria();
+                                Cafeteria();
                                 break;
                         }
                     }
-                        break;
+                    break;
 
                 case 2:
                     Console.WriteLine("You enter the chow line. Today they are serving pudding. ONE PER INMATE.");
@@ -577,7 +598,7 @@ namespace PB
                             {
                                 Console.WriteLine("You have recieved pudding!");
                                 pudding = true;
-                  
+
                             }
                             else
                             {
@@ -589,7 +610,7 @@ namespace PB
 
                     }
                     break;
-                    case 3: 
+                case 3:
                     Cell();
                     break;
             }
@@ -611,7 +632,7 @@ namespace PB
                 case 2:
                     Move();
                     break;
-                
+
                 case 3:
                     Cell();
                     break;
@@ -680,6 +701,7 @@ namespace PB
             Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
             Console.ResetColor();
 
+
             Console.WriteLine("1: Continue from last checkpoint.");
             Console.WriteLine("2: Exit to menu.");
             int action = Convert.ToInt32(Console.ReadLine());
@@ -688,7 +710,7 @@ namespace PB
                 case 1:
                     break;
 
-                    case 2:
+                case 2:
                     flowers = false;
                     screwdriver = false;
                     shiv = false;
