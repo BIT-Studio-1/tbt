@@ -410,9 +410,9 @@ namespace PB
 
                                         string[] frames =
     {
-        "(-_- )    ( •_•)",
-        "( -_-)>⌐■-■   ( •_•)",
-        "(⌐■_■)    (x_x)"
+        "(-_- )    ⌐■-■ ",
+        "( -_-)>  ( •_•)",
+        "(x_x) oh noo im dead now'"
     };
 
                                         foreach (string frame in frames)
