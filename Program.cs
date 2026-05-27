@@ -357,7 +357,7 @@ namespace PB
                 Console.WriteLine("What would you like to do?");
                 if (screwdriver != true)
                 {
-                    Console.WriteLine("1:\tConfront Jamal");
+                    Console.WriteLine("1:\tConfront the inmate");
                 }
          
                 Console.WriteLine("2:\tCheck the Yard");
@@ -370,11 +370,11 @@ namespace PB
                     switch (action_1)
                     {
                         case 1:
-                            Console.WriteLine("You approach Jamal");
+                            Console.WriteLine("You approach the inmate");
                             Console.WriteLine("What would you like to do?");
-                            Console.WriteLine("1:\tFight Jamal");
-                            Console.WriteLine("2:\tTalk to Jamal");
-                            Console.WriteLine("3:\tGive Jamal a gift");
+                            Console.WriteLine("1:\tFight the inmate");
+                            Console.WriteLine("2:\tTalk to the inmate");
+                            Console.WriteLine("3:\tGive the inmate a gift");
 
                             action_2 = Convert.ToInt32(Console.ReadLine());
 
@@ -431,8 +431,32 @@ namespace PB
         }
         public static void Check_Yard()
         {
-            Console.WriteLine("You check around the yard and find a batch of flowers.");
-            flowers = true;
+            int action = 0;
+            Console.WriteLine("You look around the Yard");
+            Console.WriteLine("You see a small flower garden, a makeshift casino, and a gym");
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1:\tWalk over to the garden");
+            Console.WriteLine("2:\tGo to the casino");
+            Console.WriteLine("3:\tCheck out the gym");
+            Console.WriteLine("4:\tGo back");
+            action = Convert.ToInt32(Console.ReadLine());
+            switch (action)
+            {
+                case 1:
+                    Console.WriteLine("You walk over to the garden and pick some flowers");
+                    flowers = true;
+                    break;
+                case 2:
+                    Console.WriteLine(
+                    break;
+                case 3:
+                    Console.WriteLine(
+                    break;
+                case 4:
+                    Yard();
+                    break;
+
+            }
         }
 
         public static void Gift_Jamal()
