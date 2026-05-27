@@ -203,6 +203,8 @@ namespace PB
             if (celldec == 0)
             {
                 Console.WriteLine("What would you like to do");
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("1. Check cell");
 
                 Console.ForegroundColor = ConsoleColor.Green;
