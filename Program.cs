@@ -204,7 +204,10 @@ namespace PB
             {
                 Console.WriteLine("What would you like to do");
                 Console.WriteLine("1. Check cell");
+
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("2. Go to yard");
+
                 Console.WriteLine("3. Go to cafeteria");
                 Console.WriteLine("4. Go to showers");
                 celltemp = Console.ReadLine();
