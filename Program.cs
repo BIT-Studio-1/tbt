@@ -360,8 +360,8 @@ namespace PB
                     Console.WriteLine("1:\tConfront Jamal");
                 }
          
-                Console.WriteLine("2:\tExit Yard");
-                Console.WriteLine("3:\tCheck the Yard");
+                Console.WriteLine("2:\tCheck the Yard");
+                Console.WriteLine("3:\tExit the Yard");
 
                 action_1 = Convert.ToInt32(Console.ReadLine());
 
@@ -407,13 +407,12 @@ namespace PB
                             break;
 
                         case 2:
+                            Check_Yard();
+                            break;
+                        case 3:
                             Console.WriteLine("You leave the Yard");
                             inYard = false;
                             Cell();
-                            break;
-                        case 3:
-                            Console.WriteLine("You check around the yard and find a batch of flowers.");
-                            flowers = true;
                             break;
                     }
                 }
@@ -429,6 +428,11 @@ namespace PB
                     }
                 }
             }
+        }
+        public static void Check_Yard()
+        {
+            Console.WriteLine("You check around the yard and find a batch of flowers.");
+            flowers = true;
         }
 
         public static void Gift_Jamal()
