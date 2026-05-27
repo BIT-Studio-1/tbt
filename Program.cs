@@ -112,7 +112,7 @@ namespace PB
 
                         for (int i = 0; i < 5; i++)
                         {
-                            Thread.Sleep(400);
+                            Thread.Sleep(100);
                             Console.Write(".");
                         }
 
@@ -122,7 +122,7 @@ namespace PB
 
                         for (int i = 0; i < 20; i++)
                         {
-                            Thread.Sleep(100);
+                            Thread.Sleep(30);
                             Console.Write("■");
                         }
 
