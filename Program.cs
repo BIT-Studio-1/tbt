@@ -213,7 +213,9 @@ namespace PB
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("3. Go to cafeteria");
 
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("4. Go to showers");
+
                 celltemp = Console.ReadLine();
                 celldec = Convert.ToInt32(celltemp);
                 switch (celldec)
