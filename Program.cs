@@ -405,7 +405,7 @@ namespace PB
                                 case 1:
                                     if (shiv != true)
                                     {
-                                        Console.WriteLine("You walk to jamal and take a swing. He bashes you on the skull, instantly killing you.");
+                                        Console.WriteLine("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
                                         Console.WriteLine("You are dead. Sending back to Yard.");
 
                                         string[] frames =
@@ -429,7 +429,7 @@ namespace PB
                                     }
                                     if (shiv == true)
                                     {
-                                        Console.WriteLine("You walk to jamal and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
+                                        Console.WriteLine("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
                                         Console.WriteLine("You pick it up.");
                                         screwdriver = true;
                                         Cell();
@@ -437,7 +437,7 @@ namespace PB
                                     break;
 
                                 case 2:
-                                    Console.WriteLine("JAMAL:\t'Hmmm, I could really use some flowers right now'");
+                                    Console.WriteLine("INMATE:\t'Hmmm, I could really use some flowers right now'");
                                     break;
 
                                 case 3:
