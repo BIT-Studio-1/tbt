@@ -754,18 +754,39 @@ namespace PB
             switch (choice)
             {
                 case 1:
-                    
+                    Reason();
                     break;
                         case 2:
-
+                    TowerFight();
                     break;
             }
         }
         public static void Reason()
         {
-
+            Console.WriteLine("Before you have the chance to say anything, the guard fires his gun, shooting you straight in the head");
+            Thread.Sleep(1500);
+            YardDeath();
         }
         public static void TowerFight()
+        {
+            if (shiv = true)
+            {
+                Console.WriteLine("Without giving the guard a chance, you dive into the guard, pressing the shiv deep into their stomach");
+                Console.WriteLine("The guard collapses on the ground, clutching their chest in pain");
+                Console.WriteLine("You rush past the guard and make it to the other side of the tower");
+                Thread.Sleep(1500);
+                TowerEscape();
+            }
+            else
+            {
+                Console.WriteLine("You dive at the guard, pushing him against the wall");
+                Console.WriteLine("You try to take a swing at the guard, but they end up firing a round into the side of your waist");
+                Console.WriteLine("You collapse to the ground, as you hold your wound tight");
+                Thread.Sleep(1500);
+                YardDeath();
+            }
+        }
+        public static void TowerEscape()
         {
 
         }
