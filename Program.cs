@@ -7,9 +7,6 @@ namespace PB
     internal class Program
     {
 
-        static ConsoleColor mainColor = ConsoleColor.Gray;
-
-
         static bool flowers = false;
         static bool screwdriver = false;
         static bool shiv = false;
@@ -83,7 +80,7 @@ namespace PB
 
                 Console.ResetColor();
 
-                Console.WriteLine("Hello human, welcome to our game!");
+                Console.WriteLine("\t\t\t\tHello human, welcome to our game!");
 
 
                 Console.WriteLine();
@@ -412,7 +409,7 @@ namespace PB
     {
         "(-_- )    ⌐■-■ ",
         "( -_-)>  ( •_•)",
-        "(x_x) oh noo im dead now'"
+        "(x_x) oh noo im dead now"
     };
 
                                         foreach (string frame in frames)
