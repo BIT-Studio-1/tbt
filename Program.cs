@@ -785,7 +785,11 @@ namespace PB
         }
         public static void TowerEscape()
         {
-
+            Console.WriteLine("You see a pipe near the front wall of the gate that seems to lead you to the outside of the prison");
+            Console.WriteLine("You leap over the railing and just manage to get a grip of the pipe as it starts shaking from impact");
+            Console.WriteLine("you slide down the pipe carefully and manage to make it to the ground safely");
+            Console.WriteLine("Without a second later, you start sprinting away from the prison, leading to your freedom");
+            Thread.Sleep(2000);
         }
         public static void Showers()
         {
