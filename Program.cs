@@ -814,6 +814,7 @@ namespace PB
             Console.WriteLine("you slide down the pipe carefully and manage to make it to the ground safely");
             Console.WriteLine("Without a second later, you start sprinting away from the prison, leading to your freedom");
             Thread.Sleep(2000);
+            Win();
         }
         public static void Showers()
         {
