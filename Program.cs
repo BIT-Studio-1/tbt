@@ -734,7 +734,30 @@ namespace PB
         }
         public static void fence()
         {
-
+            int choice;
+            Console.WriteLine("You begin to crawl through the barbed fence.");
+            Console.WriteLine("1. Crawl carefully");
+            Console.WriteLine("2. Rush through");
+            choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("You slowly crawl through the barbed wire.");
+                    if (strength > 7)
+                    {
+                        Console.WriteLine("Your strength was high enough to make it through");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You were not strong enough to make it through.");
+                        Death();
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("You rush through the barbed wire, cutting yourself. You bleed out.");
+                    Death();
+                    break;
+            }
         }
         public static void Tower()
         {
