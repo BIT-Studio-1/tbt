@@ -424,7 +424,7 @@ namespace PB
                                         Thread.Sleep(500);
                                     }
 
-                                    YardDeath();
+                                    Death();
                                 }
                                 if (shiv == true)
                                 {
@@ -762,7 +762,7 @@ namespace PB
         {
             Console.WriteLine("Before you have the chance to say anything, the guard fires his gun, shooting you straight in the head");
             Thread.Sleep(1500);
-            YardDeath();
+            Death();
         }
         public static void TowerFight()
         {
@@ -780,7 +780,7 @@ namespace PB
                 Console.WriteLine("You try to take a swing at the guard, but they end up firing a round into the side of your waist");
                 Console.WriteLine("You collapse to the ground, as you hold your wound tight");
                 Thread.Sleep(1500);
-                YardDeath();
+                Death();
             }
         }
         public static void TowerEscape()
@@ -819,7 +819,7 @@ namespace PB
 
         }
 
-        public static void YardDeath()
+        public static void Death()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
@@ -839,7 +839,11 @@ namespace PB
                     screwdriver = false;
                     shiv = false;
                     soap = false;
+                    strength = 0;
+                    money = 10;
+                    inmate = true;
                     pudding = false;
+
                     MainMenu();
                     break;
             }
