@@ -15,6 +15,8 @@ namespace PB
         static bool shiv = false;
         static bool soap = false;
         static int strength = 0;
+        static int money = 10;
+        static bool inmate = true;
 
         // =========================
         // MAIN ENTRY POINT
@@ -377,7 +379,7 @@ namespace PB
                 Console.WriteLine("You enter the Yard");
                 Console.WriteLine("You look around and see another inmate");
                 Console.WriteLine("What would you like to do?");
-                if (screwdriver != true)
+                if (inmate == true)
                 {
                     Console.WriteLine("1:\tConfront the inmate");
                 }
@@ -387,85 +389,78 @@ namespace PB
 
                 action_1 = Convert.ToInt32(Console.ReadLine());
 
-                if (screwdriver != true)
+                switch (action_1)
                 {
-                    switch (action_1)
-                    {
-                        case 1:
-                            Console.WriteLine("You approach the inmate");
-                            Console.WriteLine("What would you like to do?");
-                            Console.WriteLine("1:\tFight the inmate");
-                            Console.WriteLine("2:\tTalk to the inmate");
-                            Console.WriteLine("3:\tGive the inmate a gift");
+                    case 1:
+                        Console.WriteLine("You approach the inmate");
+                        Console.WriteLine("What would you like to do?");
+                        Console.WriteLine("1:\tFight the inmate");
+                        Console.WriteLine("2:\tTalk to the inmate");
+                        Console.WriteLine("3:\tGive the inmate a gift");
+                        Console.WriteLine("4:\tGo back");
 
-                            action_2 = Convert.ToInt32(Console.ReadLine());
+                        action_2 = Convert.ToInt32(Console.ReadLine());
 
-                            switch (action_2)
-                            {
-                                case 1:
-                                    if (shiv != true)
+                        switch (action_2)
+                        {
+                            case 1:
+                                if (shiv != true)
+                                {
+                                    Console.WriteLine("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
+                                    Console.WriteLine("You are dead. Sending back to Yard.");
+
+                                    string[] frames =
                                     {
-                                        Console.WriteLine("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
-                                        Console.WriteLine("You are dead. Sending back to Yard.");
+                                        "(-_- )    ⌐■-■ ",
+                                        "( -_-)>  ( •_•)",
+                                        "(x_x) oh noo im dead now'"
+                                    };
 
-                                        string[] frames =
-    {
-        "(-_- )    ⌐■-■ ",
-        "( -_-)>  ( •_•)",
-        "(x_x) oh noo im dead now'"
-    };
-
-                                        foreach (string frame in frames)
-                                        {
-                                            Console.Clear();
-                                            Console.ForegroundColor = ConsoleColor.Red;
-                                            Console.WriteLine(frame);
-                                            Console.ResetColor();
-
-                                            Thread.Sleep(500);
-                                        }
-
-                                        YardDeath();
-                                    }
-                                    if (shiv == true)
+                                    foreach (string frame in frames)
                                     {
-                                        Console.WriteLine("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
-                                        Console.WriteLine("You pick it up.");
-                                        screwdriver = true;
-                                        Cell();
+                                        Console.Clear();
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine(frame);
+                                        Console.ResetColor();
+
+                                        Thread.Sleep(500);
                                     }
-                                    break;
 
-                                case 2:
-                                    Console.WriteLine("INMATE:\t'Hmmm, I could really use some flowers right now'");
-                                    break;
+                                    YardDeath();
+                                }
+                                if (shiv == true)
+                                {
+                                    Console.WriteLine("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
+                                    Console.WriteLine("You pick it up.");
+                                    screwdriver = true;
+                                    inmate = false;
+                                    Cell();
+                                }
+                                break;
 
-                                case 3:
-                                    Gift_Jamal();
-                                    break;
-                            }
-                            break;
+                            case 2:
+                                Console.WriteLine("INMATE:\t'Hmmm, I could really use some flowers right now'");
+                                break;
 
-                        case 2:
-                            Check_Yard();
-                            break;
-                        case 3:
-                            Console.WriteLine("You leave the Yard");
-                            inYard = false;
-                            Cell();
-                            break;
-                    }
-                }
-                else
-                {
-                    switch (action_1)
-                    {
-                        case 2:
-                            Console.WriteLine("You leave the Yard");
-                            inYard = false;
-                            Cell();
-                            break;
-                    }
+                            case 3:
+                                Gift_Jamal();
+                                break;
+
+                            case 4:
+                                break;
+                        }
+                        break;
+
+
+                    case 2:
+                        Check_Yard();
+                        break;
+                    case 3:
+                        Console.WriteLine("You leave the Yard");
+                        inYard = false;
+                        Cell();
+                        break;
+
                 }
             }
         }
@@ -505,13 +500,13 @@ namespace PB
         {
             if (flowers)
             {
-                Console.WriteLine("JAMAL:\t'Aww flowers, thank you so much. Here's a screwdriver'");
+                Console.WriteLine("BIG DOG:\t'Aww flowers, thank you so much. Here's a screwdriver'");
                 screwdriver = true;
                 flowers = false;
             }
             else
             {
-                Console.WriteLine("You don't have anything to give Jamal");
+                Console.WriteLine("You don't have anything to give Big Dog");
             }
 
             Yard();
