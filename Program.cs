@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using System.Xml.Serialization;
 
 namespace PB
 {
@@ -12,6 +13,8 @@ namespace PB
         static bool shiv = false;
         static bool soap = false;
         static int strength = 0;
+        static int money = 10;
+        static bool inmate = true;
 
         // =========================
         // MAIN ENTRY POINT
@@ -374,7 +377,7 @@ namespace PB
                 Console.WriteLine("You enter the Yard");
                 Console.WriteLine("You look around and see another inmate");
                 Console.WriteLine("What would you like to do?");
-                if (screwdriver != true)
+                if (inmate == true)
                 {
                     Console.WriteLine("1:\tConfront the inmate");
                 }
@@ -384,27 +387,34 @@ namespace PB
 
                 action_1 = Convert.ToInt32(Console.ReadLine());
 
-                if (screwdriver != true)
+                switch (action_1)
                 {
-                    switch (action_1)
-                    {
-                        case 1:
-                            Console.WriteLine("You approach the inmate");
-                            Console.WriteLine("What would you like to do?");
-                            Console.WriteLine("1:\tFight the inmate");
-                            Console.WriteLine("2:\tTalk to the inmate");
-                            Console.WriteLine("3:\tGive the inmate a gift");
+                    case 1:
+                        Console.WriteLine("You approach the inmate");
+                        Console.WriteLine("What would you like to do?");
+                        Console.WriteLine("1:\tFight the inmate");
+                        Console.WriteLine("2:\tTalk to the inmate");
+                        Console.WriteLine("3:\tGive the inmate a gift");
+                        Console.WriteLine("4:\tGo back");
 
-                            action_2 = Convert.ToInt32(Console.ReadLine());
+                        action_2 = Convert.ToInt32(Console.ReadLine());
 
-                            switch (action_2)
-                            {
-                                case 1:
-                                    if (shiv != true)
+                        switch (action_2)
+                        {
+                            case 1:
+                                if (shiv != true)
+                                {
+                                    Console.WriteLine("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
+                                    Console.WriteLine("You are dead. Sending back to Yard.");
+
+                                    string[] frames =
                                     {
-                                        Console.WriteLine("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
-                                        Console.WriteLine("You are dead. Sending back to Yard.");
+                                        "(-_- )    ⌐■-■ ",
+                                        "( -_-)>  ( •_•)",
+                                        "(x_x) oh noo im dead now'"
+                                    };
 
+<<<<<<< HEAD
                                         string[] frames =
     {
         "(-_- )    ⌐■-■ ",
@@ -425,44 +435,53 @@ namespace PB
                                         YardDeath();
                                     }
                                     if (shiv == true)
+=======
+                                    foreach (string frame in frames)
+>>>>>>> ac764fa6f45feeca2ac252b01b782a932aefa818
                                     {
-                                        Console.WriteLine("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
-                                        Console.WriteLine("You pick it up.");
-                                        screwdriver = true;
-                                        Cell();
+                                        Console.Clear();
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine(frame);
+                                        Console.ResetColor();
+
+                                        Thread.Sleep(500);
                                     }
-                                    break;
 
-                                case 2:
-                                    Console.WriteLine("INMATE:\t'Hmmm, I could really use some flowers right now'");
-                                    break;
+                                    YardDeath();
+                                }
+                                if (shiv == true)
+                                {
+                                    Console.WriteLine("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
+                                    Console.WriteLine("You pick it up.");
+                                    screwdriver = true;
+                                    inmate = false;
+                                    Cell();
+                                }
+                                break;
 
-                                case 3:
-                                    Gift_Jamal();
-                                    break;
-                            }
-                            break;
+                            case 2:
+                                Console.WriteLine("INMATE:\t'Hmmm, I could really use some flowers right now'");
+                                break;
 
-                        case 2:
-                            Check_Yard();
-                            break;
-                        case 3:
-                            Console.WriteLine("You leave the Yard");
-                            inYard = false;
-                            Cell();
-                            break;
-                    }
-                }
-                else
-                {
-                    switch (action_1)
-                    {
-                        case 2:
-                            Console.WriteLine("You leave the Yard");
-                            inYard = false;
-                            Cell();
-                            break;
-                    }
+                            case 3:
+                                Gift_Jamal();
+                                break;
+
+                            case 4:
+                                break;
+                        }
+                        break;
+
+
+                    case 2:
+                        Check_Yard();
+                        break;
+                    case 3:
+                        Console.WriteLine("You leave the Yard");
+                        inYard = false;
+                        Cell();
+                        break;
+
                 }
             }
         }
@@ -502,13 +521,13 @@ namespace PB
         {
             if (flowers)
             {
-                Console.WriteLine("JAMAL:\t'Aww flowers, thank you so much. Here's a screwdriver'");
+                Console.WriteLine("BIG DOG:\t'Aww flowers, thank you so much. Here's a screwdriver'");
                 screwdriver = true;
                 flowers = false;
             }
             else
             {
-                Console.WriteLine("You don't have anything to give Jamal");
+                Console.WriteLine("You don't have anything to give Big Dog");
             }
 
             Yard();
@@ -717,6 +736,56 @@ namespace PB
             }
         }
         public static void Move()
+        {
+            int cellchoice;
+            Console.WriteLine("You move to the other side of the roof and find yourself near the surrounding fence.");
+            Console.WriteLine("There seem to be 2 possible ways you can make it out of this");
+            Console.WriteLine("There's a space in between the barbed wire that you could possibly crawl through, but it seems risky");
+            Console.WriteLine("There's also a guard tower that you could possibly climb up to and escape through there, but there may be someone inside");
+            Console.WriteLine("1. Climb the guard tower");
+            Console.WriteLine("2. Crawl through the barbed fence");
+            cellchoice = Convert.ToInt32(Console.ReadLine());
+            switch (cellchoice)
+            {
+                case 1:
+                    Tower();
+                    break;
+                case 2:
+                    fence();
+                    break;
+            }
+        }
+        public static void fence()
+        {
+
+        }
+        public static void Tower()
+        {
+            int choice;
+            Console.WriteLine("You take a step back before leaping onto the side of the guard tower");
+            Console.WriteLine("Luckily, You manage to grab onto a fixed light on the side of the tower");
+            Console.WriteLine("You lift yourself over the railing and make it into the tower");
+            Console.WriteLine("Unfortunetly, a guard happened to be inside the tower as you made it inside");
+            Console.WriteLine("The guard aims their gun at you and orders you to comply ");
+            Console.WriteLine("You can see a way to escape the prison on just the other side of the tower, but you need to get past the guard");
+            Console.WriteLine("1. Reason with the guard");
+            Console.WriteLine("2. Fight the guard");
+            choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    
+                    break;
+                        case 2:
+
+                    break;
+            }
+        }
+        public static void Reason()
+        {
+
+        }
+        public static void TowerFight()
         {
 
         }
