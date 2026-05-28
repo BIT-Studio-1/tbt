@@ -414,30 +414,7 @@ namespace PB
                                         "(x_x) oh noo im dead now'"
                                     };
 
-<<<<<<< HEAD
-                                        string[] frames =
-    {
-        "(-_- )    ⌐■-■ ",
-        "( -_-)>  ( •_•)",
-        "(x_x) oh noo im dead now"
-    };
-
-                                        foreach (string frame in frames)
-                                        {
-                                            Console.Clear();
-                                            Console.ForegroundColor = ConsoleColor.Red;
-                                            Console.WriteLine(frame);
-                                            Console.ResetColor();
-
-                                            Thread.Sleep(500);
-                                        }
-
-                                        YardDeath();
-                                    }
-                                    if (shiv == true)
-=======
                                     foreach (string frame in frames)
->>>>>>> ac764fa6f45feeca2ac252b01b782a932aefa818
                                     {
                                         Console.Clear();
                                         Console.ForegroundColor = ConsoleColor.Red;
