@@ -8,9 +8,6 @@ namespace PB
     internal class Program
     {
 
-        static ConsoleColor mainColor = ConsoleColor.Gray;
-
-
         static bool flowers = false;
         static bool screwdriver = false;
         static bool shiv = false;
@@ -86,7 +83,7 @@ namespace PB
 
                 Console.ResetColor();
 
-                Console.WriteLine("Hello human, welcome to our game!");
+                Console.WriteLine("\t\t\t\tHello human, welcome to our game!");
 
 
                 Console.WriteLine();
@@ -417,7 +414,30 @@ namespace PB
                                         "(x_x) oh noo im dead now'"
                                     };
 
+<<<<<<< HEAD
+                                        string[] frames =
+    {
+        "(-_- )    ⌐■-■ ",
+        "( -_-)>  ( •_•)",
+        "(x_x) oh noo im dead now"
+    };
+
+                                        foreach (string frame in frames)
+                                        {
+                                            Console.Clear();
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.WriteLine(frame);
+                                            Console.ResetColor();
+
+                                            Thread.Sleep(500);
+                                        }
+
+                                        YardDeath();
+                                    }
+                                    if (shiv == true)
+=======
                                     foreach (string frame in frames)
+>>>>>>> ac764fa6f45feeca2ac252b01b782a932aefa818
                                     {
                                         Console.Clear();
                                         Console.ForegroundColor = ConsoleColor.Red;
@@ -798,7 +818,8 @@ namespace PB
             {
                 Console.WriteLine("1. Pick up Soap");
             }
-            Console.WriteLine("2. Leave showers");
+            Console.WriteLine("2. Take a shower");
+            Console.WriteLine("3. Leave showers");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             if (soap != true)
             {
@@ -810,6 +831,11 @@ namespace PB
                 }
             }
             if (cellchoice == 2)
+            {
+                Console.WriteLine("You take a shower and feel clean.");
+                Showers();
+            }
+            else if (cellchoice == 3)
             {
                 Cell();
             }
