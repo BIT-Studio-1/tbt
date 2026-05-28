@@ -875,5 +875,10 @@ namespace PB
                     break;
             }
         }
+
+        public static void Win()
+        {
+            Console.WriteLine("You have escaped!");
+        }
     }
 }
