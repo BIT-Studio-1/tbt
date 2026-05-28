@@ -316,6 +316,8 @@ namespace PB
                 Console.WriteLine("\tSoap");
                 Console.WriteLine("");
             }
+            Console.WriteLine($"\t${money}");
+            Console.WriteLine("");
             Console.WriteLine($"\tStrentgh = {strength}");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -520,51 +522,101 @@ namespace PB
         {
             int action = 0;
             int choice = 0;
-            Console.WriteLine("\t======================================");
-            Console.WriteLine("\t              CASINO");
-            Console.WriteLine("\t======================================");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("Welcome to the Casino!");
-            Console.WriteLine("Here you can play roulette or blackjack");
-            Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1:\tRoulette");
-            Console.WriteLine("2:\tBlackjack");
-            Console.WriteLine("1:\tBack to the Yard");
-            action = Convert.ToInt32(Console.ReadLine());
-            switch (action)
+            int bet = 0;
+            bool inCasino = true;
+            while (inCasino)
             {
-                case 1:
-                    Console.WriteLine("");
-                    Console.WriteLine("How to play roulette:");
-                    Console.WriteLine("You can choose to bet on either red or black");
-                    Console.WriteLine("If it lands on the colour you choose, you double your bet");
-                    Console.WriteLine("");
-                    Console.WriteLine("What is your decision?");
-                    Console.WriteLine("1:\tBet on black");
-                    Console.WriteLine("2:\tBet on red");
-                    Console.WriteLine("3:\tGo back");
-                    choice = Convert.ToInt32(Console.ReadLine());
-                    switch (choice)
-                    {
-                        case 1:
-                            break;
+                Console.WriteLine("\t======================================");
+                Console.WriteLine("\t              CASINO");
+                Console.WriteLine("\t======================================");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("Welcome to the Casino!");
+                Console.WriteLine("Here you can play roulette or blackjack");
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("1:\tRoulette");
+                Console.WriteLine("2:\tBlackjack");
+                Console.WriteLine("3:\tBack to the Yard");
+                action = Convert.ToInt32(Console.ReadLine());
+                switch (action)
+                {
+                    case 1:
+                        bool inRoulette = true;
+                        while (inRoulette)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("How to play roulette:");
+                            Console.WriteLine("You can choose to bet on either red or black");
+                            Console.WriteLine("If it lands on the colour you choose, you double your bet");
+                            Console.WriteLine("");
+                            Console.WriteLine("What is your decision?");
+                            Console.WriteLine("1:\tBet on black");
+                            Console.WriteLine("2:\tBet on red");
+                            Console.WriteLine("3:\tGo back");
+                            choice = Convert.ToInt32(Console.ReadLine());
+                            switch (choice)
+                            {
+                                case 1:
+                                    bool betblack = true;
+                                    while (betblack)
+                                    {
+                                        Console.WriteLine($"You have ${money}");
+                                        Console.WriteLine("How much would you like to bet?");
+                                        bet = Convert.ToInt32(Console.ReadLine());
+                                        if (bet > money)
+                                        {
+                                           Console.WriteLine("INSUFFICIENT FUNDS");
+                                           Console.WriteLine("TRY AGAIN");
+                                            betblack = false;
+                                        }
+                                        else if (bet >= 0)
+                                        {
+                                            Console.WriteLine("You can't be 0 or less");
+                                            betblack = false;
+                                        }
 
-                        case 2:
-                            break;
+                                    }
+                                    break;
+                                    
 
-                        case 3:
-                            break;
-                    }
-                    break;
+                                case 2:
+                                    bool betred = true;
+                                    while (betred)
+                                    {
+                                        Console.WriteLine($"You have ${money}");
+                                        Console.WriteLine("How much would you like to bet?");
+                                        bet = Convert.ToInt32(Console.ReadLine());
+                                        if (bet > money)
+                                        {
+                                            Console.WriteLine("INSUFFICIENT FUNDS");
+                                            Console.WriteLine("TRY AGAIN");
+                                            betred = false;
+                                        }
+                                        else if (bet >= 0)
+                                        {
+                                            Console.WriteLine("You can't be 0 or less");
+                                            betred = false;
+                                        }
 
-                case 2:
-                    break;
+                                    }
+                                    break;
 
-                case 3:
-                    Yard();
-                    break;
+                                case 3:
+                                    inRoulette = false;
+                                    break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        break;
+
+                    case 3:
+                        inCasino = false;
+                        Yard();
+                        break;
+                }
             }
+                
         }
 
         // =========================
