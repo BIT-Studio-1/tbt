@@ -721,6 +721,30 @@ namespace PB
         }
         public static void Move()
         {
+            int cellchoice;
+            Console.WriteLine("You move to the other side of the roof and find yourself near the surrounding fence.");
+            Console.WriteLine("There seem to be 2 possible ways you can make it out of this");
+            Console.WriteLine("There's a space in between the barbed wire that you could possibly crawl through, but it seems risky");
+            Console.WriteLine("There's also a guard tower that you could possibly climb up to and escape through there, but there may be someone inside");
+            Console.WriteLine("1. Climb the guard tower");
+            Console.WriteLine("2. Crawl through the barbed fence");
+            cellchoice = Convert.ToInt32(Console.ReadLine());
+            switch (cellchoice)
+            {
+                case 1:
+                    Tower();
+                    break;
+                case 2:
+                    fence();
+                    break;
+            }
+        }
+        public static void fence()
+        {
+
+        }
+        public static void Tower()
+        {
 
         }
         public static void Showers()
