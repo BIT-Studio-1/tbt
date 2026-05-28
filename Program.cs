@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using System.Xml.Serialization;
 
 namespace PB
 {
@@ -744,6 +745,32 @@ namespace PB
 
         }
         public static void Tower()
+        {
+            int choice;
+            Console.WriteLine("You take a step back before leaping onto the side of the guard tower");
+            Console.WriteLine("Luckily, You manage to grab onto a fixed light on the side of the tower");
+            Console.WriteLine("You lift yourself over the railing and make it into the tower");
+            Console.WriteLine("Unfortunetly, a guard happened to be inside the tower as you made it inside");
+            Console.WriteLine("The guard aims their gun at you and orders you to comply ");
+            Console.WriteLine("You can see a way to escape the prison on just the other side of the tower, but you need to get past the guard");
+            Console.WriteLine("1. Reason with the guard");
+            Console.WriteLine("2. Fight the guard");
+            choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    
+                    break;
+                        case 2:
+
+                    break;
+            }
+        }
+        public static void Reason()
+        {
+
+        }
+        public static void TowerFight()
         {
 
         }
