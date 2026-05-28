@@ -523,6 +523,7 @@ namespace PB
         public static void Casino()
         {
             int action = 0;
+            int choice = 0;
             Console.WriteLine("\t======================================");
             Console.WriteLine("\t              CASINO");
             Console.WriteLine("\t======================================");
@@ -537,7 +538,36 @@ namespace PB
             action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("How to play roulette:");
+                    Console.WriteLine("You can choose to bet on either red or black");
+                    Console.WriteLine("If it lands on the colour you choose, you double your bet");
+                    Console.WriteLine("");
+                    Console.WriteLine("What is your decision?");
+                    Console.WriteLine("1:\tBet on black");
+                    Console.WriteLine("2:\tBet on red");
+                    Console.WriteLine("3:\tGo back");
+                    choice = Convert.ToInt32(Console.ReadLine());
+                    switch (choice)
+                    {
+                        case 1:
+                            break;
 
+                        case 2:
+                            break;
+
+                        case 3:
+                            break;
+                    }
+                    break;
+
+                case 2:
+                    break;
+
+                case 3:
+                    Yard();
+                    break;
             }
         }
 
