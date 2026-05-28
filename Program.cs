@@ -746,6 +746,7 @@ namespace PB
                     if (strength > 7)
                     {
                         Console.WriteLine("Your strength was high enough to make it through");
+                        Win();
                     }
                     else
                     {
@@ -884,6 +885,29 @@ namespace PB
 
             Console.WriteLine("                                                                                               \r\n _____      _____        _____     ____   ____         _____            ____  _____   ______   \r\n|\\    \\    /    /|  ____|\\    \\   |    | |    |       |\\    \\   _____  |    ||\\    \\ |\\     \\  \r\n| \\    \\  /    / | /     /\\    \\  |    | |    |       | |    | /    /| |    | \\\\    \\| \\     \\ \r\n|  \\____\\/    /  //     /  \\    \\ |    | |    |       \\/     / |    || |    |  \\|    \\  \\     |\r\n \\ |    /    /  /|     |    |    ||    | |    |       /     /_  \\   \\/ |    |   |     \\  |    |\r\n  \\|___/    /  / |     |    |    ||    | |    |      |     // \\  \\   \\ |    |   |      \\ |    |\r\n      /    /  /  |\\     \\  /    /||    | |    |      |    |/   \\ |    ||    |   |    |\\ \\|    |\r\n     /____/  /   | \\_____\\/____/ ||\\___\\_|____|      |\\ ___/\\   \\|   /||____|   |____||\\_____/|\r\n    |`    | /     \\ |    ||    | /| |    |    |      | |   | \\______/ ||    |   |    |/ \\|   ||\r\n    |_____|/       \\|____||____|/  \\|____|____|       \\|___|/\\ |    | ||____|   |____|   |___|/\r\n       )/             \\(    )/        \\(   )/            \\(   \\|____|/   \\(       \\(       )/  \r\n       '               '    '          '   '              '      )/       '        '       '   \r\n                                                                 '                             ");
             Console.ResetColor();
+
+            Console.WriteLine("1: Exit to menu.");
+            Console.WriteLine("2: Exit to desktop.");
+            int action = Convert.ToInt32(Console.ReadLine());
+            switch (action)
+            {
+                case 1:
+                    flowers = false;
+                    screwdriver = false;
+                    shiv = false;
+                    soap = false;
+                    strength = 0;
+                    money = 10;
+                    inmate = true;
+                    pudding = false;
+
+                    MainMenu();
+                    break;
+
+                case 2:
+                    Environment.Exit(0);
+                    break;
+            }
         }
     }
 }
