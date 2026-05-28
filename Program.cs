@@ -777,7 +777,8 @@ namespace PB
             {
                 Console.WriteLine("1. Pick up Soap");
             }
-            Console.WriteLine("2. Leave showers");
+            Console.WriteLine("2. Take a shower");
+            Console.WriteLine("3. Leave showers");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             if (soap != true)
             {
@@ -789,6 +790,11 @@ namespace PB
                 }
             }
             if (cellchoice == 2)
+            {
+                Console.WriteLine("You take a shower and feel clean.");
+                Showers();
+            }
+            else if (cellchoice == 3)
             {
                 Cell();
             }
