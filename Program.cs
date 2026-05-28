@@ -161,14 +161,17 @@ namespace PB
         static void Intro()
         {
             TypeText("You have been convicted of watching anime on an illegal website.");
+            Console.WriteLine();
             TypeText("The Judge has committed you to 25 life sentences due to your severe crime");
+            Console.WriteLine();
+            TypeText("You were sent to the most hardcore prison within the area");
 
             Thread.Sleep(1000);
             Console.WriteLine("");
             Console.WriteLine("");
 
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("      -------------Outcast Juvenile Holding Center-------------");
+            TypeText("      -------------Outcast Juvenile Holding Center-------------");
             Console.ResetColor();
 
             Console.WriteLine("");
