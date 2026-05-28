@@ -487,7 +487,7 @@ namespace PB
                     flowers = true;
                     break;
                 case 2:
-                    //Console.WriteLine(
+                    Casino();
                     break;
                 case 3:
                     Console.WriteLine("You go to check out the gym and work out");
@@ -515,6 +515,30 @@ namespace PB
             }
 
             Yard();
+        }
+        // =========================
+        // CASINO
+        // =========================
+
+        public static void Casino()
+        {
+            int action = 0;
+            Console.WriteLine("\t======================================");
+            Console.WriteLine("\t              CASINO");
+            Console.WriteLine("\t======================================");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Welcome to the Casino!");
+            Console.WriteLine("Here you can play roulette or blackjack");
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1:\tRoulette");
+            Console.WriteLine("2:\tBlackjack");
+            Console.WriteLine("1:\tBack to the Yard");
+            action = Convert.ToInt32(Console.ReadLine());
+            switch (action)
+            {
+
+            }
         }
 
         // =========================
