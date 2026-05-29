@@ -687,6 +687,8 @@ namespace PB
 
                                     int betblackjack = 0;
 
+                                    bool playerleft = false;
+
                                     bool betting = true;
                                     while (betting)
                                     {
@@ -694,14 +696,10 @@ namespace PB
                                         Console.WriteLine($"You have ${money}");
                                         Console.WriteLine("How much would you like to bet?");
                                         betblackjack = Convert.ToInt32(Console.ReadLine());
-                                        if (betblackjack > money)
+                                        if (betblackjack > money || betblackjack <= 0)
                                         {
-                                            Console.WriteLine("INSUFFICIENT FUNDS");
-
-                                        }
-                                        else if (betblackjack <= 0)
-                                        {
-                                            Console.WriteLine("You can't be 0 or less");
+                                            Console.WriteLine("Invalid bet");
+                                            Console.WriteLine("Try again");
 
                                         }
                                         else
@@ -811,18 +809,25 @@ namespace PB
                                     }
 
                                     Console.WriteLine("");
-                                    Console.WriteLine($"Dealer visable total: {dealercard1}");
+                                    Console.WriteLine($"Dealer visible total: {dealercard1}");
                                     Console.WriteLine($"Your total: {playertotal}");
                                     Console.WriteLine("");
 
-
+                                    bool blackjack = false;
                                     bool playerturn = true;
                                     while (playerturn)
                                     {
+                                        
+
                                         if (playertotal == 21)
                                         {
                                             Console.WriteLine("BLACKJACK!");
+                                            int blackjackpayout = (int)(betblackjack * 1.5);
+                                            money += blackjackpayout;
+                                            Console.WriteLine($"You win ${blackjackpayout}");
+                                            Console.WriteLine($"You now have ${money}");
                                             playerturn = false;
+                                            blackjack = true;
                                             break;
                                         }
 
@@ -840,7 +845,7 @@ namespace PB
                                                 {
                                                     Console.WriteLine("");
                                                     Console.WriteLine("You were dealt: Face Card");
-                                                    playercard1 = 10;
+                                                    newcard = 10;
                                                 }
                                                 else if (newcard == 1)
                                                 {
@@ -862,7 +867,7 @@ namespace PB
                                                     playertotal -= 10;
                                                     playeraces--;
                                                 }
-                                                Console.WriteLine($"You total is now {playertotal}");
+                                                Console.WriteLine($"Your total is now {playertotal}");
                                                 if (playertotal > 21)
                                                 {
                                                     Console.WriteLine("BUST! you went over 21");
@@ -882,11 +887,12 @@ namespace PB
                                                 Console.WriteLine("You left the table and lost your bet");
                                                 money -= betblackjack;
                                                 playerturn = false;
+                                                playerleft = true;
                                                 break;
 
                                         }
                                     }
-                                    if (playertotal <=21)
+                                    if (playertotal <=21 && !playerleft && !blackjack)
                                     {
                                         Console.WriteLine("");
                                         Console.WriteLine($"Dealer reveals: {dealercard2}");
