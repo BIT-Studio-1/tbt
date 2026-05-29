@@ -681,6 +681,10 @@ namespace PB
                                     Random ran = new Random();
                                     int playertotal = 0;
                                     int dealertotal = 0;
+
+                                    int playeraces = 0;
+                                    int dealeraces = 0;
+
                                     int betblackjack = 0;
 
                                     bool betting = true;
@@ -712,12 +716,101 @@ namespace PB
                                         int dealercard1 = ran.Next(1, 14);
                                         int dealercard2 = ran.Next(1, 14);
 
-                                        
+                                        //Player Card 1
+                                        if (playercard1 > 10)
+                                        {
+                                            Console.WriteLine("");
+                                            Console.WriteLine("You Were dealt: Face Card");
+                                            playercard1 = 10;
+                                        }
+                                        else if (playercard1 == 1)
+                                        {
+                                            playercard1 = 11;
+                                            Console.WriteLine("");
+                                            Console.WriteLine("You Were dealt: Ace");
+                                            playeraces++;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("");
+                                            Console.WriteLine($"You were dealt: {playercard1}");
+                                        }
 
-                                        Console.WriteLine($"You got dealt: {playertotal}");
-                                        Console.WriteLine("");
-                                        Console.WriteLine($"The dealer got dealt: {dealertotal}");
-                                        Console.WriteLine("");
+                                        //Player Card 2
+                                        if (playercard2 > 10)
+                                        {
+                                            Console.WriteLine("");
+                                            Console.WriteLine("You Were dealt: Face Card");
+                                            playercard2 = 10;
+                                        }
+                                        else if (playercard2 == 1)
+                                        {
+                                            playercard2 = 11;
+                                            Console.WriteLine("");
+                                            Console.WriteLine("You Were dealt: Ace");
+                                            playeraces++;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("");
+                                            Console.WriteLine($"You were dealt: {playercard2}");
+                                        }
+
+                                        //Dealer Card 1
+                                        if (dealercard1 > 10)
+                                        {
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Dealer Was dealt: Face Card");
+                                            dealercard1 = 10;
+                                        }
+                                        else if (dealercard1 == 1)
+                                        {
+                                            dealercard1 = 11;
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Dealer Was dealt: Ace");
+                                            dealeraces++;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("");
+                                            Console.WriteLine($"Dealer Was dealt: {dealercard1}");
+                                        }
+
+                                        //Dealer Card 2
+                                        if (dealercard2 > 10)
+                                        {
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Dealer Was dealt: Hidden Card");
+                                            dealercard2 = 10;
+                                        }
+                                        else if (dealercard2 == 1)
+                                        {
+                                            dealercard2 = 11;
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Dealer Was dealt: Hidden Card");
+                                            dealeraces++;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Dealer Was dealt: Hidden Card");
+                                        }
+
+                                        playertotal = playercard1 + playercard2;
+                                        dealertotal = dealercard1 + dealercard2;
+
+                                        while (playertotal > 21 && playeraces > 0)
+                                        {
+                                            playertotal -= 10;
+                                            playeraces--;
+                                        }
+                                        while (dealertotal > 21 && dealeraces > 0)
+                                        {
+                                            dealertotal -= 10;
+                                            dealeraces--;
+                                        }
+
+
                                         bool playerturn = true;
                                         while (playerturn)
                                         {
