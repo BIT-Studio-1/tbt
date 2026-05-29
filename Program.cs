@@ -166,7 +166,7 @@ namespace PB
             Console.WriteLine();
             TypeText("You were sent to the most hardcore prison within the area");
 
-            Thread.Sleep(1000);
+            Thread.Sleep(100);
             Console.WriteLine("");
             Console.WriteLine("");
 
@@ -175,7 +175,6 @@ namespace PB
             Console.ResetColor();
 
             Console.WriteLine("");
-            Thread.Sleep(3000);
             Cell();
         }
 
@@ -545,6 +544,11 @@ namespace PB
                         while (inRoulette)
                         {
                             Console.WriteLine("");
+                            Console.WriteLine("\t======================================");
+                            Console.WriteLine("\t              ROULETTE");
+                            Console.WriteLine("\t======================================");
+                            Console.WriteLine("");
+                            Console.WriteLine("");
                             Console.WriteLine("How to play roulette:");
                             Console.WriteLine("You can choose to bet on either red or black");
                             Console.WriteLine("If it lands on the colour you choose, you double your bet");
@@ -569,10 +573,32 @@ namespace PB
                                            Console.WriteLine("TRY AGAIN");
                                             betblack = false;
                                         }
-                                        else if (bet >= 0)
+                                        else if (bet <= 0)
                                         {
                                             Console.WriteLine("You can't be 0 or less");
                                             betblack = false;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine($"You bet ${bet} on black");
+                                            Random rand = new Random();
+                                            int land = rand.Next(0, 2);
+                                            switch (land)
+                                            {
+                                                case 0:
+                                                    Console.WriteLine($"YOU WON ${bet + bet}");
+                                                    money = money + bet;
+                                                    Console.WriteLine($"You now have ${money}");
+                                                    betblack = false;
+                                                    break;
+
+                                                case 1:
+                                                    Console.WriteLine("You lost");
+                                                    money = money - bet;
+                                                    Console.WriteLine($"You now have ${money}");
+                                                    betblack = false;
+                                                    break;
+                                            }
                                         }
 
                                     }
@@ -592,10 +618,32 @@ namespace PB
                                             Console.WriteLine("TRY AGAIN");
                                             betred = false;
                                         }
-                                        else if (bet >= 0)
+                                        else if (bet <= 0)
                                         {
                                             Console.WriteLine("You can't be 0 or less");
                                             betred = false;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine($"You bet ${bet} on red");
+                                            Random rand = new Random();
+                                            int land = rand.Next(0, 2);
+                                            switch (land)
+                                            {
+                                                case 0:
+                                                    Console.WriteLine($"YOU WON ${bet + bet}");
+                                                    money = money + bet;
+                                                    Console.WriteLine($"You now have ${money}");
+                                                    betred = false;
+                                                    break;
+
+                                                case 1:
+                                                    Console.WriteLine("You lost");
+                                                    money = money - bet;
+                                                    Console.WriteLine($"You now have ${money}");
+                                                    betred = false;
+                                                    break;
+                                            }
                                         }
 
                                     }
@@ -608,6 +656,85 @@ namespace PB
                         }
                         break;
                     case 2:
+                        bool inBlackjack = true;
+                        while (inBlackjack)
+                        {
+                            Console.WriteLine("\t======================================");
+                            Console.WriteLine("\t             BLACKJACK");
+                            Console.WriteLine("\t======================================");
+                            Console.WriteLine("");
+                            Console.WriteLine("");
+                            Console.WriteLine("How to play blackjack:");
+                            Console.WriteLine("Your goal is to get as close to 21 as possible");
+                            Console.WriteLine("If you go over 21, you bust and lose");
+                            Console.WriteLine("Face cards are worth 10");
+                            Console.WriteLine("Aces are worth 1 or 11");
+                            Console.WriteLine("The dealer must draw until they reach 17");
+                            Console.WriteLine("");
+                            Console.WriteLine("What would you like to do?");
+                            Console.WriteLine("1:\tPlay Blackjack");
+                            Console.WriteLine("2:\tGo Back");
+                            int blackjackmenu = Convert.ToInt32(Console.ReadLine());
+                            switch (blackjackmenu)
+                            {
+                                case 1:
+                                    Random ran = new Random();
+                                    int playertotal = 0;
+                                    int dealertotal = 0;
+                                    int betblackjack = 0;
+
+                                    bool betting = true;
+                                    while (betting)
+                                    {
+
+                                        Console.WriteLine($"You have ${money}");
+                                        Console.WriteLine("How much would you like to bet?");
+                                        betblackjack = Convert.ToInt32(Console.ReadLine());
+                                        if (betblackjack > money)
+                                        {
+                                            Console.WriteLine("INSUFFICIENT FUNDS");
+                                            Console.WriteLine("TRY AGAIN");
+                                            betting = false;
+                                        }
+                                        else if (bet <= 0)
+                                        {
+                                            Console.WriteLine("You can't be 0 or less");
+                                            betting = false;
+                                        }
+                                        else
+                                        {
+                                            betting = false;
+                                        }
+
+                                        int playercard1 = ran.Next(1, 14);
+                                        int playercard2 = ran.Next(1, 14);
+
+                                        int dealercard1 = ran.Next(1, 14);
+                                        int dealercard2 = ran.Next(1, 14);
+
+                                        
+
+                                        Console.WriteLine($"You got dealt: {playertotal}");
+                                        Console.WriteLine("");
+                                        Console.WriteLine($"The dealer got dealt: {dealertotal}");
+                                        Console.WriteLine("");
+                                        bool playerturn = true;
+                                        while (playerturn)
+                                        {
+                                            Console.WriteLine("1:\tHit");
+                                            Console.WriteLine("1:\tStand");
+                                        }
+                                    }
+                                    break;
+
+                                case 2:
+                                    inBlackjack = false;
+                                    break;
+                            }
+                            
+
+                            
+                        }
                         break;
 
                     case 3:
