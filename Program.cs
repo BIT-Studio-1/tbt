@@ -15,6 +15,7 @@ namespace PB
         static int strength = 0;
         static int money = 10;
         static bool inmate = true;
+        static bool cross = false;
 
         // =========================
         // MAIN ENTRY POINT
@@ -263,6 +264,10 @@ namespace PB
             TypeText("3. Look inside desk");
             TypeText("4. Look through window");
             TypeText("5. Exit");
+            if (cross = true)
+            {
+                TypeText("6. Pray");
+            }
             celltemp = Console.ReadLine();
             cellchoice = Convert.ToInt32(celltemp);
             switch (cellchoice)
@@ -282,8 +287,38 @@ namespace PB
                 case 5:
                     Cell();
                     break;
+                case 6:
+                    if (cross = true)
+                    {
+                        Pray();
+                    }
+                    break;
 
             }
+        }
+        
+        public static void Pray()
+        {
+            TypeText("You put on the pendent and kneel on the ground");
+            TypeText("You close your eyes on starting praying a way out of this horrible prison");
+            Thread.Sleep(1000);
+            TypeText("..............");
+            Thread.Sleep(1000);
+            TypeText("..............");
+            Thread.Sleep(1000);
+            TypeText("..............");
+            Thread.Sleep(2000);
+            TypeText("Suddenly, you feel a huge quake surrounding your cell");
+            TypeText("You see the roof of your cell collapse, a bright light errupts from it");
+            TypeText("You squint your eyes in reaction, but in the bright light, you see something you would have never expected before...");
+            Thread.Sleep(1000);
+            TypeText("It's Jesus");
+            Thread.Sleep(1000);
+            TypeText("He extends his hand out to you, responding to your dire need");
+            TypeText("You take his hand, as he lifts you into the sky");
+            TypeText("In that moment, you realise that Jesus is helping you escape prison.");
+            Thread.Sleep(500);
+            Win();
         }
         public static void Bed()
         {
@@ -314,6 +349,11 @@ namespace PB
             if (screwdriver)
             {
                 TypeText("\tScrewdriver");
+                Console.WriteLine("");
+            }
+            if (cross)
+            {
+                TypeText("\tCross Pendent");
                 Console.WriteLine("");
             }
             if (soap)
@@ -1017,11 +1057,24 @@ namespace PB
                     {
                         TypeText("What would you like to do?");
                         TypeText("1:\tGo Back.");
+                        TypeText("3.\tBuy Cross Pendent $100");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
                             case 1:
                                 Cafeteria();
+                                break;
+                            case 3:
+                                if (money >= 100)
+                                {
+                                    money = money - 100;
+                                    TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
+                                    TypeText("You now have a cross");
+                                }
+                                else
+                                {
+                                    TypeText("You don't have enough money");
+                                }
                                 break;
                         }
 
@@ -1031,7 +1084,7 @@ namespace PB
                         TypeText("What would you like to do?");
                         TypeText("1:\tGo Back.");
                         TypeText("2:\tGive Crack Head Joe Pudding.");
-                        TypeText("3. Buy Cross Pendent $100");
+                        TypeText("3.\tBuy Cross Pendent $100");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
@@ -1146,6 +1199,7 @@ namespace PB
                     shiv = false;
                     soap = false;
                     pudding = false;
+                    cross = false;
                     MainMenu();
                     break;
             }
@@ -1310,6 +1364,7 @@ namespace PB
                     money = 10;
                     inmate = true;
                     pudding = false;
+                    cross = false;
 
                     MainMenu();
                     break;
@@ -1339,6 +1394,7 @@ namespace PB
                     money = 10;
                     inmate = true;
                     pudding = false;
+                    cross = false;
 
                     MainMenu();
                     break;
