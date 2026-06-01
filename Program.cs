@@ -212,19 +212,19 @@ namespace PB
 
             if (celldec == 0)
             {
-                Console.WriteLine("What would you like to do");
+                TypeText("What would you like to do");
 
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine("1. Check cell");
+                TypeText("1. Check cell");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("2. Go to yard");
+                TypeText("2. Go to yard");
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("3. Go to cafeteria");
+                TypeText("3. Go to cafeteria");
 
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("4. Go to showers");
+                TypeText("4. Go to showers");
 
                 Console.ResetColor();
 
@@ -255,14 +255,14 @@ namespace PB
             string celltemp;
             int celldec, cellchoice;
             Console.WriteLine();
-            Console.WriteLine("You look around your cell");
-            Console.WriteLine("It contains a bed, desk, toilet, and a window.");
-            Console.WriteLine("What do you want to do");
-            Console.WriteLine("1. Look at bed");
-            Console.WriteLine("2. Look at toilet");
-            Console.WriteLine("3. Look inside desk");
-            Console.WriteLine("4. Look through window");
-            Console.WriteLine("5. Exit");
+            TypeText("You look around your cell");
+            TypeText("It contains a bed, desk, toilet, and a window.");
+            TypeText("What do you want to do");
+            TypeText("1. Look at bed");
+            TypeText("2. Look at toilet");
+            TypeText("3. Look inside desk");
+            TypeText("4. Look through window");
+            TypeText("5. Exit");
             celltemp = Console.ReadLine();
             cellchoice = Convert.ToInt32(celltemp);
             switch (cellchoice)
@@ -287,66 +287,66 @@ namespace PB
         }
         public static void Bed()
         {
-            Console.WriteLine("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
+            TypeText("It's an old rusty bed. The mattress has some weird stains on them, might be blood.");
             Thread.Sleep(1500);
             Look();
         }
         public static void Window()
         {
-            Console.WriteLine("You look out the window just to see a solid concrete wall, how ironic...");
+            TypeText("You look out the window just to see a solid concrete wall, how ironic...");
             Thread.Sleep(1500);
             Look();
         }
         public static void inventory()
         {
-            Console.WriteLine("\tInventory");
+            TypeText("\tInventory");
             Console.WriteLine("");
             if (flowers)
             {
-                Console.WriteLine("\tFlowers");
+                TypeText("\tFlowers");
                 Console.WriteLine("");
             }
             if (shiv)
             {
-                Console.WriteLine("\tShiv");
+                TypeText("\tShiv");
                 Console.WriteLine("");
             }
             if (screwdriver)
             {
-                Console.WriteLine("\tScrewdriver");
+                TypeText("\tScrewdriver");
                 Console.WriteLine("");
             }
             if (soap)
             {
-                Console.WriteLine("\tSoap");
+                TypeText("\tSoap");
                 Console.WriteLine("");
             }
-            Console.WriteLine($"\t${money}");
+            TypeText($"\t${money}");
             Console.WriteLine("");
-            Console.WriteLine($"\tStrentgh = {strength}");
+            TypeText($"\tStrentgh = {strength}");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("Press 'Enter' to exit");
+            TypeText("Press 'Enter' to exit");
             Console.ReadLine();
             Look();
         }
         public static void toilet()
         {
             int cellchoice, cellchoice2;
-            Console.WriteLine("There's a toilet in the corner of the cell, it seems to be connected by some screws");
-            Console.WriteLine("1. Remove toilet from wall (Screwdriver needed)");
-            Console.WriteLine("2. Leave toilet");
+            TypeText("There's a toilet in the corner of the cell, it seems to be connected by some screws");
+            TypeText("1. Remove toilet from wall (Screwdriver needed)");
+            TypeText("2. Leave toilet");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             switch (cellchoice)
             {
                 case 1:
                     if (screwdriver == true)
                     {
-                        Console.WriteLine("You unscrew the screws from the toilet.");
-                        Console.WriteLine("You remove the toilet from the wall to see a hole that leads to behind the cell.");
-                        Console.WriteLine("Inside, you see a ladder that seems to lead to the roof.");
-                        Console.WriteLine("1. Go to roof");
-                        Console.WriteLine("2. Return to cell");
+                        TypeText("You unscrew the screws from the toilet.");
+                        TypeText("You remove the toilet from the wall to see a hole that leads to behind the cell.");
+                        TypeText("Inside, you see a ladder that seems to lead to the roof.");
+                        TypeText("1. Go to roof");
+                        TypeText("2. Return to cell");
                         cellchoice2 = Convert.ToInt32(Console.ReadLine());
                         switch (cellchoice2)
                         {
@@ -354,7 +354,7 @@ namespace PB
                                 Roof();
                                 break;
                             case 2:
-                                Console.WriteLine("You go back to your cell and screw the toilet back to the wall");
+                                TypeText("You go back to your cell and screw the toilet back to the wall");
                                 Look();
                                 break;
                         }
@@ -362,7 +362,7 @@ namespace PB
                     }
                     else
                     {
-                        Console.WriteLine("You need a screwdriver");
+                        TypeText("You need a screwdriver");
                         Thread.Sleep(1000);
                         Look();
                     }
@@ -384,28 +384,28 @@ namespace PB
             {
                 int action_1 = 0, action_2 = 0;
 
-                Console.WriteLine("You enter the Yard");
-                Console.WriteLine("You look around and see another inmate");
-                Console.WriteLine("What would you like to do?");
+                TypeText("You enter the Yard");
+                TypeText("You look around and see another inmate");
+                TypeText("What would you like to do?");
                 if (inmate == true)
                 {
-                    Console.WriteLine("1:\tConfront the inmate");
+                    TypeText("1:\tConfront the inmate");
                 }
 
-                Console.WriteLine("2:\tCheck the Yard");
-                Console.WriteLine("3:\tExit the Yard");
+                TypeText("2:\tCheck the Yard");
+                TypeText("3:\tExit the Yard");
 
                 action_1 = Convert.ToInt32(Console.ReadLine());
 
                 switch (action_1)
                 {
                     case 1:
-                        Console.WriteLine("You approach the inmate");
-                        Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("1:\tFight the inmate");
-                        Console.WriteLine("2:\tTalk to the inmate");
-                        Console.WriteLine("3:\tGive the inmate a gift");
-                        Console.WriteLine("4:\tGo back");
+                        TypeText("You approach the inmate");
+                        TypeText("What would you like to do?");
+                        TypeText("1:\tFight the inmate");
+                        TypeText("2:\tTalk to the inmate");
+                        TypeText("3:\tGive the inmate a gift");
+                        TypeText("4:\tGo back");
 
                         action_2 = Convert.ToInt32(Console.ReadLine());
 
@@ -414,8 +414,8 @@ namespace PB
                             case 1:
                                 if (shiv != true)
                                 {
-                                    Console.WriteLine("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
-                                    Console.WriteLine("You are dead. Sending back to Yard.");
+                                    TypeText("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
+                                    TypeText("You are dead. Sending back to Yard.");
 
                                     string[] frames =
                                     {
@@ -428,7 +428,7 @@ namespace PB
                                     {
                                         Console.Clear();
                                         Console.ForegroundColor = ConsoleColor.Red;
-                                        Console.WriteLine(frame);
+                                        TypeText(frame);
                                         Console.ResetColor();
 
                                         Thread.Sleep(500);
@@ -438,8 +438,8 @@ namespace PB
                                 }
                                 if (shiv == true)
                                 {
-                                    Console.WriteLine("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
-                                    Console.WriteLine("You pick it up.");
+                                    TypeText("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
+                                    TypeText("You pick it up.");
                                     screwdriver = true;
                                     inmate = false;
                                     Cell();
@@ -447,7 +447,7 @@ namespace PB
                                 break;
 
                             case 2:
-                                Console.WriteLine("INMATE:\t'Hmmm, I could really use some flowers right now'");
+                                TypeText("INMATE:\t'Hmmm, I could really use some flowers right now'");
                                 break;
 
                             case 3:
@@ -464,7 +464,7 @@ namespace PB
                         Check_Yard();
                         break;
                     case 3:
-                        Console.WriteLine("You leave the Yard");
+                        TypeText("You leave the Yard");
                         inYard = false;
                         Cell();
                         break;
@@ -475,26 +475,26 @@ namespace PB
         public static void Check_Yard()
         {
             int action = 0;
-            Console.WriteLine("You look around the Yard");
-            Console.WriteLine("You see a small flower garden, a makeshift casino, and a gym");
-            Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1:\tWalk over to the garden");
-            Console.WriteLine("2:\tGo to the casino");
-            Console.WriteLine("3:\tCheck out the gym");
-            Console.WriteLine("4:\tGo back");
+            TypeText("You look around the Yard");
+            TypeText("You see a small flower garden, a makeshift casino, and a gym");
+            TypeText("What would you like to do?");
+            TypeText("1:\tWalk over to the garden");
+            TypeText("2:\tGo to the casino");
+            TypeText("3:\tCheck out the gym");
+            TypeText("4:\tGo back");
             action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
                 case 1:
-                    Console.WriteLine("You walk over to the garden and pick some flowers");
+                    TypeText("You walk over to the garden and pick some flowers");
                     flowers = true;
                     break;
                 case 2:
                     Casino();
                     break;
                 case 3:
-                    Console.WriteLine("You go to check out the gym and work out");
-                    Console.WriteLine("You gained 1 strentgh");
+                    TypeText("You go to check out the gym and work out");
+                    TypeText("You gained 1 strentgh");
                     strength++;
                     break;
                 case 4:
@@ -508,13 +508,13 @@ namespace PB
         {
             if (flowers)
             {
-                Console.WriteLine("BIG DOG:\t'Aww flowers, thank you so much. Here's a screwdriver'");
+                TypeText("BIG DOG:\t'Aww flowers, thank you so much. Here's a screwdriver'");
                 screwdriver = true;
                 flowers = false;
             }
             else
             {
-                Console.WriteLine("You don't have anything to give Big Dog");
+                TypeText("You don't have anything to give Big Dog");
             }
 
             Yard();
@@ -531,17 +531,17 @@ namespace PB
             bool inCasino = true;
             while (inCasino)
             {
-                Console.WriteLine("\t======================================");
-                Console.WriteLine("\t              CASINO");
-                Console.WriteLine("\t======================================");
+                TypeText("\t======================================");
+                TypeText("\t              CASINO");
+                TypeText("\t======================================");
                 Console.WriteLine("");
                 Console.WriteLine("");
-                Console.WriteLine("Welcome to the Casino!");
-                Console.WriteLine("Here you can play roulette or blackjack");
-                Console.WriteLine("What would you like to do?");
-                Console.WriteLine("1:\tRoulette");
-                Console.WriteLine("2:\tBlackjack");
-                Console.WriteLine("3:\tBack to the Yard");
+                TypeText("Welcome to the Casino!");
+                TypeText("Here you can play roulette or blackjack");
+                TypeText("What would you like to do?");
+                TypeText("1:\tRoulette");
+                TypeText("2:\tBlackjack");
+                TypeText("3:\tBack to the Yard");
                 action = Convert.ToInt32(Console.ReadLine());
                 switch (action)
                 {
@@ -550,19 +550,19 @@ namespace PB
                         while (inRoulette)
                         {
                             Console.WriteLine("");
-                            Console.WriteLine("\t======================================");
-                            Console.WriteLine("\t              ROULETTE");
-                            Console.WriteLine("\t======================================");
+                            TypeText("\t======================================");
+                            TypeText("\t              ROULETTE");
+                            TypeText("\t======================================");
+                            TypeText("");
+                            TypeText("");
+                            TypeText("How to play roulette:");
+                            TypeText("You can choose to bet on either red or black");
+                            TypeText("If it lands on the colour you choose, you double your bet");
                             Console.WriteLine("");
-                            Console.WriteLine("");
-                            Console.WriteLine("How to play roulette:");
-                            Console.WriteLine("You can choose to bet on either red or black");
-                            Console.WriteLine("If it lands on the colour you choose, you double your bet");
-                            Console.WriteLine("");
-                            Console.WriteLine("What is your decision?");
-                            Console.WriteLine("1:\tBet on black");
-                            Console.WriteLine("2:\tBet on red");
-                            Console.WriteLine("3:\tGo back");
+                            TypeText("What is your decision?");
+                            TypeText("1:\tBet on black");
+                            TypeText("2:\tBet on red");
+                            TypeText("3:\tGo back");
                             choice = Convert.ToInt32(Console.ReadLine());
                             switch (choice)
                             {
@@ -570,38 +570,38 @@ namespace PB
                                     bool betblack = true;
                                     while (betblack)
                                     {
-                                        Console.WriteLine($"You have ${money}");
-                                        Console.WriteLine("How much would you like to bet?");
+                                        TypeText($"You have ${money}");
+                                        TypeText("How much would you like to bet?");
                                         bet = Convert.ToInt32(Console.ReadLine());
                                         if (bet > money)
                                         {
-                                           Console.WriteLine("INSUFFICIENT FUNDS");
-                                           Console.WriteLine("TRY AGAIN");
+                                            TypeText("INSUFFICIENT FUNDS");
+                                            TypeText("TRY AGAIN");
                                             betblack = false;
                                         }
                                         else if (bet <= 0)
                                         {
-                                            Console.WriteLine("You can't be 0 or less");
+                                            TypeText("You can't be 0 or less");
                                             betblack = false;
                                         }
                                         else
                                         {
-                                            Console.WriteLine($"You bet ${bet} on black");
+                                            TypeText($"You bet ${bet} on black");
                                             Random rand = new Random();
                                             int land = rand.Next(0, 2);
                                             switch (land)
                                             {
                                                 case 0:
-                                                    Console.WriteLine($"YOU WON ${bet + bet}");
+                                                    TypeText($"YOU WON ${bet + bet}");
                                                     money = money + bet;
-                                                    Console.WriteLine($"You now have ${money}");
+                                                    TypeText($"You now have ${money}");
                                                     betblack = false;
                                                     break;
 
                                                 case 1:
-                                                    Console.WriteLine("You lost");
+                                                    TypeText("You lost");
                                                     money = money - bet;
-                                                    Console.WriteLine($"You now have ${money}");
+                                                    TypeText($"You now have ${money}");
                                                     betblack = false;
                                                     break;
                                             }
@@ -615,38 +615,38 @@ namespace PB
                                     bool betred = true;
                                     while (betred)
                                     {
-                                        Console.WriteLine($"You have ${money}");
-                                        Console.WriteLine("How much would you like to bet?");
+                                        TypeText($"You have ${money}");
+                                        TypeText("How much would you like to bet?");
                                         bet = Convert.ToInt32(Console.ReadLine());
                                         if (bet > money)
                                         {
-                                            Console.WriteLine("INSUFFICIENT FUNDS");
-                                            Console.WriteLine("TRY AGAIN");
+                                            TypeText("INSUFFICIENT FUNDS");
+                                            TypeText("TRY AGAIN");
                                             betred = false;
                                         }
                                         else if (bet <= 0)
                                         {
-                                            Console.WriteLine("You can't be 0 or less");
+                                            TypeText("You can't be 0 or less");
                                             betred = false;
                                         }
                                         else
                                         {
-                                            Console.WriteLine($"You bet ${bet} on red");
+                                            TypeText($"You bet ${bet} on red");
                                             Random rand = new Random();
                                             int land = rand.Next(0, 2);
                                             switch (land)
                                             {
                                                 case 0:
-                                                    Console.WriteLine($"YOU WON ${bet + bet}");
+                                                    TypeText($"YOU WON ${bet + bet}");
                                                     money = money + bet;
-                                                    Console.WriteLine($"You now have ${money}");
+                                                    TypeText($"You now have ${money}");
                                                     betred = false;
                                                     break;
 
                                                 case 1:
-                                                    Console.WriteLine("You lost");
+                                                    TypeText("You lost");
                                                     money = money - bet;
-                                                    Console.WriteLine($"You now have ${money}");
+                                                    TypeText($"You now have ${money}");
                                                     betred = false;
                                                     break;
                                             }
@@ -665,21 +665,21 @@ namespace PB
                         bool inBlackjack = true;
                         while (inBlackjack)
                         {
-                            Console.WriteLine("\t======================================");
-                            Console.WriteLine("\t             BLACKJACK");
-                            Console.WriteLine("\t======================================");
-                            Console.WriteLine("");
-                            Console.WriteLine("");
-                            Console.WriteLine("How to play blackjack:");
-                            Console.WriteLine("Your goal is to get as close to 21 as possible");
-                            Console.WriteLine("If you go over 21, you bust and lose");
-                            Console.WriteLine("Face cards are worth 10");
-                            Console.WriteLine("Aces are worth 1 or 11");
-                            Console.WriteLine("The dealer must draw until they reach 17");
-                            Console.WriteLine("");
-                            Console.WriteLine("What would you like to do?");
-                            Console.WriteLine("1:\tPlay Blackjack");
-                            Console.WriteLine("2:\tGo Back");
+                            TypeText("\t======================================");
+                            TypeText("\t             BLACKJACK");
+                            TypeText("\t======================================");
+                            TypeText("");
+                            TypeText("");
+                            TypeText("How to play blackjack:");
+                            TypeText("Your goal is to get as close to 21 as possible");
+                            TypeText("If you go over 21, you bust and lose");
+                            TypeText("Face cards are worth 10");
+                            TypeText("Aces are worth 1 or 11");
+                            TypeText("The dealer must draw until they reach 17");
+                            TypeText("");
+                            TypeText("What would you like to do?");
+                            TypeText("1:\tPlay Blackjack");
+                            TypeText("2:\tGo Back");
                             int blackjackmenu = Convert.ToInt32(Console.ReadLine());
                             switch (blackjackmenu)
                             {
@@ -699,13 +699,13 @@ namespace PB
                                     while (betting)
                                     {
 
-                                        Console.WriteLine($"You have ${money}");
-                                        Console.WriteLine("How much would you like to bet?");
+                                        TypeText($"You have ${money}");
+                                        TypeText("How much would you like to bet?");
                                         betblackjack = Convert.ToInt32(Console.ReadLine());
                                         if (betblackjack > money || betblackjack <= 0)
                                         {
-                                            Console.WriteLine("Invalid bet");
-                                            Console.WriteLine("Try again");
+                                            TypeText("Invalid bet");
+                                            TypeText("Try again");
 
                                         }
                                         else
@@ -724,80 +724,80 @@ namespace PB
                                     if (playercard1 > 10)
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine("You were dealt: Face Card");
+                                        TypeText("You were dealt: Face Card");
                                         playercard1 = 10;
                                     }
                                     else if (playercard1 == 1)
                                     {
                                         playercard1 = 11;
                                         Console.WriteLine("");
-                                        Console.WriteLine("You were dealt: Ace");
+                                        TypeText("You were dealt: Ace");
                                         playeraces++;
                                     }
                                     else
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine($"You were dealt: {playercard1}");
+                                        TypeText($"You were dealt: {playercard1}");
                                     }
 
                                     //Player Card 2
                                     if (playercard2 > 10)
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine("You were dealt: Face Card");
+                                        TypeText("You were dealt: Face Card");
                                         playercard2 = 10;
                                     }
                                     else if (playercard2 == 1)
                                     {
                                         playercard2 = 11;
                                         Console.WriteLine("");
-                                        Console.WriteLine("You were dealt: Ace");
+                                        TypeText("You were dealt: Ace");
                                         playeraces++;
                                     }
                                     else
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine($"You were dealt: {playercard2}");
+                                        TypeText($"You were dealt: {playercard2}");
                                     }
 
                                     //Dealer Card 1
                                     if (dealercard1 > 10)
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine("Dealer was dealt: Face Card");
+                                        TypeText("Dealer was dealt: Face Card");
                                         dealercard1 = 10;
                                     }
                                     else if (dealercard1 == 1)
                                     {
                                         dealercard1 = 11;
                                         Console.WriteLine("");
-                                        Console.WriteLine("Dealer was dealt: Ace");
+                                        TypeText("Dealer was dealt: Ace");
                                         dealeraces++;
                                     }
                                     else
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine($"Dealer was dealt: {dealercard1}");
+                                        TypeText($"Dealer was dealt: {dealercard1}");
                                     }
 
                                     //Dealer Card 2
                                     if (dealercard2 > 10)
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine("Dealer was dealt: Hidden Card");
+                                        TypeText("Dealer was dealt: Hidden Card");
                                         dealercard2 = 10;
                                     }
                                     else if (dealercard2 == 1)
                                     {
                                         dealercard2 = 11;
                                         Console.WriteLine("");
-                                        Console.WriteLine("Dealer was dealt: Hidden Card");
+                                        TypeText("Dealer was dealt: Hidden Card");
                                         dealeraces++;
                                     }
                                     else
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine("Dealer was dealt: Hidden Card");
+                                        TypeText("Dealer was dealt: Hidden Card");
                                     }
 
                                     playertotal = playercard1 + playercard2;
@@ -815,8 +815,8 @@ namespace PB
                                     }
 
                                     Console.WriteLine("");
-                                    Console.WriteLine($"Dealer visible total: {dealercard1}");
-                                    Console.WriteLine($"Your total: {playertotal}");
+                                    TypeText($"Dealer visible total: {dealercard1}");
+                                    TypeText($"Your total: {playertotal}");
                                     Console.WriteLine("");
 
                                     bool blackjack = false;
@@ -827,19 +827,19 @@ namespace PB
 
                                         if (playertotal == 21)
                                         {
-                                            Console.WriteLine("BLACKJACK!");
+                                            TypeText("BLACKJACK!");
                                             int blackjackpayout = (int)(betblackjack * 1.5);
                                             money += blackjackpayout;
-                                            Console.WriteLine($"You win ${blackjackpayout}");
-                                            Console.WriteLine($"You now have ${money}");
+                                            TypeText($"You win ${blackjackpayout}");
+                                            TypeText($"You now have ${money}");
                                             playerturn = false;
                                             blackjack = true;
                                             break;
                                         }
 
-                                        Console.WriteLine("1:\tHit");
-                                        Console.WriteLine("2:\tStand");
-                                        Console.WriteLine("3:\tLeave BlackJack");
+                                        TypeText("1:\tHit");
+                                        TypeText("2:\tStand");
+                                        TypeText("3:\tLeave BlackJack");
                                         int blackjackaction = Convert.ToInt32(Console.ReadLine());
 
                                         switch (blackjackaction)
@@ -850,20 +850,20 @@ namespace PB
                                                 if (newcard > 10)
                                                 {
                                                     Console.WriteLine("");
-                                                    Console.WriteLine("You were dealt: Face Card");
+                                                    TypeText("You were dealt: Face Card");
                                                     newcard = 10;
                                                 }
                                                 else if (newcard == 1)
                                                 {
                                                     newcard = 11;
                                                     Console.WriteLine("");
-                                                    Console.WriteLine("You were dealt: Ace");
+                                                    TypeText("You were dealt: Ace");
                                                     playeraces++;
                                                 }
                                                 else
                                                 {
                                                     Console.WriteLine("");
-                                                    Console.WriteLine($"You were dealt: {newcard}");
+                                                    TypeText($"You were dealt: {newcard}");
                                                 }
 
                                                 playertotal += newcard;
@@ -873,24 +873,24 @@ namespace PB
                                                     playertotal -= 10;
                                                     playeraces--;
                                                 }
-                                                Console.WriteLine($"Your total is now {playertotal}");
+                                                TypeText($"Your total is now {playertotal}");
                                                 if (playertotal > 21)
                                                 {
-                                                    Console.WriteLine("BUST! you went over 21");
+                                                    TypeText("BUST! you went over 21");
                                                     money -= betblackjack;
-                                                    Console.WriteLine($"You now have ${money}");
+                                                    TypeText($"You now have ${money}");
                                                     playerturn = false;
                                                 }
 
                                                 break;
 
                                             case 2:
-                                                Console.WriteLine("You stand");
+                                                TypeText("You stand");
                                                 playerturn = false;
                                                 break;
 
                                             case 3:
-                                                Console.WriteLine("You left the table and lost your bet");
+                                                TypeText("You left the table and lost your bet");
                                                 money -= betblackjack;
                                                 playerturn = false;
                                                 playerleft = true;
@@ -901,8 +901,8 @@ namespace PB
                                     if (playertotal <=21 && !playerleft && !blackjack)
                                     {
                                         Console.WriteLine("");
-                                        Console.WriteLine($"Dealer reveals: {dealercard2}");
-                                        Console.WriteLine("The Dealer's turn...");
+                                        TypeText($"Dealer reveals: {dealercard2}");
+                                        TypeText("The Dealer's turn...");
 
                                         while (dealertotal < 17)
                                         {
@@ -911,20 +911,20 @@ namespace PB
                                             if (newdealercard > 10)
                                             {
                                                 Console.WriteLine("");
-                                                Console.WriteLine("Dealer was dealt: Face Card");
+                                                TypeText("Dealer was dealt: Face Card");
                                                 newdealercard = 10;
                                             }
                                             else if (newdealercard == 1)
                                             {
                                                 newdealercard = 11;
                                                 Console.WriteLine("");
-                                                Console.WriteLine("Dealer was dealt: Ace");
+                                                TypeText("Dealer was dealt: Ace");
                                                 dealeraces++;
                                             }
                                             else
                                             {
                                                 Console.WriteLine("");
-                                                Console.WriteLine($"Dealer was dealt: {newdealercard}");
+                                                TypeText($"Dealer was dealt: {newdealercard}");
                                             }
                                             dealertotal += newdealercard;
 
@@ -935,35 +935,35 @@ namespace PB
                                             }
                                         }
                                         Console.WriteLine("");
-                                        Console.WriteLine($"Dealer's total: {dealertotal}");
-                                        Console.WriteLine($"Your total: {playertotal}");
+                                        TypeText($"Dealer's total: {dealertotal}");
+                                        TypeText($"Your total: {playertotal}");
                                         Console.WriteLine("");
 
                                         if (dealertotal > 21)
                                         {
-                                            Console.WriteLine("Dealer busted");
-                                            Console.WriteLine("You win");
+                                            TypeText("Dealer busted");
+                                            TypeText("You win");
                                             money += betblackjack;
                                         }
                                         else if (dealertotal > playertotal)
                                         {
-                                            Console.WriteLine("Dealer wins");
+                                            TypeText("Dealer wins");
                                             money -= betblackjack;
                                         }
                                         else if (dealertotal < playertotal)
                                         {
-                                            Console.WriteLine("You win");
+                                            TypeText("You win");
                                             money += betblackjack;
                                         }
                                         else
                                         {
-                                            Console.WriteLine("It's a draw");
-                                            Console.WriteLine("You get your money back");
+                                            TypeText("It's a draw");
+                                            TypeText("You get your money back");
                                         }
-                                        Console.WriteLine($"You now have ${money}");
+                                        TypeText($"You now have ${money}");
                                     }
                                     Console.WriteLine("");
-                                    Console.WriteLine("Press 'Enter' to continue");
+                                    TypeText("Press 'Enter' to continue");
                                     Console.ReadLine();
                                     break;
  
@@ -996,25 +996,25 @@ namespace PB
         {
             int action_1 = 0;
             int action_2 = 0;
-            Console.WriteLine("You enter the Cafeteria and look around.");
-            Console.WriteLine("You see Crack Head Joe sitting at a table.");
-            Console.WriteLine("You also see the chow line.");
-            Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1:\tTalk to Crack Head Joe.");
-            Console.WriteLine("2:\tEnter the Chow Line.");
-            Console.WriteLine("3:\tExit Cafeteria.");
+            TypeText("You enter the Cafeteria and look around.");
+            TypeText("You see Crack Head Joe sitting at a table.");
+            TypeText("You also see the chow line.");
+            TypeText("What would you like to do?");
+            TypeText("1:\tTalk to Crack Head Joe.");
+            TypeText("2:\tEnter the Chow Line.");
+            TypeText("3:\tExit Cafeteria.");
 
             action_1 = Convert.ToInt32(Console.ReadLine());
 
             switch (action_1)
             {
                 case 1:
-                    Console.WriteLine("You walk up to Crack Head Joe.");
-                    Console.WriteLine("'Hmmm... I could really use some pudding right now' he mutters.");
+                    TypeText("You walk up to Crack Head Joe.");
+                    TypeText("'Hmmm... I could really use some pudding right now' he mutters.");
                     if (pudding != true)
                     {
-                        Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("1:\tGo Back.");
+                        TypeText("What would you like to do?");
+                        TypeText("1:\tGo Back.");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
@@ -1026,9 +1026,9 @@ namespace PB
                     }
                     else
                     {
-                        Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("1:\tGo Back.");
-                        Console.WriteLine("2:\tGive Crack Head Joe Pudding.");
+                        TypeText("What would you like to do?");
+                        TypeText("1:\tGo Back.");
+                        TypeText("2:\tGive Crack Head Joe Pudding.");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
@@ -1038,12 +1038,12 @@ namespace PB
                             case 2:
                                 if (shiv != true)
                                 {
-                                    Console.WriteLine("Thanks kid heres a shiv");
+                                    TypeText("Thanks kid heres a shiv");
                                     shiv = true;
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Bro You already tried that go away.");
+                                    TypeText("Bro You already tried that go away.");
                                 }
 
                                 Cafeteria();
@@ -1053,10 +1053,10 @@ namespace PB
                     break;
 
                 case 2:
-                    Console.WriteLine("You enter the chow line. Today they are serving pudding. ONE PER INMATE.");
-                    Console.WriteLine("What would you like to do?");
-                    Console.WriteLine("1:\tGo Back.");
-                    Console.WriteLine("2:\tGet some pudding.");
+                    TypeText("You enter the chow line. Today they are serving pudding. ONE PER INMATE.");
+                    TypeText("What would you like to do?");
+                    TypeText("1:\tGo Back.");
+                    TypeText("2:\tGet some pudding.");
                     action_2 = Convert.ToInt32(Console.ReadLine());
                     switch (action_2)
                     {
@@ -1066,13 +1066,13 @@ namespace PB
                         case 2:
                             if (pudding != true)
                             {
-                                Console.WriteLine("You have recieved pudding!");
+                                TypeText("You have recieved pudding!");
                                 pudding = true;
 
                             }
                             else
                             {
-                                Console.WriteLine("You've already got your pudding!");
+                                TypeText("You've already got your pudding!");
                             }
                             Cafeteria();
                             break;
@@ -1088,10 +1088,10 @@ namespace PB
         public static void Roof()
         {
             int cellchoice = 0;
-            Console.WriteLine("You find yourself ontop of the prison roof. There seem to be 2 possible ways to go");
-            Console.WriteLine("1: Jump to the next building");
-            Console.WriteLine("2: Move to the other side of the roof");
-            Console.WriteLine("3: Go back to cell");
+            TypeText("You find yourself ontop of the prison roof. There seem to be 2 possible ways to go");
+            TypeText("1: Jump to the next building");
+            TypeText("2: Move to the other side of the roof");
+            TypeText("3: Go back to cell");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             switch (cellchoice)
             {
@@ -1110,14 +1110,14 @@ namespace PB
         }
         public static void Jump()
         {
-            Console.WriteLine("You start running and get ready to jump to the other building but your foot slips and you fall, spliting your head open");
+            TypeText("You start running and get ready to jump to the other building but your foot slips and you fall, spliting your head open");
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
+            TypeText("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
             Console.ResetColor();
 
-            Console.WriteLine("1: Continue from last checkpoint.");
-            Console.WriteLine("2: Exit to menu.");
+            TypeText("1: Continue from last checkpoint.");
+            TypeText("2: Exit to menu.");
             int action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
@@ -1138,12 +1138,12 @@ namespace PB
         public static void Move()
         {
             int cellchoice;
-            Console.WriteLine("You move to the other side of the roof and find yourself near the surrounding fence.");
-            Console.WriteLine("There seem to be 2 possible ways you can make it out of this");
-            Console.WriteLine("There's a space in between the barbed wire that you could possibly crawl through, but it seems risky");
-            Console.WriteLine("There's also a guard tower that you could possibly climb up to and escape through there, but there may be someone inside");
-            Console.WriteLine("1. Climb the guard tower");
-            Console.WriteLine("2. Crawl through the barbed fence");
+            TypeText("You move to the other side of the roof and find yourself near the surrounding fence.");
+            TypeText("There seem to be 2 possible ways you can make it out of this");
+            TypeText("There's a space in between the barbed wire that you could possibly crawl through, but it seems risky");
+            TypeText("There's also a guard tower that you could possibly climb up to and escape through there, but there may be someone inside");
+            TypeText("1. Climb the guard tower");
+            TypeText("2. Crawl through the barbed fence");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             switch (cellchoice)
             {
@@ -1158,27 +1158,27 @@ namespace PB
         public static void fence()
         {
             int choice;
-            Console.WriteLine("You begin to crawl through the barbed fence.");
-            Console.WriteLine("1. Crawl carefully");
-            Console.WriteLine("2. Rush through");
+            TypeText("You begin to crawl through the barbed fence.");
+            TypeText("1. Crawl carefully");
+            TypeText("2. Rush through");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine("You slowly crawl through the barbed wire.");
+                    TypeText("You slowly crawl through the barbed wire.");
                     if (strength > 7)
                     {
-                        Console.WriteLine("Your strength was high enough to make it through");
+                        TypeText("Your strength was high enough to make it through");
                         Win();
                     }
                     else
                     {
-                        Console.WriteLine("You were not strong enough to make it through.");
+                        TypeText("You were not strong enough to make it through.");
                         Death();
                     }
                     break;
                 case 2:
-                    Console.WriteLine("You rush through the barbed wire, cutting yourself. You bleed out.");
+                    TypeText("You rush through the barbed wire, cutting yourself. You bleed out.");
                     Death();
                     break;
             }
@@ -1186,14 +1186,14 @@ namespace PB
         public static void Tower()
         {
             int choice;
-            Console.WriteLine("You take a step back before leaping onto the side of the guard tower");
-            Console.WriteLine("Luckily, You manage to grab onto a fixed light on the side of the tower");
-            Console.WriteLine("You lift yourself over the railing and make it into the tower");
-            Console.WriteLine("Unfortunetly, a guard happened to be inside the tower as you made it inside");
-            Console.WriteLine("The guard aims their gun at you and orders you to comply ");
-            Console.WriteLine("You can see a way to escape the prison on just the other side of the tower, but you need to get past the guard");
-            Console.WriteLine("1. Reason with the guard");
-            Console.WriteLine("2. Fight the guard");
+            TypeText("You take a step back before leaping onto the side of the guard tower");
+            TypeText("Luckily, You manage to grab onto a fixed light on the side of the tower");
+            TypeText("You lift yourself over the railing and make it into the tower");
+            TypeText("Unfortunetly, a guard happened to be inside the tower as you made it inside");
+            TypeText("The guard aims their gun at you and orders you to comply ");
+            TypeText("You can see a way to escape the prison on just the other side of the tower, but you need to get past the guard");
+            TypeText("1. Reason with the guard");
+            TypeText("2. Fight the guard");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -1207,7 +1207,7 @@ namespace PB
         }
         public static void Reason()
         {
-            Console.WriteLine("Before you have the chance to say anything, the guard fires his gun, shooting you straight in the head");
+            TypeText("Before you have the chance to say anything, the guard fires his gun, shooting you straight in the head");
             Thread.Sleep(1500);
             Death();
         }
@@ -1215,53 +1215,53 @@ namespace PB
         {
             if (shiv = true)
             {
-                Console.WriteLine("Without giving the guard a chance, you dive into the guard, pressing the shiv deep into their stomach");
-                Console.WriteLine("The guard collapses on the ground, clutching their chest in pain");
-                Console.WriteLine("You rush past the guard and make it to the other side of the tower");
+                TypeText("Without giving the guard a chance, you dive into the guard, pressing the shiv deep into their stomach");
+                TypeText("The guard collapses on the ground, clutching their chest in pain");
+                TypeText("You rush past the guard and make it to the other side of the tower");
                 Thread.Sleep(1500);
                 TowerEscape();
             }
             else
             {
-                Console.WriteLine("You dive at the guard, pushing him against the wall");
-                Console.WriteLine("You try to take a swing at the guard, but they end up firing a round into the side of your waist");
-                Console.WriteLine("You collapse to the ground, as you hold your wound tight");
+                TypeText("You dive at the guard, pushing him against the wall");
+                TypeText("You try to take a swing at the guard, but they end up firing a round into the side of your waist");
+                TypeText("You collapse to the ground, as you hold your wound tight");
                 Thread.Sleep(1500);
                 Death();
             }
         }
         public static void TowerEscape()
         {
-            Console.WriteLine("You see a pipe near the front wall of the gate that seems to lead you to the outside of the prison");
-            Console.WriteLine("You leap over the railing and just manage to get a grip of the pipe as it starts shaking from impact");
-            Console.WriteLine("you slide down the pipe carefully and manage to make it to the ground safely");
-            Console.WriteLine("Without a second later, you start sprinting away from the prison, leading to your freedom");
+            TypeText("You see a pipe near the front wall of the gate that seems to lead you to the outside of the prison");
+            TypeText("You leap over the railing and just manage to get a grip of the pipe as it starts shaking from impact");
+            TypeText("you slide down the pipe carefully and manage to make it to the ground safely");
+            TypeText("Without a second later, you start sprinting away from the prison, leading to your freedom");
             Thread.Sleep(2000);
             Win();
         }
         public static void Showers()
         {
             int cellchoice;
-            Console.WriteLine("The showers are all empty, the only thing you see is a bar of soap on the floor");
+            TypeText("The showers are all empty, the only thing you see is a bar of soap on the floor");
             if (soap != true)
             {
-                Console.WriteLine("1. Pick up Soap");
+                TypeText("1. Pick up Soap");
             }
-            Console.WriteLine("2. Take a shower");
-            Console.WriteLine("3. Leave showers");
+            TypeText("2. Take a shower");
+            TypeText("3. Leave showers");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             if (soap != true)
             {
                 if (cellchoice == 1)
                 {
-                    Console.WriteLine("You pick up the soap");
+                    TypeText("You pick up the soap");
                     soap = true;
                     Showers();
                 }
             }
             if (cellchoice == 2)
             {
-                Console.WriteLine("You take a shower and feel clean.");
+                TypeText("You take a shower and feel clean.");
                 Showers();
             }
             else if (cellchoice == 3)
@@ -1274,12 +1274,12 @@ namespace PB
         public static void Death()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
+            TypeText("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
             Console.ResetColor();
 
 
-            Console.WriteLine("1: Continue from last checkpoint.");
-            Console.WriteLine("2: Exit to menu.");
+            TypeText("1: Continue from last checkpoint.");
+            TypeText("2: Exit to menu.");
             int action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
@@ -1303,15 +1303,15 @@ namespace PB
 
         public static void Win()
         {
-            Console.WriteLine("You have escaped!");
+            TypeText("You have escaped!");
 
             Console.ForegroundColor = ConsoleColor.Green;
 
-            Console.WriteLine("                                                                                               \r\n _____      _____        _____     ____   ____         _____            ____  _____   ______   \r\n|\\    \\    /    /|  ____|\\    \\   |    | |    |       |\\    \\   _____  |    ||\\    \\ |\\     \\  \r\n| \\    \\  /    / | /     /\\    \\  |    | |    |       | |    | /    /| |    | \\\\    \\| \\     \\ \r\n|  \\____\\/    /  //     /  \\    \\ |    | |    |       \\/     / |    || |    |  \\|    \\  \\     |\r\n \\ |    /    /  /|     |    |    ||    | |    |       /     /_  \\   \\/ |    |   |     \\  |    |\r\n  \\|___/    /  / |     |    |    ||    | |    |      |     // \\  \\   \\ |    |   |      \\ |    |\r\n      /    /  /  |\\     \\  /    /||    | |    |      |    |/   \\ |    ||    |   |    |\\ \\|    |\r\n     /____/  /   | \\_____\\/____/ ||\\___\\_|____|      |\\ ___/\\   \\|   /||____|   |____||\\_____/|\r\n    |`    | /     \\ |    ||    | /| |    |    |      | |   | \\______/ ||    |   |    |/ \\|   ||\r\n    |_____|/       \\|____||____|/  \\|____|____|       \\|___|/\\ |    | ||____|   |____|   |___|/\r\n       )/             \\(    )/        \\(   )/            \\(   \\|____|/   \\(       \\(       )/  \r\n       '               '    '          '   '              '      )/       '        '       '   \r\n                                                                 '                             ");
+            TypeText("                                                                                               \r\n _____      _____        _____     ____   ____         _____            ____  _____   ______   \r\n|\\    \\    /    /|  ____|\\    \\   |    | |    |       |\\    \\   _____  |    ||\\    \\ |\\     \\  \r\n| \\    \\  /    / | /     /\\    \\  |    | |    |       | |    | /    /| |    | \\\\    \\| \\     \\ \r\n|  \\____\\/    /  //     /  \\    \\ |    | |    |       \\/     / |    || |    |  \\|    \\  \\     |\r\n \\ |    /    /  /|     |    |    ||    | |    |       /     /_  \\   \\/ |    |   |     \\  |    |\r\n  \\|___/    /  / |     |    |    ||    | |    |      |     // \\  \\   \\ |    |   |      \\ |    |\r\n      /    /  /  |\\     \\  /    /||    | |    |      |    |/   \\ |    ||    |   |    |\\ \\|    |\r\n     /____/  /   | \\_____\\/____/ ||\\___\\_|____|      |\\ ___/\\   \\|   /||____|   |____||\\_____/|\r\n    |`    | /     \\ |    ||    | /| |    |    |      | |   | \\______/ ||    |   |    |/ \\|   ||\r\n    |_____|/       \\|____||____|/  \\|____|____|       \\|___|/\\ |    | ||____|   |____|   |___|/\r\n       )/             \\(    )/        \\(   )/            \\(   \\|____|/   \\(       \\(       )/  \r\n       '               '    '          '   '              '      )/       '        '       '   \r\n                                                                 '                             ");
             Console.ResetColor();
 
-            Console.WriteLine("1: Exit to menu.");
-            Console.WriteLine("2: Exit to desktop.");
+            TypeText("1: Exit to menu.");
+            TypeText("2: Exit to desktop.");
             int action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
