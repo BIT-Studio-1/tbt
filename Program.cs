@@ -1085,6 +1085,7 @@ namespace PB
                                 {
                                     TypeText("You don't have enough money");
                                 }
+                                Cafeteria();
                                 break;
                         }
 
@@ -1125,6 +1126,7 @@ namespace PB
                                 {
                                     TypeText("You don't have enough money");
                                 }
+                                Cafeteria();
                                     break;
                         }
                     }
