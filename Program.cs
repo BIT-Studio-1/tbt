@@ -1010,7 +1010,9 @@ namespace PB
             {
                 case 1:
                     TypeText("You walk up to Crack Head Joe.");
+                    TypeText("You see him constantly scratching his skin");
                     TypeText("'Hmmm... I could really use some pudding right now' he mutters.");
+                    TypeText("You also see that he has a cross around his neck");
                     if (pudding != true)
                     {
                         TypeText("What would you like to do?");
@@ -1029,6 +1031,7 @@ namespace PB
                         TypeText("What would you like to do?");
                         TypeText("1:\tGo Back.");
                         TypeText("2:\tGive Crack Head Joe Pudding.");
+                        TypeText("3. Buy Cross Pendent $100");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
@@ -1048,6 +1051,18 @@ namespace PB
 
                                 Cafeteria();
                                 break;
+                            case 3:
+                                if (money >= 100)
+                                {
+                                    money = money - 100;
+                                    TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
+                                    TypeText("You now have a cross");
+                                }
+                                else
+                                {
+                                    TypeText("You don't have enough money");
+                                }
+                                    break;
                         }
                     }
                     break;
