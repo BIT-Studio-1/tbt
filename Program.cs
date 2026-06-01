@@ -169,9 +169,12 @@ namespace PB
         {
             TypeText("You have been convicted of watching anime on an illegal website.");
             Console.WriteLine();
+            Thread.Sleep(2000);
             TypeText("The Judge has committed you to 25 life sentences due to your severe crime");
             Console.WriteLine();
+            Thread.Sleep(2000);
             TypeText("You were sent to the most hardcore prison within the area");
+            Thread.Sleep(2000);
 
             Thread.Sleep(100);
             Console.WriteLine("");
@@ -179,6 +182,7 @@ namespace PB
 
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             TypeText("      -------------Outcast Juvenile Holding Center-------------");
+            Thread.Sleep(2000);
             Console.ResetColor();
 
             Console.WriteLine("");
