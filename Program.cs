@@ -593,12 +593,18 @@ namespace PB
                         bool inRoulette = true;
                         while (inRoulette)
                         {
-                            Console.WriteLine("");
-                            TypeText("\t======================================");
-                            TypeText("\t              ROULETTE");
-                            TypeText("\t======================================");
-                            TypeText("");
-                            TypeText("");
+
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("""
+                         ____   ___  _   _ _     _____ _____ _____ _____
+                        |  _ \ / _ \| | | | |   | ____|_   _|_   _| ____|
+                        | |_) | | | | | | | |   |  _|   | |   | | |  _|
+                        |  _ <| |_| | |_| | |___| |___  | |   | | | |___
+                        |_| \_\\___/ \___/|_____|_____| |_|   |_| |_____|
+                        """);
+
+                            Console.ResetColor;
+
                             TypeText("How to play roulette:");
                             TypeText("You can choose to bet on either red or black");
                             TypeText("If it lands on the colour you choose, you double your bet");
