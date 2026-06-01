@@ -83,21 +83,21 @@ namespace PB
 
                 Console.ResetColor();
 
-                Console.WriteLine("\t\t\t\tHello human, welcome to our game!");
+                TypeText("\t\t\t\tHello human, welcome to our game!");
 
 
                 Console.WriteLine();
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("1. Start Game");
+                TypeText("1. Start Game");
                 Console.ResetColor();
 
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("2. Exit Game");
+                TypeText("2. Exit Game");
                 Console.ResetColor();
 
                 Console.WriteLine();
-                Console.Write("Choose an option: ");
+                TypeText("Choose an option: ");
 
                 string choice = Console.ReadLine();
 
@@ -105,11 +105,11 @@ namespace PB
                 {
                     case "1":
                         Console.Clear();
-                        Console.WriteLine("Starting Game...");
+                        TypeText("Starting Game...");
                         Console.WriteLine();
 
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write("Loading ");
+                        TypeText("Loading ");
 
                         for (int i = 0; i < 5; i++)
                         {
