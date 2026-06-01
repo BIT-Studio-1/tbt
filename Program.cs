@@ -575,10 +575,8 @@ namespace PB
             bool inCasino = true;
             while (inCasino)
             {
-                TypeText("\t======================================");
-                TypeText("\t              CASINO");
-                TypeText("\t======================================");
-                Console.WriteLine("");
+                
+                Console.WriteLine("  ____    _    ____ ___ _   _  ___  \r\n / ___|  / \\  / ___|_ _| \\ | |/ _ \\ \r\n| |     / _ \\ \\___ \\| ||  \\| | | | |\r\n| |___ / ___ \\ ___) | || |\\  | |_| |\r\n \\____/_/   \\_\\____/___|_| \\_|\\___/ ");
                 Console.WriteLine("");
                 TypeText("Welcome to the Casino!");
                 TypeText("Here you can play roulette or blackjack");
