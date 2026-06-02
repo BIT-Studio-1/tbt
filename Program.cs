@@ -208,78 +208,77 @@ namespace PB
         // =========================
         public static void Cell()
         {
-            string celltemp;
-
-
-            int celldec, cellchoice;
+            int celldec;
             TypeText("You arrive in your cell, a cramped cold and dirty cell");
-            celldec = 0;
+            Thread.Sleep(100);
+            TypeText("What would you like to do");
+            Thread.Sleep(100);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("1:\tCheck cell");
+            Thread.Sleep(100);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("2:\tGo to yard");
+            Thread.Sleep(100);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("3:\tGo to cafeteria");
+            Thread.Sleep(100);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("4:\tGo to showers");
 
-            if (celldec == 0)
+            Console.ResetColor();
+
+            celldec = Convert.ToInt32(Console.ReadLine());
+            switch (celldec)
             {
-                TypeText("What would you like to do");
-                Thread.Sleep(100);
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine("1. Check cell");
-                Thread.Sleep(100);
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("2. Go to yard");
-                Thread.Sleep(100);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("3. Go to cafeteria");
-                Thread.Sleep(100);
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("4. Go to showers");
-
-                Console.ResetColor();
-
-                celltemp = Console.ReadLine();
-                celldec = Convert.ToInt32(celltemp);
-                switch (celldec)
-                {
-                    case 1:
-                        Look();
-                        break;
-                    case 2:
-                        Yard();
-                        break;
-                    case 3:
-                        Cafeteria();
-                        break;
-                    case 4:
-                        Showers();
-                        break;
+                case 1:
+                    Look();
+                    break;
+                case 2:
+                    Yard();
+                    break;
+                case 3:
+                    Cafeteria();
+                    break;
+                case 4:
+                    Showers();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice");
+                    Console.WriteLine("");
+                    Console.WriteLine("Press 'Enter' to continue");
+                    break;
 
 
-                }
             }
+           
         }
 
         public static void Look()
         {
-            string celltemp;
-            int celldec, cellchoice;
+            int cellchoice;
             Console.WriteLine();
             TypeText("You look around your cell");
             TypeText("It contains a bed, desk, toilet, and a window.");
             TypeText("What do you want to do");
             Thread.Sleep(100);
-            Console.WriteLine("1. Look at bed");
+            Console.WriteLine("1:\tLook at bed");
             Thread.Sleep(100);
-            Console.WriteLine("2. Look at toilet");
+            Console.WriteLine("2:\tLook at toilet");
             Thread.Sleep(100);
-            Console.WriteLine("3. Look inside desk");
+            Console.WriteLine("3:\tLook inside desk");
             Thread.Sleep(100);
-            Console.WriteLine("4. Look through window");
+            Console.WriteLine("4:\tLook through window");
             Thread.Sleep(100);
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("5:\tExit");
             Thread.Sleep(100);
-            if (cross = true)
+            if (cross)
             {
-                Console.WriteLine("6. Pray");
+                Console.WriteLine("");
+                Console.WriteLine("=====================");
+                Console.WriteLine("6:\tPray");
+                Console.WriteLine("=====================");
             }
-            celltemp = Console.ReadLine();
-            cellchoice = Convert.ToInt32(celltemp);
+            cellchoice = Convert.ToInt32(Console.ReadLine());
             switch (cellchoice)
             {
                 case 1:
@@ -298,10 +297,10 @@ namespace PB
                     Cell();
                     break;
                 case 6:
-                    if (cross = true)
-                    {
-                        Pray();
-                    }
+                    Pray();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice");
                     break;
 
             }
@@ -399,9 +398,9 @@ namespace PB
             int cellchoice, cellchoice2;
             TypeText("There's a toilet in the corner of the cell, it seems to be connected by some screws");
             Thread.Sleep(100);
-            Console.WriteLine("1. Remove toilet from wall (Screwdriver needed)");
+            Console.WriteLine("1:\tRemove toilet from wall (Screwdriver needed)");
             Thread.Sleep(100);
-            Console.WriteLine("2. Leave toilet");
+            Console.WriteLine("2:\tLeave toilet");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             switch (cellchoice)
             {
