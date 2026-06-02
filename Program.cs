@@ -98,15 +98,15 @@ namespace PB
                 Console.WriteLine();
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                TypeText("1. Start Game");
+                Console.WriteLine("1. Start Game");
                 Console.ResetColor();
 
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                TypeText("2. Exit Game");
+                Console.WriteLine("2. Exit Game");
                 Console.ResetColor();
 
                 Console.WriteLine();
-                TypeText("Choose an option: ");
+                Console.WriteLine("Choose an option: ");
 
                 string choice = Console.ReadLine();
 
@@ -169,12 +169,12 @@ namespace PB
         {
             TypeText("You have been convicted of watching anime on an illegal website.");
             Console.WriteLine();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             TypeText("The Judge has committed you to 25 life sentences due to your severe crime");
             Console.WriteLine();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             TypeText("You were sent to the most hardcore prison within the area");
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
 
             Thread.Sleep(100);
             Console.WriteLine("");
@@ -182,7 +182,7 @@ namespace PB
 
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             TypeText("      -------------Outcast Juvenile Holding Center-------------");
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             Console.ResetColor();
 
             Console.WriteLine("");
@@ -212,24 +212,24 @@ namespace PB
 
 
             int celldec, cellchoice;
-            Console.WriteLine("You arrive in your cell, a cramped cold and dirty cell");
+            TypeText("You arrive in your cell, a cramped cold and dirty cell");
             celldec = 0;
 
             if (celldec == 0)
             {
                 TypeText("What would you like to do");
-
+                Thread.Sleep(100);
                 Console.ForegroundColor = ConsoleColor.Gray;
-                TypeText("1. Check cell");
-
+                Console.WriteLine("1. Check cell");
+                Thread.Sleep(100);
                 Console.ForegroundColor = ConsoleColor.Green;
-                TypeText("2. Go to yard");
-
+                Console.WriteLine("2. Go to yard");
+                Thread.Sleep(100);
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                TypeText("3. Go to cafeteria");
-
+                Console.WriteLine("3. Go to cafeteria");
+                Thread.Sleep(100);
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                TypeText("4. Go to showers");
+                Console.WriteLine("4. Go to showers");
 
                 Console.ResetColor();
 
@@ -263,14 +263,20 @@ namespace PB
             TypeText("You look around your cell");
             TypeText("It contains a bed, desk, toilet, and a window.");
             TypeText("What do you want to do");
-            TypeText("1. Look at bed");
-            TypeText("2. Look at toilet");
-            TypeText("3. Look inside desk");
-            TypeText("4. Look through window");
-            TypeText("5. Exit");
+            Thread.Sleep(100);
+            Console.WriteLine("1. Look at bed");
+            Thread.Sleep(100);
+            Console.WriteLine("2. Look at toilet");
+            Thread.Sleep(100);
+            Console.WriteLine("3. Look inside desk");
+            Thread.Sleep(100);
+            Console.WriteLine("4. Look through window");
+            Thread.Sleep(100);
+            Console.WriteLine("5. Exit");
+            Thread.Sleep(100);
             if (cross = true)
             {
-                TypeText("6. Pray");
+                Console.WriteLine("6. Pray");
             }
             celltemp = Console.ReadLine();
             cellchoice = Convert.ToInt32(celltemp);
@@ -340,36 +346,50 @@ namespace PB
         {
             TypeText("\tInventory");
             Console.WriteLine("");
+            Thread.Sleep(100);
             if (flowers)
             {
-                TypeText("\tFlowers");
+                Console.WriteLine("\tFlowers");
                 Console.WriteLine("");
+                Thread.Sleep(100);
             }
             if (shiv)
             {
-                TypeText("\tShiv");
+                Console.WriteLine("\tShiv");
                 Console.WriteLine("");
+                Thread.Sleep(100);
             }
             if (screwdriver)
             {
-                TypeText("\tScrewdriver");
+                Console.WriteLine("\tScrewdriver");
                 Console.WriteLine("");
+                Thread.Sleep(100);
             }
             if (cross)
             {
-                TypeText("\tCross Pendent");
+                Console.WriteLine("\tCross Pendent");
                 Console.WriteLine("");
+                Thread.Sleep(100);
+            }
+            if (pudding)
+            {
+                Console.WriteLine("\tPudding");
+                Console.WriteLine("");
+                Thread.Sleep(100);
             }
             if (soap)
             {
-                TypeText("\tSoap");
+                Console.WriteLine("\tSoap");
                 Console.WriteLine("");
+                Thread.Sleep(100);
             }
-            TypeText($"\t${money}");
+            Console.WriteLine($"\t${money}");
             Console.WriteLine("");
-            TypeText($"\tStrentgh = {strength}");
+            Thread.Sleep(100);
+            Console.WriteLine($"\tStrentgh = {strength}");
             Console.WriteLine("");
             Console.WriteLine("");
+            Thread.Sleep(100);
             TypeText("Press 'Enter' to exit");
             Console.ReadLine();
             Look();
@@ -378,8 +398,10 @@ namespace PB
         {
             int cellchoice, cellchoice2;
             TypeText("There's a toilet in the corner of the cell, it seems to be connected by some screws");
-            TypeText("1. Remove toilet from wall (Screwdriver needed)");
-            TypeText("2. Leave toilet");
+            Thread.Sleep(100);
+            Console.WriteLine("1. Remove toilet from wall (Screwdriver needed)");
+            Thread.Sleep(100);
+            Console.WriteLine("2. Leave toilet");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             switch (cellchoice)
             {
@@ -389,8 +411,10 @@ namespace PB
                         TypeText("You unscrew the screws from the toilet.");
                         TypeText("You remove the toilet from the wall to see a hole that leads to behind the cell.");
                         TypeText("Inside, you see a ladder that seems to lead to the roof.");
-                        TypeText("1. Go to roof");
-                        TypeText("2. Return to cell");
+                        Thread.Sleep(100);
+                        Console.WriteLine("1. Go to roof");
+                        Thread.Sleep(100);
+                        Console.WriteLine("2. Return to cell");
                         cellchoice2 = Convert.ToInt32(Console.ReadLine());
                         switch (cellchoice2)
                         {
@@ -431,13 +455,16 @@ namespace PB
                 TypeText("You enter the Yard");
                 TypeText("You look around and see another inmate");
                 TypeText("What would you like to do?");
+                Thread.Sleep(100);
                 if (inmate == true)
                 {
-                    TypeText("1:\tConfront the inmate");
+                    Console.WriteLine("1:\tConfront the inmate");
+                    Thread.Sleep(100);
                 }
 
-                TypeText("2:\tCheck the Yard");
-                TypeText("3:\tExit the Yard");
+                Console.WriteLine("2:\tCheck the Yard");
+                Thread.Sleep(100);
+                Console.WriteLine("3:\tExit the Yard");
 
                 action_1 = Convert.ToInt32(Console.ReadLine());
 
@@ -446,10 +473,14 @@ namespace PB
                     case 1:
                         TypeText("You approach the inmate");
                         TypeText("What would you like to do?");
-                        TypeText("1:\tFight the inmate");
-                        TypeText("2:\tTalk to the inmate");
-                        TypeText("3:\tGive the inmate a gift");
-                        TypeText("4:\tGo back");
+                        Thread.Sleep(100);
+                        Console.WriteLine("1:\tFight the inmate");
+                        Thread.Sleep(100);
+                        Console.WriteLine("2:\tTalk to the inmate");
+                        Thread.Sleep(100);
+                        Console.WriteLine("3:\tGive the inmate a gift");
+                        Thread.Sleep(100);
+                        Console.WriteLine("4:\tGo back");
 
                         action_2 = Convert.ToInt32(Console.ReadLine());
 
@@ -522,10 +553,14 @@ namespace PB
             TypeText("You look around the Yard");
             TypeText("You see a small flower garden, a makeshift casino, and a gym");
             TypeText("What would you like to do?");
-            TypeText("1:\tWalk over to the garden");
-            TypeText("2:\tGo to the casino");
-            TypeText("3:\tCheck out the gym");
-            TypeText("4:\tGo back");
+            Thread.Sleep(100);
+            Console.WriteLine("1:\tWalk over to the garden");
+            Thread.Sleep(100);
+            Console.WriteLine("2:\tGo to the casino");
+            Thread.Sleep(100);
+            Console.WriteLine("3:\tCheck out the gym");
+            Thread.Sleep(100);
+            Console.WriteLine("4:\tGo back");
             action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
@@ -581,9 +616,12 @@ namespace PB
                 TypeText("Welcome to the Casino!");
                 TypeText("Here you can play roulette or blackjack");
                 TypeText("What would you like to do?");
-                TypeText("1:\tRoulette");
-                TypeText("2:\tBlackjack");
-                TypeText("3:\tBack to the Yard");
+                Thread.Sleep(100);
+                Console.WriteLine("1:\tRoulette");
+                Thread.Sleep(100);
+                Console.WriteLine("2:\tBlackjack");
+                Thread.Sleep(100);
+                Console.WriteLine("3:\tBack to the Yard");
                 action = Convert.ToInt32(Console.ReadLine());
                 switch (action)
                 {
@@ -608,9 +646,12 @@ namespace PB
                             TypeText("If it lands on the colour you choose, you double your bet");
                             Console.WriteLine("");
                             TypeText("What is your decision?");
-                            TypeText("1:\tBet on black");
-                            TypeText("2:\tBet on red");
-                            TypeText("3:\tGo back");
+                            Thread.Sleep(100);
+                            Console.WriteLine("1:\tBet on black");
+                            Thread.Sleep(100);
+                            Console.WriteLine("2:\tBet on red");
+                            Thread.Sleep(100);
+                            Console.WriteLine("3:\tGo back");
                             choice = Convert.ToInt32(Console.ReadLine());
                             switch (choice)
                             {
@@ -726,8 +767,10 @@ namespace PB
                             TypeText("The dealer must draw until they reach 17");
                             TypeText("");
                             TypeText("What would you like to do?");
-                            TypeText("1:\tPlay Blackjack");
-                            TypeText("2:\tGo Back");
+                            Thread.Sleep(100);
+                            Console.WriteLine("1:\tPlay Blackjack");
+                            Thread.Sleep(100);
+                            Console.WriteLine("2:\tGo Back");
                             int blackjackmenu = Convert.ToInt32(Console.ReadLine());
                             switch (blackjackmenu)
                             {
@@ -884,10 +927,12 @@ namespace PB
                                             blackjack = true;
                                             break;
                                         }
-
-                                        TypeText("1:\tHit");
-                                        TypeText("2:\tStand");
-                                        TypeText("3:\tLeave BlackJack");
+                                        Thread.Sleep(100);
+                                        Console.WriteLine("1:\tHit");
+                                        Thread.Sleep(100);
+                                        Console.WriteLine("2:\tStand");
+                                        Thread.Sleep(100);
+                                        Console.WriteLine("3:\tLeave BlackJack");
                                         int blackjackaction = Convert.ToInt32(Console.ReadLine());
 
                                         switch (blackjackaction)
@@ -1048,9 +1093,12 @@ namespace PB
             TypeText("You see Crack Head Joe sitting at a table.");
             TypeText("You also see the chow line.");
             TypeText("What would you like to do?");
-            TypeText("1:\tTalk to Crack Head Joe.");
-            TypeText("2:\tEnter the Chow Line.");
-            TypeText("3:\tExit Cafeteria.");
+            Thread.Sleep(100);
+            Console.WriteLine("1:\tTalk to Crack Head Joe.");
+            Thread.Sleep(100);
+            Console.WriteLine("2:\tEnter the Chow Line.");
+            Thread.Sleep(100);
+            Console.WriteLine("3:\tExit Cafeteria.");
 
             action_1 = Convert.ToInt32(Console.ReadLine());
 
@@ -1064,8 +1112,10 @@ namespace PB
                     if (pudding != true)
                     {
                         TypeText("What would you like to do?");
-                        TypeText("1:\tGo Back.");
-                        TypeText("3.\tBuy Cross Pendent $100");
+                        Thread.Sleep(100);
+                        Console.WriteLine("1:\tGo Back.");
+                        Thread.Sleep(100);
+                        Console.WriteLine("3.\tBuy Cross Pendent $100");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
@@ -1091,9 +1141,12 @@ namespace PB
                     else
                     {
                         TypeText("What would you like to do?");
-                        TypeText("1:\tGo Back.");
-                        TypeText("2:\tGive Crack Head Joe Pudding.");
-                        TypeText("3.\tBuy Cross Pendent $100");
+                        Thread.Sleep(100);
+                        Console.WriteLine("1:\tGo Back.");
+                        Thread.Sleep(100);
+                        Console.WriteLine("2:\tGive Crack Head Joe Pudding.");
+                        Thread.Sleep(100);
+                        Console.WriteLine("3.\tBuy Cross Pendent $100");
                         action_2 = Convert.ToInt32(Console.ReadLine());
                         switch (action_2)
                         {
@@ -1133,8 +1186,10 @@ namespace PB
                 case 2:
                     TypeText("You enter the chow line. Today they are serving pudding. ONE PER INMATE.");
                     TypeText("What would you like to do?");
-                    TypeText("1:\tGo Back.");
-                    TypeText("2:\tGet some pudding.");
+                    Thread.Sleep(100);
+                    Console.WriteLine("1:\tGo Back.");
+                    Thread.Sleep(100);
+                    Console.WriteLine("2:\tGet some pudding.");
                     action_2 = Convert.ToInt32(Console.ReadLine());
                     switch (action_2)
                     {
@@ -1167,9 +1222,12 @@ namespace PB
         {
             int cellchoice = 0;
             TypeText("You find yourself ontop of the prison roof. There seem to be 2 possible ways to go");
-            TypeText("1: Jump to the next building");
-            TypeText("2: Move to the other side of the roof");
-            TypeText("3: Go back to cell");
+            Thread.Sleep(100);
+            Console.WriteLine("1: Jump to the next building");
+            Thread.Sleep(100);
+            Console.WriteLine("2: Move to the other side of the roof");
+            Thread.Sleep(100);
+            Console.WriteLine("3: Go back to cell");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             switch (cellchoice)
             {
@@ -1193,9 +1251,10 @@ namespace PB
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
             Console.ResetColor();
-
-            TypeText("1: Continue from last checkpoint.");
-            TypeText("2: Exit to menu.");
+            Thread.Sleep(100);
+            Console.WriteLine("1: Continue from last checkpoint.");
+            Thread.Sleep(100);
+            Console.WriteLine("2: Exit to menu.");
             int action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
@@ -1221,8 +1280,10 @@ namespace PB
             TypeText("There seem to be 2 possible ways you can make it out of this");
             TypeText("There's a space in between the barbed wire that you could possibly crawl through, but it seems risky");
             TypeText("There's also a guard tower that you could possibly climb up to and escape through there, but there may be someone inside");
-            TypeText("1. Climb the guard tower");
-            TypeText("2. Crawl through the barbed fence");
+            Thread.Sleep(100);
+            Console.WriteLine("1. Climb the guard tower");
+            Thread.Sleep(100);
+            Console.WriteLine("2. Crawl through the barbed fence");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             switch (cellchoice)
             {
@@ -1238,8 +1299,10 @@ namespace PB
         {
             int choice;
             TypeText("You begin to crawl through the barbed fence.");
-            TypeText("1. Crawl carefully");
-            TypeText("2. Rush through");
+            Thread.Sleep(100);
+            Console.WriteLine("1. Crawl carefully");
+            Thread.Sleep(100);
+            Console.WriteLine("2. Rush through");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -1271,8 +1334,10 @@ namespace PB
             TypeText("Unfortunetly, a guard happened to be inside the tower as you made it inside");
             TypeText("The guard aims their gun at you and orders you to comply ");
             TypeText("You can see a way to escape the prison on just the other side of the tower, but you need to get past the guard");
-            TypeText("1. Reason with the guard");
-            TypeText("2. Fight the guard");
+            Thread.Sleep(100);
+            Console.WriteLine("1. Reason with the guard");
+            Thread.Sleep(100);
+            Console.WriteLine("2. Fight the guard");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -1322,12 +1387,15 @@ namespace PB
         {
             int cellchoice;
             TypeText("The showers are all empty, the only thing you see is a bar of soap on the floor");
+            Thread.Sleep(100);
             if (soap != true)
             {
-                TypeText("1. Pick up Soap");
+                Console.WriteLine("1. Pick up Soap");
             }
-            TypeText("2. Take a shower");
-            TypeText("3. Leave showers");
+            Thread.Sleep(100);
+            Console.WriteLine("2. Take a shower");
+            Thread.Sleep(100);
+            Console.WriteLine("3. Leave showers");
             cellchoice = Convert.ToInt32(Console.ReadLine());
             if (soap != true)
             {
@@ -1356,9 +1424,10 @@ namespace PB
             Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
             Console.ResetColor();
 
-
-            TypeText("1: Continue from last checkpoint.");
-            TypeText("2: Exit to menu.");
+            Thread.Sleep(100);
+            Console.WriteLine("1: Continue from last checkpoint.");
+            Thread.Sleep(100);
+            Console.WriteLine("2: Exit to menu.");
             int action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
@@ -1383,15 +1452,17 @@ namespace PB
 
         public static void Win()
         {
+            Thread.Sleep(1000);
             TypeText("You have escaped!");
-
+            Thread.Sleep(1000);
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine("\r\n _____      _____        _____     ____   ____         _____            ____  _____   ______   \r\n|\\    \\    /    /|  ____|\\    \\   |    | |    |       |\\    \\   _____  |    ||\\    \\ |\\     \\  \r\n| \\    \\  /    / | /     /\\    \\  |    | |    |       | |    | /    /| |    | \\\\    \\| \\     \\ \r\n|  \\____\\/    /  //     /  \\    \\ |    | |    |       \\/     / |    || |    |  \\|    \\  \\     |\r\n \\ |    /    /  /|     |    |    ||    | |    |       /     /_  \\   \\/ |    |   |     \\  |    |\r\n  \\|___/    /  / |     |    |    ||    | |    |      |     // \\  \\   \\ |    |   |      \\ |    |\r\n      /    /  /  |\\     \\  /    /||    | |    |      |    |/   \\ |    ||    |   |    |\\ \\|    |\r\n     /____/  /   | \\_____\\/____/ ||\\___\\_|____|      |\\ ___/\\   \\|   /||____|   |____||\\_____/|\r\n    |`    | /     \\ |    ||    | /| |    |    |      | |   | \\______/ ||    |   |    |/ \\|   ||\r\n    |_____|/       \\|____||____|/  \\|____|____|       \\|___|/\\ |    | ||____|   |____|   |___|/\r\n       )/             \\(    )/        \\(   )/            \\(   \\|____|/   \\(       \\(       )/  \r\n       '               '    '          '   '              '      )/       '        '       '   \r\n                                                                 '                             ");
             Console.ResetColor();
-
-            TypeText("1: Exit to menu.");
-            TypeText("2: Exit to desktop.");
+            Thread.Sleep(100);
+            Console.WriteLine("1: Exit to menu.");
+            Thread.Sleep(100);
+            Console.WriteLine("2: Exit to desktop.");
             int action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
