@@ -99,6 +99,8 @@ namespace PB
                 Console.WriteLine("2. Exit Game");
                 Console.ResetColor();
 
+                Console.WriteLine("3. How to Play");
+
                 Console.WriteLine();
                 Console.WriteLine("Choose an option: ");
 
@@ -140,13 +142,72 @@ namespace PB
                         Environment.Exit(0);
                         break;
 
+                    case 3:
+                        HowToPlay();
+                        break;
+
                     default:
                         TypeText("Invalid Option");
                         Thread.Sleep(1000);
                         break;
                 }
             }
+
+
         }
+
+        public static void HowToPlay()
+{
+    Console.Clear();
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    TypeText("=============== HOW TO PLAY ===============");
+    Console.ResetColor();
+    Console.WriteLine();
+
+    TypeText("Welcome to Outcast Juvenile Holding Center.");
+    TypeText("Your goal is simple: survive, explore, and escape.");
+    Console.WriteLine();
+
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    TypeText("BASIC CONTROLS");
+    Console.ResetColor();
+    TypeText("- Type the number of the option you want to choose.");
+    TypeText("- Press Enter to confirm.");
+    Console.WriteLine();
+
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    TypeText("GAMEPLAY");
+    Console.ResetColor();
+    TypeText("- Explore different areas like your cell, yard, cafeteria, and showers.");
+    TypeText("- Collect items to help you survive or escape.");
+    TypeText("- Interact with inmates—some friendly, some deadly.");
+    TypeText("- Earn money in the casino, gain strength in the gym, or find hidden paths.");
+    Console.WriteLine();
+
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    TypeText("WINNING & LOSING");
+    Console.ResetColor();
+    TypeText("- You can escape through various methods depending on your choices.");
+    TypeText("- Bad decisions (like fighting unarmed) may result in death.");
+    TypeText("- Death sends you back to try again.");
+    Console.WriteLine();
+
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    TypeText("TIPS");
+    Console.ResetColor();
+    TypeText("- Items matter. Some paths require specific tools.");
+    TypeText("- Talking before fighting can reveal clues.");
+    TypeText("- Strength helps in combat.");
+    TypeText("- Money helps everywhere.");
+    Console.WriteLine();
+
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    TypeText("Press Enter to return to the Main Menu.");
+    Console.ResetColor();
+    Console.ReadLine();
+    MainMenu();
+}
+
 
         // =========================
         // INTRO SCENE
@@ -293,28 +354,142 @@ namespace PB
 
             }
         }
-        
+
         public static void Pray()
         {
-            TypeText("You put on the pendent and kneel on the ground");
-            TypeText("You close your eyes on starting praying a way out of this horrible prison");
+            TypeText("You put on the pendant and kneel on the cold stone floor.");
+            TypeText("Closing your eyes, you begin to pray...");
+
             Thread.Sleep(1000);
-            TypeText("..............");
-            Thread.Sleep(1000);
-            TypeText("..............");
-            Thread.Sleep(1000);
-            TypeText("..............");
+
+            for (int i = 0; i < 3; i++)
+            {
+                TypeText("..............");
+                Thread.Sleep(1000);
+            }
+
+            // Earthquake
+            Console.Beep(200, 300);
+            Console.Beep(180, 300);
+            Console.Beep(160, 500);
+
+            TypeText("Suddenly, the ground begins to shake!");
+            TypeText("Cracks spread across the prison walls!");
+
+            Thread.Sleep(1500);
+
+            Console.Beep(100, 1000);
+
+            TypeText("A blinding light erupts from above!");
+
             Thread.Sleep(2000);
-            TypeText("Suddenly, you feel a huge quake surrounding your cell");
-            TypeText("You see the roof of your cell collapse, a bright light errupts from it");
-            TypeText("You squint your eyes in reaction, but in the bright light, you see something you would have never expected before...");
+
+            // Jesus descending animation
+            string[] frames =
+            {
+@"
+                 ✨
+                ☁☁☁
+                  O
+                 /|\
+                 / \
+",
+
+@"
+                 
+                 ✨
+                ☁☁☁
+                  O
+                 /|\
+                 / \
+",
+
+@"
+                 
+                 
+                 ✨
+                ☁☁☁
+                  O
+                 /|\
+                 / \
+",
+
+@"
+                 
+                 
+                 
+                 ✨
+                ☁☁☁
+                  O
+                 /|\
+                 / \
+",
+
+@"
+                 
+                 
+                 
+                 
+                 ✨
+                ☁☁☁
+                  O
+                 /|\
+                 / \
+"
+    };
+
+            foreach (string frame in frames)
+            {
+                Console.Clear();
+                Console.WriteLine(frame);
+
+                Console.Beep(900, 150);
+
+                Thread.Sleep(700);
+            }
+
+            Console.Clear();
+
+            // Heavenly fanfare
+            Console.Beep(523, 250); // C
+            Console.Beep(659, 250); // E
+            Console.Beep(784, 500); // G
+            Console.Beep(1046, 1000); // High C
+
+            TypeText("You shield your eyes from the brilliance.");
+            TypeText("A figure emerges from the light...");
+            Thread.Sleep(1500);
+
+            TypeText("It is Jesus Christ.");
+
             Thread.Sleep(1000);
-            TypeText("It's Jesus");
+
+            TypeText("\"Do not be afraid,\" He says.");
+            TypeText("\"Your prayers have been heard.\"");
+
+            Console.Beep(1200, 500);
+
+            TypeText("The chains around your wrists shatter.");
+            TypeText("The prison doors burst open.");
+            TypeText("The darkness flees from His presence.");
+
+            Thread.Sleep(1500);
+
+            TypeText("Jesus extends His hand.");
+
             Thread.Sleep(1000);
-            TypeText("He extends his hand out to you, responding to your dire need");
-            TypeText("You take his hand, as he lifts you into the sky");
-            TypeText("In that moment, you realise that Jesus is helping you escape prison.");
-            Thread.Sleep(500);
+
+            TypeText("You take it.");
+
+            Console.Beep(1500, 800);
+
+            TypeText("A warm peace fills your heart.");
+            TypeText("You begin to rise into the sky.");
+            TypeText("Far below, the prison collapses into ruins.");
+            TypeText("You have been set free.");
+
+            Thread.Sleep(1000);
+
             Win();
         }
         public static void Bed()
