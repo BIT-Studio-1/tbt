@@ -1698,6 +1698,7 @@ namespace PB
                                     money = money - 100;
                                     TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
                                     TypeText("You now have a cross");
+                                    cross = true;
                                 }
                                 else
                                 {
@@ -1742,6 +1743,7 @@ namespace PB
                                     money = money - 100;
                                     TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
                                     TypeText("You now have a cross");
+                                    cross = true;
                                 }
                                 else
                                 {
