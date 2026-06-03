@@ -39,7 +39,7 @@ namespace PB
               " ▒███▒▒▒▒▒▒   ▒███▒▒▒▒▒███  ▒███  ▒▒▒▒▒▒▒▒███▒███      ▒███ ▒███ ▒▒██████     ▒███▒▒▒▒▒███ ▒███▒▒▒▒▒███  ▒███▒▒█    ▒███▒▒▒▒▒███  ▒███▒▒███   ",
               " ▒███         ▒███    ▒███  ▒███  ███    ▒███▒▒███     ███  ▒███  ▒▒█████     ▒███    ▒███ ▒███    ▒███  ▒███    ▒█ ▒███    ▒███  ▒███ ▒▒███  ",
               " █████        █████   █████ █████▒▒█████████  ▒▒▒███████▒   █████  ▒▒█████    ███████████  █████   █████ ██████████ █████   █████ █████ ▒▒████",
-              " ▒▒▒▒▒        ▒▒▒▒▒   ▒▒▒▒▒ ▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒    ▒▒▒▒▒    ▒▒▒▒▒    ▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒   ▒▒▒▒▒ ▒▒▒▒▒▒▒▒▒▒ ▒▒▒▒▒   ▒▒▒▒▒ ▒▒▒▒▒   ▒▒▒▒"                                                                                                   
+              " ▒▒▒▒▒        ▒▒▒▒▒   ▒▒▒▒▒ ▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒    ▒▒▒▒▒    ▒▒▒▒▒    ▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒   ▒▒▒▒▒ ▒▒▒▒▒▒▒▒▒▒ ▒▒▒▒▒   ▒▒▒▒▒ ▒▒▒▒▒   ▒▒▒▒"
             };
 
             ConsoleColor[] colors =
@@ -157,56 +157,56 @@ namespace PB
         }
 
         public static void HowToPlay()
-{
-    Console.Clear();
-    Console.ForegroundColor = ConsoleColor.Cyan;
-    TypeText("=============== HOW TO PLAY ===============");
-    Console.ResetColor();
-    Console.WriteLine();
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("=============== HOW TO PLAY ===============");
+            Console.ResetColor();
+            Console.WriteLine();
 
-    TypeText("Welcome to Outcast Juvenile Holding Center.");
-    TypeText("Your goal is simple: survive, explore, and escape.");
-    Console.WriteLine();
+            Console.WriteLine("Welcome to Outcast Juvenile Holding Center.");
+            Console.WriteLine("Your goal is simple: survive, explore, and escape.");
+            Console.WriteLine();
 
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    TypeText("BASIC CONTROLS");
-    Console.ResetColor();
-    TypeText("- Type the number of the option you want to choose.");
-    TypeText("- Press Enter to confirm.");
-    Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("BASIC CONTROLS");
+            Console.ResetColor();
+            Console.WriteLine("- Type the number of the option you want to choose.");
+            Console.WriteLine("- Press Enter to confirm.");
+            Console.WriteLine();
 
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    TypeText("GAMEPLAY");
-    Console.ResetColor();
-    TypeText("- Explore different areas like your cell, yard, cafeteria, and showers.");
-    TypeText("- Collect items to help you survive or escape.");
-    TypeText("- Interact with inmates—some friendly, some deadly.");
-    TypeText("- Earn money in the casino, gain strength in the gym, or find hidden paths.");
-    Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("GAMEPLAY");
+            Console.ResetColor();
+            Console.WriteLine("- Explore different areas like your cell, yard, cafeteria, and showers.");
+            Console.WriteLine("- Collect items to help you survive or escape.");
+            Console.WriteLine("- Interact with inmates—some friendly, some deadly.");
+            Console.WriteLine("- Earn money in the casino, gain strength in the gym, or find hidden paths.");
+            Console.WriteLine();
 
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    TypeText("WINNING & LOSING");
-    Console.ResetColor();
-    TypeText("- You can escape through various methods depending on your choices.");
-    TypeText("- Bad decisions (like fighting unarmed) may result in death.");
-    TypeText("- Death sends you back to try again.");
-    Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("WINNING & LOSING");
+            Console.ResetColor();
+            Console.WriteLine("- You can escape through various methods depending on your choices.");
+            Console.WriteLine("- Bad decisions (like fighting unarmed) may result in death.");
+            Console.WriteLine("- Death sends you back to try again.");
+            Console.WriteLine();
 
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    TypeText("TIPS");
-    Console.ResetColor();
-    TypeText("- Items matter. Some paths require specific tools.");
-    TypeText("- Talking before fighting can reveal clues.");
-    TypeText("- Strength helps in combat.");
-    TypeText("- Money helps everywhere.");
-    Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("TIPS");
+            Console.ResetColor();
+            Console.WriteLine("- Items matter. Some paths require specific tools.");
+            Console.WriteLine("- Talking before fighting can reveal clues.");
+            Console.WriteLine("- Strength helps in combat.");
+            Console.WriteLine("- Money helps everywhere.");
+            Console.WriteLine();
 
-    Console.ForegroundColor = ConsoleColor.Cyan;
-    TypeText("Press Enter to return to the Main Menu.");
-    Console.ResetColor();
-    Console.ReadLine();
-    MainMenu();
-}
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Press Enter to return to the Main Menu.");
+            Console.ResetColor();
+            Console.ReadLine();
+            MainMenu();
+        }
 
 
         // =========================
@@ -299,7 +299,7 @@ namespace PB
 
 
             }
-           
+
         }
 
         public static void Look()
@@ -1092,7 +1092,7 @@ namespace PB
 
                                     }
                                     break;
-                                    
+
 
                                 case 2:
                                     bool betred = true;
@@ -1229,17 +1229,17 @@ namespace PB
                                 "`------'"
                             };
 
-                                                        
+
                             ConsoleColor[] colors = {
-                                ConsoleColor.White,   
-                                ConsoleColor.Red,     
-                                ConsoleColor.White,   
-                                ConsoleColor.Red,     
-                                ConsoleColor.White,   
-                                ConsoleColor.Red,     
-                                ConsoleColor.White,   
-                                ConsoleColor.Red,     
-                                ConsoleColor.White    
+                                ConsoleColor.White,
+                                ConsoleColor.Red,
+                                ConsoleColor.White,
+                                ConsoleColor.Red,
+                                ConsoleColor.White,
+                                ConsoleColor.Red,
+                                ConsoleColor.White,
+                                ConsoleColor.Red,
+                                ConsoleColor.White
                             };
 
                             string[][] letters = { letterB, letterL, letterA1, letterC1, letterK1, letterJ, letterA2, letterC2, letterK2 };
@@ -1411,7 +1411,7 @@ namespace PB
                                     bool playerturn = true;
                                     while (playerturn)
                                     {
-                                        
+
 
                                         if (playertotal == 21)
                                         {
@@ -1488,7 +1488,7 @@ namespace PB
 
                                         }
                                     }
-                                    if (playertotal <=21 && !playerleft && !blackjack)
+                                    if (playertotal <= 21 && !playerleft && !blackjack)
                                     {
                                         Console.WriteLine("");
                                         TypeText($"Dealer reveals: {dealercard2}");
@@ -1556,15 +1556,15 @@ namespace PB
                                     TypeText("Press 'Enter' to continue");
                                     Console.ReadLine();
                                     break;
- 
+
 
                                 case 2:
                                     inBlackjack = false;
                                     break;
                             }
-                            
 
-                            
+
+
                         }
                         break;
 
@@ -1574,7 +1574,7 @@ namespace PB
                         break;
                 }
             }
-                
+
         }
 
         // =========================
@@ -1675,7 +1675,7 @@ namespace PB
                                     TypeText("You don't have enough money");
                                 }
                                 Cafeteria();
-                                    break;
+                                break;
                         }
                     }
                     break;
@@ -1841,7 +1841,7 @@ namespace PB
                 case 1:
                     Reason();
                     break;
-                        case 2:
+                case 2:
                     TowerFight();
                     break;
             }
