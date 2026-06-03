@@ -723,6 +723,10 @@ namespace PB
             Console.WriteLine("3:\tCheck out the gym");
             Thread.Sleep(100);
             Console.WriteLine("4:\tGo back");
+
+            Console.WriteLine("5:\tDo laundry job");
+
+
             action = Convert.ToInt32(Console.ReadLine());
             switch (action)
             {
@@ -741,6 +745,10 @@ namespace PB
                 case 4:
                     Yard();
                     break;
+                case 5:
+                    LaundryJob();
+                    break;
+
 
             }
         }
@@ -760,6 +768,46 @@ namespace PB
 
             Yard();
         }
+
+        public static void LaundryJob()
+        {
+            Console.Clear();
+            TypeText("You head over to the prison laundry room.");
+            Thread.Sleep(500);
+
+            TypeText("A guard hands you a pile of dirty clothes.");
+            Thread.Sleep(500);
+
+            TypeText("You spend time washing, folding, and sorting uniforms...");
+
+            // Simulate work
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write(".");
+                Thread.Sleep(500);
+            }
+
+            Console.WriteLine();
+
+            // Safe fixed reward (or small range)
+            Random rand = new Random();
+            int earnings = rand.Next(5, 15); // $5–$15
+
+            money += earnings;
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            TypeText($"You earned ${earnings} for your work.");
+            Console.ResetColor();
+
+            TypeText($"You now have ${money}");
+
+            Console.WriteLine();
+            TypeText("Press Enter to return to the yard...");
+            Console.ReadLine();
+
+            Yard();
+        }
+
         // =========================
         // CASINO
         // =========================
