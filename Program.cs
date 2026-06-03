@@ -348,7 +348,10 @@ namespace PB
                     Cell();
                     break;
                 case 6:
-                    Pray();
+                    if (cross)
+                    {
+                        Pray();
+                    }
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
