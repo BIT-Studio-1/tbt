@@ -3,6 +3,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Xml.Serialization;
 
+
+
 namespace PB
 {
     internal class Program
@@ -769,8 +771,28 @@ namespace PB
             Yard();
         }
 
+
+        static DateTime lastLaundryTime = DateTime.MinValue;
+
         public static void LaundryJob()
         {
+            // ✅ Check cooldown
+            if ((DateTime.Now - lastLaundryTime).TotalMinutes < 10)
+            {
+                Console.Clear();
+                TypeText("The laundry job isn't ready yet.");
+
+                double timeLeft = 10 - (DateTime.Now - lastLaundryTime).TotalMinutes;
+                TypeText($"Come back in {Math.Ceiling(timeLeft)} minutes.");
+
+                Console.ReadLine();
+                Yard();
+                return;
+            }
+
+            // ✅ Set last time used
+            lastLaundryTime = DateTime.Now;
+
             Console.Clear();
             TypeText("You head over to the prison laundry room.");
             Thread.Sleep(500);
@@ -789,9 +811,8 @@ namespace PB
 
             Console.WriteLine();
 
-            // Safe fixed reward (or small range)
-            Random rand = new Random();
-            int earnings = rand.Next(5, 15); // $5–$15
+            // ✅ Use global Random instead (better)
+            int earnings = new Random().Next(5, 15);
 
             money += earnings;
 
@@ -807,6 +828,7 @@ namespace PB
 
             Yard();
         }
+
 
         // =========================
         // CASINO
