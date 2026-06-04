@@ -779,13 +779,13 @@ namespace PB
 
         public static void LaundryJob()
         {
-            // ✅ Check cooldown
+            // Check cooldown
             if ((DateTime.Now - lastLaundryTime).TotalMinutes < 10)
             {
                 Console.Clear();
                 TypeText("The laundry job isn't ready yet.");
 
-                double timeLeft = 10 - (DateTime.Now - lastLaundryTime).TotalMinutes;
+                double timeLeft = 2.5 - (DateTime.Now - lastLaundryTime).TotalMinutes;
                 TypeText($"Come back in {Math.Ceiling(timeLeft)} minutes.");
 
                 Console.ReadLine();
@@ -793,7 +793,7 @@ namespace PB
                 return;
             }
 
-            // ✅ Set last time used
+            // Set last time used
             lastLaundryTime = DateTime.Now;
 
             Console.Clear();
@@ -814,7 +814,7 @@ namespace PB
 
             Console.WriteLine();
 
-            // ✅ Use global Random instead (better)
+            // Use global Random instead (better)
             int earnings = new Random().Next(5, 15);
 
             money += earnings;
