@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Xml.Serialization;
@@ -1992,6 +1993,7 @@ namespace PB
 
         public static void Death()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("  ________                        ________                     \r\n /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \r\n/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\r\n\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\r\n \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \r\n        \\/     \\/      \\/     \\/          \\/          \\/       ");
             Console.ResetColor();
@@ -2001,23 +2003,43 @@ namespace PB
             Thread.Sleep(100);
             Console.WriteLine("2: Exit to menu.");
             int action = Convert.ToInt32(Console.ReadLine());
+            bool exit = true;
             switch (action)
             {
                 case 1:
                     break;
 
                 case 2:
-                    flowers = false;
-                    screwdriver = false;
-                    shiv = false;
-                    soap = false;
-                    strength = 0;
-                    money = 10;
-                    inmate = true;
-                    pudding = false;
-                    cross = false;
+                    while (exit)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("This proccess will reset your game, would you like to continue?");
+                        Console.WriteLine("1. Yes");
+                        Console.WriteLine("2. No");
+                        int action2 = Convert.ToInt32(Console.ReadLine());
 
-                    MainMenu();
+
+                        switch (action2)
+                        {
+                            case 1:
+                                flowers = false;
+                                screwdriver = false;
+                                shiv = false;
+                                soap = false;
+                                strength = 0;
+                                money = 10;
+                                inmate = true;
+                                pudding = false;
+                                cross = false;
+
+                                MainMenu();
+                                break;
+                            case 2:
+                                Death();
+                                break;
+                        }
+                   
+                    }
                     break;
             }
         }
