@@ -347,23 +347,29 @@ namespace PB
             switch (cellchoice)
             {
                 case 1:
+                    Console.Clear();
                     Bed();
                     break;
                 case 2:
+                    Console.Clear();
                     toilet();
                     break;
                 case 3:
+                    Console.Clear();
                     inventory();
                     break;
                 case 4:
+                    Console.Clear();
                     Window();
                     break;
                 case 5:
+                    Console.Clear();
                     Cell();
                     break;
                 case 6:
                     if (cross)
                     {
+                        Console.Clear();
                         Pray();
                     }
                     break;
@@ -573,6 +579,7 @@ namespace PB
             Thread.Sleep(100);
             TypeText("Press 'Enter' to exit");
             Console.ReadLine();
+            Console.Clear();
             Look();
         }
         public static void toilet()
@@ -754,6 +761,7 @@ namespace PB
                     flowers = true;
                     break;
                 case 2:
+                    Console.Clear();
                     Casino();
                     break;
                 case 3:
@@ -762,9 +770,11 @@ namespace PB
                     strength++;
                     break;
                 case 4:
+                    Console.Clear();
                     Yard();
                     break;
                 case 5:
+                    Console.Clear();
                     LaundryJob();
                     break;
 
@@ -1657,6 +1667,7 @@ namespace PB
 
                     case 3:
                         inCasino = false;
+                        Console.Clear();
                         Yard();
                         break;
                 }
@@ -1800,12 +1811,14 @@ namespace PB
                     }
                     break;
                 case 3:
+                    Console.Clear();
                     Cell();
                     break;
             }
         }
         public static void Roof()
         {
+            Console.Clear();
             int cellchoice = 0;
             TypeText("You find yourself ontop of the prison roof. There seem to be 2 possible ways to go");
             Thread.Sleep(100);
@@ -1818,14 +1831,17 @@ namespace PB
             switch (cellchoice)
             {
                 case 1:
+                    Console.Clear();
                     Jump();
                     break;
 
                 case 2:
+                    Console.Clear();
                     Move();
                     break;
 
                 case 3:
+                    Console.Clear();
                     Cell();
                     break;
             }
@@ -1915,10 +1931,15 @@ namespace PB
         {
             int choice;
             TypeText("You take a step back before leaping onto the side of the guard tower");
+            Thread.Sleep(1000);
             TypeText("Luckily, You manage to grab onto a fixed light on the side of the tower");
+            Thread.Sleep(1000);
             TypeText("You lift yourself over the railing and make it into the tower");
+            Thread.Sleep(1000);
             TypeText("Unfortunetly, a guard happened to be inside the tower as you made it inside");
+            Thread.Sleep(1000);
             TypeText("The guard aims their gun at you and orders you to comply ");
+            Thread.Sleep(1000);
             TypeText("You can see a way to escape the prison on just the other side of the tower, but you need to get past the guard");
             Thread.Sleep(100);
             Console.WriteLine("1. Reason with the guard");
@@ -1931,6 +1952,7 @@ namespace PB
                     Reason();
                     break;
                 case 2:
+                    Console.Clear();
                     TowerFight();
                     break;
             }
@@ -1957,14 +1979,18 @@ namespace PB
                 TypeText("You try to take a swing at the guard, but they end up firing a round into the side of your waist");
                 TypeText("You collapse to the ground, as you hold your wound tight");
                 Thread.Sleep(1500);
+                Console.Clear();
                 Death();
             }
         }
         public static void TowerEscape()
         {
             TypeText("You see a pipe near the front wall of the gate that seems to lead you to the outside of the prison");
+            Thread.Sleep(1000);
             TypeText("You leap over the railing and just manage to get a grip of the pipe as it starts shaking from impact");
+            Thread.Sleep(1000);
             TypeText("you slide down the pipe carefully and manage to make it to the ground safely");
+            Thread.Sleep(1000);
             TypeText("Without a second later, you start sprinting away from the prison, leading to your freedom");
             Thread.Sleep(2000);
             Win();
