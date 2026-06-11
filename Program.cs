@@ -1689,8 +1689,11 @@ namespace PB
             int action_1 = 0;
             int action_2 = 0;
             TypeText("You enter the Cafeteria and look around.");
+            Thread.Sleep(500);
             TypeText("You see Crack Head Joe sitting at a table.");
+            Thread.Sleep(500);
             TypeText("You also see the chow line.");
+            Thread.Sleep(500);
             TypeText("What would you like to do?");
             Thread.Sleep(100);
             Console.WriteLine("1:\tTalk to Crack Head Joe.");
@@ -1705,8 +1708,11 @@ namespace PB
             {
                 case 1:
                     TypeText("You walk up to Crack Head Joe.");
+                    Thread.Sleep(500);
                     TypeText("You see him constantly scratching his skin");
+                    Thread.Sleep(500);
                     TypeText("'Hmmm... I could really use some pudding right now' he mutters.");
+                    Thread.Sleep(500);
                     TypeText("You also see that he has a cross around his neck");
                     if (pudding != true)
                     {
@@ -1726,6 +1732,7 @@ namespace PB
                                 {
                                     money = money - 100;
                                     TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
+                                    Thread.Sleep(750);
                                     TypeText("You now have a cross");
                                     cross = true;
                                 }
@@ -1771,6 +1778,7 @@ namespace PB
                                 {
                                     money = money - 100;
                                     TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
+                                    Thread.Sleep(750);
                                     TypeText("You now have a cross");
                                     cross = true;
                                 }
@@ -1786,6 +1794,7 @@ namespace PB
 
                 case 2:
                     TypeText("You enter the chow line. Today they are serving pudding. ONE PER INMATE.");
+                    Thread.Sleep(500);
                     TypeText("What would you like to do?");
                     Thread.Sleep(100);
                     Console.WriteLine("1:\tGo Back.");
@@ -1885,8 +1894,11 @@ namespace PB
             Console.Clear();
             int cellchoice;
             TypeText("You move to the other side of the roof and find yourself near the surrounding fence.");
+            Thread.Sleep(1000);
             TypeText("There seem to be 2 possible ways you can make it out of this");
+            Thread.Sleep(1000);
             TypeText("There's a space in between the barbed wire that you could possibly crawl through, but it seems risky");
+            Thread.Sleep(1000);
             TypeText("There's also a guard tower that you could possibly climb up to and escape through there, but there may be someone inside");
             Thread.Sleep(100);
             Console.WriteLine("1. Climb the guard tower");
@@ -1979,7 +1991,9 @@ namespace PB
             if (shiv = true)
             {
                 TypeText("Without giving the guard a chance, you dive into the guard, pressing the shiv deep into their stomach");
+                Thread.Sleep(1000);
                 TypeText("The guard collapses on the ground, clutching their chest in pain");
+                Thread.Sleep(1000);
                 TypeText("You rush past the guard and make it to the other side of the tower");
                 Thread.Sleep(1500);
                 TowerEscape();
@@ -1987,7 +2001,9 @@ namespace PB
             else
             {
                 TypeText("You dive at the guard, pushing him against the wall");
+                Thread.Sleep(1000);
                 TypeText("You try to take a swing at the guard, but they end up firing a round into the side of your waist");
+                Thread.Sleep(1000);
                 TypeText("You collapse to the ground, as you hold your wound tight");
                 Thread.Sleep(1500);
                 Console.Clear();
