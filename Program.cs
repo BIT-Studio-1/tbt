@@ -273,6 +273,7 @@ namespace PB
         // =========================
         public static void Cell()
         {
+            Console.Clear();
             int celldec;
             TypeText("You arrive in your cell, a cramped cold and dirty cell");
             Thread.Sleep(100);
@@ -634,6 +635,7 @@ namespace PB
         // =========================
         public static void Yard()
         {
+            Console.Clear() ;
             bool inYard = true;
 
             while (inYard)
@@ -863,6 +865,7 @@ namespace PB
 
         public static void Casino()
         {
+            Console.Clear();
             int action = 0;
             int choice = 0;
             int bet = 0;
@@ -1682,6 +1685,7 @@ namespace PB
 
         public static void Cafeteria()
         {
+            Console.Clear();
             int action_1 = 0;
             int action_2 = 0;
             TypeText("You enter the Cafeteria and look around.");
@@ -1848,6 +1852,7 @@ namespace PB
         }
         public static void Jump()
         {
+            Console.Clear();
             TypeText("You start running and get ready to jump to the other building but your foot slips and you fall, spliting your head open");
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.Red;
@@ -1877,6 +1882,7 @@ namespace PB
         }
         public static void Move()
         {
+            Console.Clear();
             int cellchoice;
             TypeText("You move to the other side of the roof and find yourself near the surrounding fence.");
             TypeText("There seem to be 2 possible ways you can make it out of this");
@@ -1899,6 +1905,7 @@ namespace PB
         }
         public static void fence()
         {
+            Console.Clear();
             int choice;
             TypeText("You begin to crawl through the barbed fence.");
             Thread.Sleep(100);
@@ -1929,6 +1936,7 @@ namespace PB
         }
         public static void Tower()
         {
+            Console.Clear ();
             int choice;
             TypeText("You take a step back before leaping onto the side of the guard tower");
             Thread.Sleep(1000);
@@ -1965,6 +1973,7 @@ namespace PB
         }
         public static void TowerFight()
         {
+            Console.Clear();
             if (shiv = true)
             {
                 TypeText("Without giving the guard a chance, you dive into the guard, pressing the shiv deep into their stomach");
@@ -1997,6 +2006,7 @@ namespace PB
         }
         public static void Showers()
         {
+            Console.Clear();
             int cellchoice;
             TypeText("The showers are all empty, the only thing you see is a bar of soap on the floor");
             Thread.Sleep(100);
