@@ -1994,6 +1994,7 @@ namespace PB
             TypeText("Before you have the chance to say anything, the guard fires his gun, shooting you straight in the head");
             Thread.Sleep(1500);
             Death();
+            Roof();
         }
         public static void TowerFight()
         {
@@ -2024,6 +2025,7 @@ namespace PB
                 Thread.Sleep(1500);
                 Console.Clear();
                 Death();
+                Roof();
             }
         }
         public static void TowerEscape()
