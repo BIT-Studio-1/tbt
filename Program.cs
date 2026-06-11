@@ -311,15 +311,19 @@ namespace PB
                 switch (celldec)
                 {
                     case 1:
+                        invalidInputCheck = false;
                         Look();
                         break;
                     case 2:
+                        invalidInputCheck = false;
                         Yard();
                         break;
                     case 3:
+                        invalidInputCheck = false;
                         Cafeteria();
                         break;
                     case 4:
+                        invalidInputCheck = false;
                         Showers();
                         break;
                     default:
@@ -363,28 +367,34 @@ namespace PB
                 switch (cellchoice)
                 {
                     case 1:
+                        invalidInputCheck = false;
                         Console.Clear();
                         Bed();
                         break;
                     case 2:
+                        invalidInputCheck = false;
                         Console.Clear();
                         toilet();
                         break;
                     case 3:
+                        invalidInputCheck = false;
                         Console.Clear();
                         inventory();
                         break;
                     case 4:
+                        invalidInputCheck = false;
                         Console.Clear();
                         Window();
                         break;
                     case 5:
+                        invalidInputCheck = false;
                         Console.Clear();
                         Cell();
                         break;
                     case 6:
                         if (cross)
                         {
+                            invalidInputCheck = false;
                             Console.Clear();
                             Pray();
                         }
@@ -611,14 +621,16 @@ namespace PB
             Console.WriteLine("1:\tRemove toilet from wall (Screwdriver needed)");
             Thread.Sleep(100);
             Console.WriteLine("2:\tLeave toilet");
-            cellchoice = Convert.ToInt32(Console.ReadLine());
-            switch (cellchoice)
+
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    if (screwdriver == true)
-                    {
-                        bool invalidInput = true;
-                        while (invalidInput == true)
+                cellchoice = Convert.ToInt32(Console.ReadLine());
+                switch (cellchoice)
+                {
+                    case 1:
+                        invalidInputCheck = false;
+                        if (screwdriver == true)
                         {
                             TypeText("You unscrew the screws from the toilet.");
                             Console.WriteLine();
@@ -629,35 +641,42 @@ namespace PB
                             Console.WriteLine("1. Go to roof");
                             Thread.Sleep(100);
                             Console.WriteLine("2. Return to cell");
-                            cellchoice2 = Convert.ToInt32(Console.ReadLine());
-                            switch (cellchoice2)
+                            bool invalidInput = true;
+                            while (invalidInput == true)
                             {
-                                case 1:
-                                    invalidInput = false;
-                                    Roof();
-                                    break;
-                                case 2:
-                                    invalidInput = false;
-                                    TypeText("You go back to your cell and screw the toilet back to the wall");
-                                    Look();
-                                    break;
-                                default:
-                                    Console.WriteLine("Invalid Input");
-                                    Thread.Sleep(750);
-                                    break;
+                                cellchoice2 = Convert.ToInt32(Console.ReadLine());
+                                switch (cellchoice2)
+                                {
+                                    case 1:
+                                        invalidInput = false;
+                                        Roof();
+                                        break;
+                                    case 2:
+                                        invalidInput = false;
+                                        TypeText("You go back to your cell and screw the toilet back to the wall");
+                                        Look();
+                                        break;
+                                    default:
+                                        Console.WriteLine("Invalid Input");
+                                        break;
+                                }
                             }
                         }
-                    }
-                    else
-                    {
-                        TypeText("You need a screwdriver");
-                        Thread.Sleep(1000);
+                        else
+                        {
+                            TypeText("You need a screwdriver");
+                            Thread.Sleep(1000);
+                            Look();
+                        }
+                        break;
+                    case 2:
+                        invalidInputCheck = false;
                         Look();
-                    }
-                    break;
-                case 2:
-                    Look();
-                    break;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input");
+                        break;
+                }
             }
         }
 
@@ -687,94 +706,107 @@ namespace PB
                 Thread.Sleep(100);
                 Console.WriteLine("3:\tExit the Yard");
 
-                action_1 = Convert.ToInt32(Console.ReadLine());
-
-                switch (action_1)
+                bool invalidInputCheck = true;
+                while (invalidInputCheck)
                 {
-                    case 1:
-                        TypeText("You approach the inmate");
-                        TypeText("What would you like to do?");
-                        Thread.Sleep(100);
-                        Console.WriteLine("1:\tFight the inmate");
-                        Thread.Sleep(100);
-                        Console.WriteLine("2:\tTalk to the inmate");
-                        Thread.Sleep(100);
-                        Console.WriteLine("3:\tGive the inmate a gift");
-                        Thread.Sleep(100);
-                        Console.WriteLine("4:\tGo back");
+                    action_1 = Convert.ToInt32(Console.ReadLine());
 
-                        action_2 = Convert.ToInt32(Console.ReadLine());
+                    switch (action_1)
+                    {
+                        case 1:
+                            invalidInputCheck = false;
+                            TypeText("You approach the inmate");
+                            TypeText("What would you like to do?");
+                            Thread.Sleep(100);
+                            Console.WriteLine("1:\tFight the inmate");
+                            Thread.Sleep(100);
+                            Console.WriteLine("2:\tTalk to the inmate");
+                            Thread.Sleep(100);
+                            Console.WriteLine("3:\tGive the inmate a gift");
+                            Thread.Sleep(100);
+                            Console.WriteLine("4:\tGo back");
 
-                        switch (action_2)
-                        {
-                            case 1:
-                                if (shiv != true)
+                            bool invalidInputCheck2 = true;
+                            while (invalidInputCheck2)
+                            {
+                                action_2 = Convert.ToInt32(Console.ReadLine());
+
+                                switch (action_2)
                                 {
-                                    TypeText("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
-                                    TypeText("You are dead. Sending back to Yard.");
+                                    case 1:
+                                        invalidInputCheck2 = false;
+                                        if (shiv != true)
+                                        {
+                                            TypeText("You walk up to the inmate and take a swing. He bashes you on the skull, instantly killing you.");
+                                            TypeText("You are dead. Sending back to Yard.");
 
-                                    string[] frames =
-                                    {
-                                        "(-_- )    ⌐■-■ ",
-                                        "( -_-)>  ( •_•)",
-                                        "(x_x) oh noo im dead now'"
-                                    };
+                                            string[] frames =
+                                            {
+                                                "(-_- )    ⌐■-■ ",
+                                                "( -_-)>  ( •_•)",
+                                                "(x_x) oh noo im dead now'"
+                                            };
 
-                                    foreach (string frame in frames)
-                                    {
-                                        Console.Clear();
-                                        Console.ForegroundColor = ConsoleColor.Red;
-                                        TypeText(frame);
-                                        Console.ResetColor();
+                                            foreach (string frame in frames)
+                                            {
+                                                Console.Clear();
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                TypeText(frame);
+                                                Console.ResetColor();
 
-                                        Thread.Sleep(500);
-                                    }
+                                                Thread.Sleep(500);
+                                            }
 
-                                    Death();
+                                            Death();
+                                        }
+                                        if (shiv == true)
+                                        {
+                                            TypeText("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
+                                            TypeText("You pick it up.");
+                                            screwdriver = true;
+                                            inmate = false;
+                                            Cell();
+                                        }
+                                        break;
+
+                                    case 2:
+                                        invalidInputCheck2 = false;
+                                        TypeText("INMATE:\t'Hmmm, I could really use some flowers right now'");
+                                        break;
+
+                                    case 3:
+                                        invalidInputCheck2 = false;
+                                        Gift_Jamal();
+                                        break;
+
+                                    case 4:
+                                        invalidInputCheck2 = false;
+                                        break;
+
+                                    default:
+                                        Console.WriteLine("Invalid input");
+                                        break;
                                 }
-                                if (shiv == true)
-                                {
-                                    TypeText("You walk up to the inmate and take a swing with your shiv. He falls to the ground. Dropping a screwdriver.");
-                                    TypeText("You pick it up.");
-                                    screwdriver = true;
-                                    inmate = false;
-                                    Cell();
-                                }
-                                break;
+                            }
 
-                            case 2:
-                                TypeText("INMATE:\t'Hmmm, I could really use some flowers right now'");
-                                break;
-
-                            case 3:
-                                Gift_Jamal();
-                                break;
-
-                            case 4:
-                                break;
-
-                            default:
-                                Console.WriteLine("Invalid input");
-                                Thread.Sleep(750);
-                                Yard();
-                                break;
-                        }
-                        break;
+                            
+                            break;
 
 
-                    case 2:
-                        Check_Yard();
-                        break;
-                    case 3:
-                        TypeText("You leave the Yard");
-                        inYard = false;
-                        Cell();
-                        break;
-                    default:
-                        Console.WriteLine("Invalid input");
-                        Thread.Sleep(750);
-                        Yard();
-                        break;
+                        case 2:
+                            invalidInputCheck = false;
+                            Check_Yard();
+                            break;
+                        case 3:
+                            invalidInputCheck = false;
+                            TypeText("You leave the Yard");
+                            inYard = false;
+                            Cell();
+                            break;
+                        default:
+                            Console.WriteLine("Invalid input");
+                            break;
+                    }
                 }
             }
         }
@@ -795,34 +827,46 @@ namespace PB
 
             Console.WriteLine("5:\tDo laundry job");
 
-
-            action = Convert.ToInt32(Console.ReadLine());
-            switch (action)
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    TypeText("You walk over to the garden and pick some flowers");
-                    flowers = true;
-                    break;
-                case 2:
-                    Console.Clear();
-                    Casino();
-                    break;
-                case 3:
-                    TypeText("You go to check out the gym and work out");
-                    TypeText("You gained 1 strentgh");
-                    strength++;
-                    break;
-                case 4:
-                    Console.Clear();
-                    Yard();
-                    break;
-                case 5:
-                    Console.Clear();
-                    LaundryJob();
-                    break;
+                action = Convert.ToInt32(Console.ReadLine());
+                switch (action)
+                {
+                    case 1:
+                        invalidInputCheck = false;
+                        TypeText("You walk over to the garden and pick some flowers");
+                        flowers = true;
+                        break;
+                    case 2:
+                        invalidInputCheck = false;
+                        Console.Clear();
+                        Casino();
+                        break;
+                    case 3:
+                        invalidInputCheck = false;
+                        TypeText("You go to check out the gym and work out");
+                        TypeText("You gained 1 strentgh");
+                        strength++;
+                        break;
+                    case 4:
+                        invalidInputCheck = false;
+                        Console.Clear();
+                        Yard();
+                        break;
+                    case 5:
+                        invalidInputCheck = false;
+                        Console.Clear();
+                        LaundryJob();
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input");
+                        break;
 
 
-            }
+                }
+            }  
         }
 
         public static void Gift_Jamal()
