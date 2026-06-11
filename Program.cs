@@ -1858,21 +1858,22 @@ namespace PB
                             Thread.Sleep(100);
                             Console.WriteLine("3.\tBuy Cross Pendent $100");
 
-                            bool invalidInputCheck2 = true;
-                            while (invalidInputCheck2)
+                            bool invalidInputCheck3 = true;
+                            while (invalidInputCheck3)
                             {
                                 action_2 = Convert.ToInt32(Console.ReadLine());
                                 switch (action_2)
                                 {
                                     case 1:
-                                        invalidInputCheck2 = false;
+                                        invalidInputCheck3 = false;
                                         Cafeteria();
                                         break;
                                     case 2:
-                                        invalidInputCheck2 = false;
+                                        invalidInputCheck3 = false;
                                         if (shiv != true)
                                         {
                                             TypeText("Thanks kid heres a shiv");
+                                            Thread.Sleep(1000);
                                             shiv = true;
                                         }
                                         else
@@ -1883,13 +1884,14 @@ namespace PB
                                         Cafeteria();
                                         break;
                                     case 3:
-                                        invalidInputCheck2 = false;
+                                        invalidInputCheck3 = false;
                                         if (money >= 100)
                                         {
                                             money = money - 100;
                                             TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
                                             Thread.Sleep(750);
                                             TypeText("You now have a cross");
+                                            Thread.Sleep(750);
                                             cross = true;
                                         }
                                         else
@@ -1917,27 +1919,29 @@ namespace PB
                         Thread.Sleep(100);
                         Console.WriteLine("2:\tGet some pudding.");
 
-                        bool invalidInputCheck2 = true;
-                        while (invalidInputCheck2)
+                        bool invalidInputCheck4 = true;
+                        while (invalidInputCheck4)
                         {
                             action_2 = Convert.ToInt32(Console.ReadLine());
                             switch (action_2)
                             {
                                 case 1:
-                                    invalidInputCheck2 = false;
+                                    invalidInputCheck4 = false;
                                     Cafeteria();
                                     break;
                                 case 2:
-                                    invalidInputCheck2 = false;
+                                    invalidInputCheck4 = false;
                                     if (pudding != true)
                                     {
                                         TypeText("You have recieved pudding!");
+                                        Thread.Sleep(1000);
                                         pudding = true;
 
                                     }
                                     else
                                     {
                                         TypeText("You've already got your pudding!");
+                                        Thread.Sleep(1000);
                                     }
                                     Cafeteria();
                                     break;
@@ -1972,23 +1976,34 @@ namespace PB
             Console.WriteLine("2: Move to the other side of the roof");
             Thread.Sleep(100);
             Console.WriteLine("3: Go back to cell");
-            cellchoice = Convert.ToInt32(Console.ReadLine());
-            switch (cellchoice)
+
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    Console.Clear();
-                    Jump();
-                    break;
+                cellchoice = Convert.ToInt32(Console.ReadLine());
+                switch (cellchoice)
+                {
+                    case 1:
+                        invalidInputCheck = false;
+                        Console.Clear();
+                        Jump();
+                        break;
 
-                case 2:
-                    Console.Clear();
-                    Move();
-                    break;
+                    case 2:
+                        invalidInputCheck = false;
+                        Console.Clear();
+                        Move();
+                        break;
 
-                case 3:
-                    Console.Clear();
-                    Cell();
-                    break;
+                    case 3:
+                        invalidInputCheck = false;
+                        Console.Clear();
+                        Cell();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        break;
+                }
             }
         }
         public static void Jump()
@@ -2003,22 +2018,33 @@ namespace PB
             Console.WriteLine("1: Continue from last checkpoint.");
             Thread.Sleep(100);
             Console.WriteLine("2: Exit to menu.");
-            int action = Convert.ToInt32(Console.ReadLine());
-            switch (action)
-            {
-                case 1:
-                    Roof();
-                    break;
 
-                case 2:
-                    flowers = false;
-                    screwdriver = false;
-                    shiv = false;
-                    soap = false;
-                    pudding = false;
-                    cross = false;
-                    MainMenu();
-                    break;
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
+            {
+                int action = Convert.ToInt32(Console.ReadLine());
+                switch (action)
+                {
+                    case 1:
+                        invalidInputCheck = false;
+                        Roof();
+                        break;
+
+                    case 2:
+                        invalidInputCheck = false;
+                        flowers = false;
+                        screwdriver = false;
+                        shiv = false;
+                        soap = false;
+                        pudding = false;
+                        cross = false;
+                        MainMenu();
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        break;
+                }
             }
         }
         public static void Move()
@@ -2039,15 +2065,25 @@ namespace PB
             Console.WriteLine("1. Climb the guard tower");
             Thread.Sleep(100);
             Console.WriteLine("2. Crawl through the barbed fence");
-            cellchoice = Convert.ToInt32(Console.ReadLine());
-            switch (cellchoice)
+
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    Tower();
-                    break;
-                case 2:
-                    fence();
-                    break;
+                cellchoice = Convert.ToInt32(Console.ReadLine());
+                switch (cellchoice)
+                {
+                    case 1:
+                        invalidInputCheck = false;
+                        Tower();
+                        break;
+                    case 2:
+                        invalidInputCheck = false;
+                        fence();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        break;
+                }
             }
         }
         public static void fence()
@@ -2059,29 +2095,39 @@ namespace PB
             Console.WriteLine("1. Crawl carefully");
             Thread.Sleep(100);
             Console.WriteLine("2. Rush through");
-            choice = Convert.ToInt32(Console.ReadLine());
-            switch (choice)
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    TypeText("You slowly crawl through the barbed wire.");
-                    if (strength > 7)
-                    {
-                        TypeText("Your strength was high enough to make it through");
-                        Win();
-                    }
-                    else
-                    {
-                        TypeText("You were not strong enough to make it through.");
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        invalidInputCheck = false;
+                        TypeText("You slowly crawl through the barbed wire.");
+                        if (strength > 7)
+                        {
+                            TypeText("Your strength was high enough to make it through");
+                            Win();
+                        }
+                        else
+                        {
+                            TypeText("You were not strong enough to make it through.");
+                            Death();
+                            Roof();
+                        }
+                        break;
+                    case 2:
+                        invalidInputCheck = false;
+                        TypeText("You rush through the barbed wire, cutting yourself. You bleed out.");
                         Death();
                         Roof();
-                    }
-                    break;
-                case 2:
-                    TypeText("You rush through the barbed wire, cutting yourself. You bleed out.");
-                    Death();
-                    Roof();
-                    break;
-            }
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        break;
+                }
+            }   
         }
         public static void Tower()
         {
@@ -2107,17 +2153,28 @@ namespace PB
             Console.WriteLine("1. Reason with the guard");
             Thread.Sleep(100);
             Console.WriteLine("2. Fight the guard");
-            choice = Convert.ToInt32(Console.ReadLine());
-            switch (choice)
+
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    Reason();
-                    break;
-                case 2:
-                    Console.Clear();
-                    TowerFight();
-                    break;
-            }
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        invalidInputCheck = false;
+                        Reason();
+                        break;
+                    case 2:
+                        invalidInputCheck = false;
+                        Console.Clear();
+                        TowerFight();
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        break;
+                }
+            } 
         }
         public static void Reason()
         {
@@ -2188,25 +2245,42 @@ namespace PB
             Console.WriteLine("2. Take a shower");
             Thread.Sleep(100);
             Console.WriteLine("3. Leave showers");
-            cellchoice = Convert.ToInt32(Console.ReadLine());
-            if (soap != true)
+
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                if (cellchoice == 1)
+                cellchoice = Convert.ToInt32(Console.ReadLine());
+                if (soap != true)
                 {
-                    TypeText("You pick up the soap");
-                    soap = true;
+                    if (cellchoice == 1)
+                    {
+                        invalidInputCheck = false;
+                        TypeText("You pick up the soap");
+                        soap = true;
+                        Showers();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Input");
+                    }
+                }
+                if (cellchoice == 2)
+                {
+                    invalidInputCheck = false;
+                    TypeText("You take a shower and feel clean.");
                     Showers();
                 }
+                else if (cellchoice == 3)
+                {
+                    invalidInputCheck = false;
+                    Cell();
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input");
+                }
             }
-            if (cellchoice == 2)
-            {
-                TypeText("You take a shower and feel clean.");
-                Showers();
-            }
-            else if (cellchoice == 3)
-            {
-                Cell();
-            }
+            
 
         }
 
