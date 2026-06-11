@@ -598,7 +598,9 @@ namespace PB
                     if (screwdriver == true)
                     {
                         TypeText("You unscrew the screws from the toilet.");
+                        Console.WriteLine();
                         TypeText("You remove the toilet from the wall to see a hole that leads to behind the cell.");
+                        Console.WriteLine();
                         TypeText("Inside, you see a ladder that seems to lead to the roof.");
                         Thread.Sleep(100);
                         Console.WriteLine("1. Go to roof");
@@ -1894,10 +1896,13 @@ namespace PB
             Console.Clear();
             int cellchoice;
             TypeText("You move to the other side of the roof and find yourself near the surrounding fence.");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("There seem to be 2 possible ways you can make it out of this");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("There's a space in between the barbed wire that you could possibly crawl through, but it seems risky");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("There's also a guard tower that you could possibly climb up to and escape through there, but there may be someone inside");
             Thread.Sleep(100);
@@ -1953,14 +1958,19 @@ namespace PB
             Console.Clear ();
             int choice;
             TypeText("You take a step back before leaping onto the side of the guard tower");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("Luckily, You manage to grab onto a fixed light on the side of the tower");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("You lift yourself over the railing and make it into the tower");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("Unfortunetly, a guard happened to be inside the tower as you made it inside");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("The guard aims their gun at you and orders you to comply ");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("You can see a way to escape the prison on just the other side of the tower, but you need to get past the guard");
             Thread.Sleep(100);
@@ -1991,20 +2001,26 @@ namespace PB
             if (shiv = true)
             {
                 TypeText("Without giving the guard a chance, you dive into the guard, pressing the shiv deep into their stomach");
+                Console.WriteLine();
                 Thread.Sleep(1000);
                 TypeText("The guard collapses on the ground, clutching their chest in pain");
+                Console.WriteLine();
                 Thread.Sleep(1000);
                 TypeText("You rush past the guard and make it to the other side of the tower");
+                Console.WriteLine();
                 Thread.Sleep(1500);
                 TowerEscape();
             }
             else
             {
                 TypeText("You dive at the guard, pushing him against the wall");
+                Console.WriteLine();
                 Thread.Sleep(1000);
                 TypeText("You try to take a swing at the guard, but they end up firing a round into the side of your waist");
+                Console.WriteLine();
                 Thread.Sleep(1000);
                 TypeText("You collapse to the ground, as you hold your wound tight");
+                Console.WriteLine();
                 Thread.Sleep(1500);
                 Console.Clear();
                 Death();
@@ -2013,12 +2029,16 @@ namespace PB
         public static void TowerEscape()
         {
             TypeText("You see a pipe near the front wall of the gate that seems to lead you to the outside of the prison");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("You leap over the railing and just manage to get a grip of the pipe as it starts shaking from impact");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("you slide down the pipe carefully and manage to make it to the ground safely");
+            Console.WriteLine();
             Thread.Sleep(1000);
             TypeText("Without a second later, you start sprinting away from the prison, leading to your freedom");
+            Console.WriteLine();
             Thread.Sleep(2000);
             Win();
         }
