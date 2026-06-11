@@ -217,38 +217,49 @@ namespace PB
         // =========================
         static void Intro()
         {
-            Console.WriteLine("Would you like to skip the intro");
-            Console.WriteLine("1. Yes");
-            Console.WriteLine("2. No");
-            int choice = Convert.ToInt32(Console.ReadLine());
-            if (choice == 1)
+            bool invalidInput = true;
+            while (invalidInput == true)
             {
-                Console.Clear();
-                Cell();
-            }
-            if (choice == 2)
-            {
-                Console.Clear();
-                TypeText("You have been convicted of watching anime on an illegal website.");
-                Console.WriteLine();
-                Thread.Sleep(1000);
-                TypeText("The Judge has committed you to 25 life sentences due to your severe crime");
-                Console.WriteLine();
-                Thread.Sleep(1000);
-                TypeText("You were sent to the most hardcore prison within the area");
-                Thread.Sleep(1000);
+                invalidInput = true;
+                Console.WriteLine("Would you like to skip the intro");
+                Console.WriteLine("1. Yes");
+                Console.WriteLine("2. No");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                if (choice == 1)
+                {
+                    invalidInput = false;
+                    Console.Clear();
+                    Cell();
+                }
+                if (choice == 2)
+                {
+                    invalidInput = false;
+                    Console.Clear();
+                    TypeText("You have been convicted of watching anime on an illegal website.");
+                    Console.WriteLine();
+                    Thread.Sleep(1000);
+                    TypeText("The Judge has committed you to 25 life sentences due to your severe crime");
+                    Console.WriteLine();
+                    Thread.Sleep(1000);
+                    TypeText("You were sent to the most hardcore prison within the area");
+                    Thread.Sleep(1000);
 
-                Thread.Sleep(100);
-                Console.WriteLine("");
-                Console.WriteLine("");
+                    Thread.Sleep(100);
+                    Console.WriteLine("");
+                    Console.WriteLine("");
 
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-                TypeText("      -------------Outcast Juvenile Holding Center-------------");
-                Thread.Sleep(1000);
-                Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    TypeText("      -------------Outcast Juvenile Holding Center-------------");
+                    Thread.Sleep(1000);
+                    Console.ResetColor();
 
-                Console.WriteLine("");
-                Cell();
+                    Console.WriteLine("");
+                    Cell();
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input");
+                }
             }
         }
 
