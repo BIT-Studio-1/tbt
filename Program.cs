@@ -321,8 +321,8 @@ namespace PB
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
-                    Console.WriteLine("");
-                    Console.WriteLine("Press 'Enter' to continue");
+                    Thread.Sleep(750);
+                    Cell();
                     break;
 
 
@@ -384,9 +384,17 @@ namespace PB
                         Console.Clear();
                         Pray();
                     }
-                    break;
+                    else
+                    {
+                        Console.WriteLine("Invalid choice");
+                        Thread.Sleep(750);
+                        Look();
+                    }
+                        break;
                 default:
                     Console.WriteLine("Invalid choice");
+                    Thread.Sleep(750);
+                    Look();
                     break;
 
             }
@@ -608,27 +616,36 @@ namespace PB
                 case 1:
                     if (screwdriver == true)
                     {
-                        TypeText("You unscrew the screws from the toilet.");
-                        Console.WriteLine();
-                        TypeText("You remove the toilet from the wall to see a hole that leads to behind the cell.");
-                        Console.WriteLine();
-                        TypeText("Inside, you see a ladder that seems to lead to the roof.");
-                        Thread.Sleep(100);
-                        Console.WriteLine("1. Go to roof");
-                        Thread.Sleep(100);
-                        Console.WriteLine("2. Return to cell");
-                        cellchoice2 = Convert.ToInt32(Console.ReadLine());
-                        switch (cellchoice2)
+                        bool invalidInput = true;
+                        while (invalidInput == true)
                         {
-                            case 1:
-                                Roof();
-                                break;
-                            case 2:
-                                TypeText("You go back to your cell and screw the toilet back to the wall");
-                                Look();
-                                break;
+                            TypeText("You unscrew the screws from the toilet.");
+                            Console.WriteLine();
+                            TypeText("You remove the toilet from the wall to see a hole that leads to behind the cell.");
+                            Console.WriteLine();
+                            TypeText("Inside, you see a ladder that seems to lead to the roof.");
+                            Thread.Sleep(100);
+                            Console.WriteLine("1. Go to roof");
+                            Thread.Sleep(100);
+                            Console.WriteLine("2. Return to cell");
+                            cellchoice2 = Convert.ToInt32(Console.ReadLine());
+                            switch (cellchoice2)
+                            {
+                                case 1:
+                                    invalidInput = false;
+                                    Roof();
+                                    break;
+                                case 2:
+                                    invalidInput = false;
+                                    TypeText("You go back to your cell and screw the toilet back to the wall");
+                                    Look();
+                                    break;
+                                default:
+                                    Console.WriteLine("Invalid Input");
+                                    Thread.Sleep(750);
+                                    break;
+                            }
                         }
-
                     }
                     else
                     {
