@@ -874,12 +874,14 @@ namespace PB
             if (flowers)
             {
                 TypeText("BIG DOG:\t'Aww flowers, thank you so much. Here's a screwdriver'");
+                Thread.Sleep(1000);
                 screwdriver = true;
                 flowers = false;
             }
             else
             {
                 TypeText("You don't have anything to give Big Dog");
+                Thread.Sleep(1000);
             }
 
             Yard();
@@ -1787,131 +1789,176 @@ namespace PB
             Thread.Sleep(100);
             Console.WriteLine("3:\tExit Cafeteria.");
 
-            action_1 = Convert.ToInt32(Console.ReadLine());
-
-            switch (action_1)
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    TypeText("You walk up to Crack Head Joe.");
-                    Thread.Sleep(500);
-                    TypeText("You see him constantly scratching his skin");
-                    Thread.Sleep(500);
-                    TypeText("'Hmmm... I could really use some pudding right now' he mutters.");
-                    Thread.Sleep(500);
-                    TypeText("You also see that he has a cross around his neck");
-                    if (pudding != true)
-                    {
+                action_1 = Convert.ToInt32(Console.ReadLine());
+
+                switch (action_1)
+                {
+                    case 1:
+                        invalidInputCheck = false;
+                        TypeText("You walk up to Crack Head Joe.");
+                        Thread.Sleep(500);
+                        TypeText("You see him constantly scratching his skin");
+                        Thread.Sleep(500);
+                        TypeText("'Hmmm... I could really use some pudding right now' he mutters.");
+                        Thread.Sleep(500);
+                        TypeText("You also see that he has a cross around his neck");
+                        if (pudding != true)
+                        {
+                            TypeText("What would you like to do?");
+                            Thread.Sleep(100);
+                            Console.WriteLine("1:\tGo Back.");
+                            Thread.Sleep(100);
+                            Console.WriteLine("2.\tBuy Cross Pendent $100");
+
+                            bool invalidInputCheck2 = true;
+                            while (invalidInputCheck2)
+                            {
+                                action_2 = Convert.ToInt32(Console.ReadLine());
+                                switch (action_2)
+                                {
+                                    case 1:
+                                        invalidInputCheck2 = false;
+                                        Cafeteria();
+                                        break;
+                                    case 2:
+                                        invalidInputCheck2 = false;
+                                        if (money >= 100)
+                                        {
+                                            money = money - 100;
+                                            TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
+                                            Thread.Sleep(750);
+                                            TypeText("You now have a cross");
+                                            cross = true;
+                                        }
+                                        else
+                                        {
+                                            TypeText("You don't have enough money");
+                                        }
+                                        Cafeteria();
+                                        break;
+
+                                    default:
+                                        Console.WriteLine("Invalid Input");
+                                        break;
+                                }
+                            }
+                            
+
+                        }
+                        else
+                        {
+                            TypeText("What would you like to do?");
+                            Thread.Sleep(100);
+                            Console.WriteLine("1:\tGo Back.");
+                            Thread.Sleep(100);
+                            Console.WriteLine("2:\tGive Crack Head Joe Pudding.");
+                            Thread.Sleep(100);
+                            Console.WriteLine("3.\tBuy Cross Pendent $100");
+
+                            bool invalidInputCheck2 = true;
+                            while (invalidInputCheck2)
+                            {
+                                action_2 = Convert.ToInt32(Console.ReadLine());
+                                switch (action_2)
+                                {
+                                    case 1:
+                                        invalidInputCheck2 = false;
+                                        Cafeteria();
+                                        break;
+                                    case 2:
+                                        invalidInputCheck2 = false;
+                                        if (shiv != true)
+                                        {
+                                            TypeText("Thanks kid heres a shiv");
+                                            shiv = true;
+                                        }
+                                        else
+                                        {
+                                            TypeText("Bro You already tried that go away.");
+                                        }
+
+                                        Cafeteria();
+                                        break;
+                                    case 3:
+                                        invalidInputCheck2 = false;
+                                        if (money >= 100)
+                                        {
+                                            money = money - 100;
+                                            TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
+                                            Thread.Sleep(750);
+                                            TypeText("You now have a cross");
+                                            cross = true;
+                                        }
+                                        else
+                                        {
+                                            TypeText("You don't have enough money");
+                                        }
+                                        Cafeteria();
+                                        break;
+
+                                    default:
+                                        Console.WriteLine("Invalid Input");
+                                        break;
+                                }
+                            } 
+                        }
+                        break;
+
+                    case 2:
+                        invalidInputCheck = false;
+                        TypeText("You enter the chow line. Today they are serving pudding. ONE PER INMATE.");
+                        Thread.Sleep(500);
                         TypeText("What would you like to do?");
                         Thread.Sleep(100);
                         Console.WriteLine("1:\tGo Back.");
                         Thread.Sleep(100);
-                        Console.WriteLine("3.\tBuy Cross Pendent $100");
-                        action_2 = Convert.ToInt32(Console.ReadLine());
-                        switch (action_2)
+                        Console.WriteLine("2:\tGet some pudding.");
+
+                        bool invalidInputCheck2 = true;
+                        while (invalidInputCheck2)
                         {
-                            case 1:
-                                Cafeteria();
-                                break;
-                            case 3:
-                                if (money >= 100)
-                                {
-                                    money = money - 100;
-                                    TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
-                                    Thread.Sleep(750);
-                                    TypeText("You now have a cross");
-                                    cross = true;
-                                }
-                                else
-                                {
-                                    TypeText("You don't have enough money");
-                                }
-                                Cafeteria();
-                                break;
-                        }
-
-                    }
-                    else
-                    {
-                        TypeText("What would you like to do?");
-                        Thread.Sleep(100);
-                        Console.WriteLine("1:\tGo Back.");
-                        Thread.Sleep(100);
-                        Console.WriteLine("2:\tGive Crack Head Joe Pudding.");
-                        Thread.Sleep(100);
-                        Console.WriteLine("3.\tBuy Cross Pendent $100");
-                        action_2 = Convert.ToInt32(Console.ReadLine());
-                        switch (action_2)
-                        {
-                            case 1:
-                                Cafeteria();
-                                break;
-                            case 2:
-                                if (shiv != true)
-                                {
-                                    TypeText("Thanks kid heres a shiv");
-                                    shiv = true;
-                                }
-                                else
-                                {
-                                    TypeText("Bro You already tried that go away.");
-                                }
-
-                                Cafeteria();
-                                break;
-                            case 3:
-                                if (money >= 100)
-                                {
-                                    money = money - 100;
-                                    TypeText("You give Crack Head Joe $100, he takes off the cross and hands it to you");
-                                    Thread.Sleep(750);
-                                    TypeText("You now have a cross");
-                                    cross = true;
-                                }
-                                else
-                                {
-                                    TypeText("You don't have enough money");
-                                }
-                                Cafeteria();
-                                break;
-                        }
-                    }
-                    break;
-
-                case 2:
-                    TypeText("You enter the chow line. Today they are serving pudding. ONE PER INMATE.");
-                    Thread.Sleep(500);
-                    TypeText("What would you like to do?");
-                    Thread.Sleep(100);
-                    Console.WriteLine("1:\tGo Back.");
-                    Thread.Sleep(100);
-                    Console.WriteLine("2:\tGet some pudding.");
-                    action_2 = Convert.ToInt32(Console.ReadLine());
-                    switch (action_2)
-                    {
-                        case 1:
-                            Cafeteria();
-                            break;
-                        case 2:
-                            if (pudding != true)
+                            action_2 = Convert.ToInt32(Console.ReadLine());
+                            switch (action_2)
                             {
-                                TypeText("You have recieved pudding!");
-                                pudding = true;
+                                case 1:
+                                    invalidInputCheck2 = false;
+                                    Cafeteria();
+                                    break;
+                                case 2:
+                                    invalidInputCheck2 = false;
+                                    if (pudding != true)
+                                    {
+                                        TypeText("You have recieved pudding!");
+                                        pudding = true;
 
+                                    }
+                                    else
+                                    {
+                                        TypeText("You've already got your pudding!");
+                                    }
+                                    Cafeteria();
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Invalid Input");
+                                    break;
                             }
-                            else
-                            {
-                                TypeText("You've already got your pudding!");
-                            }
-                            Cafeteria();
-                            break;
+                        }
+                        
+                        break;
+                    case 3:
+                        invalidInputCheck = false;
+                        Console.Clear();
+                        Cell();
+                        break;
 
-
-                    }
-                    break;
-                case 3:
-                    Console.Clear();
-                    Cell();
-                    break;
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        break;
+                }
             }
         }
         public static void Roof()
