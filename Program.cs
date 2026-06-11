@@ -218,12 +218,12 @@ namespace PB
         static void Intro()
         {
             bool invalidInput = true;
+            invalidInput = true;
+            Console.WriteLine("Would you like to skip the intro");
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
             while (invalidInput == true)
             {
-                invalidInput = true;
-                Console.WriteLine("Would you like to skip the intro");
-                Console.WriteLine("1. Yes");
-                Console.WriteLine("2. No");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 if (choice == 1)
                 {
@@ -304,30 +304,31 @@ namespace PB
 
             Console.ResetColor();
 
-            celldec = Convert.ToInt32(Console.ReadLine());
-            switch (celldec)
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    Look();
-                    break;
-                case 2:
-                    Yard();
-                    break;
-                case 3:
-                    Cafeteria();
-                    break;
-                case 4:
-                    Showers();
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice");
-                    Thread.Sleep(750);
-                    Cell();
-                    break;
+                celldec = Convert.ToInt32(Console.ReadLine());
+                switch (celldec)
+                {
+                    case 1:
+                        Look();
+                        break;
+                    case 2:
+                        Yard();
+                        break;
+                    case 3:
+                        Cafeteria();
+                        break;
+                    case 4:
+                        Showers();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice");
+                        break;
 
 
+                }
             }
-
         }
 
         public static void Look()
@@ -355,49 +356,49 @@ namespace PB
                 Console.WriteLine("6:\tPray");
                 Console.WriteLine("=====================");
             }
-            cellchoice = Convert.ToInt32(Console.ReadLine());
-            switch (cellchoice)
+            bool invalidInputCheck = true;
+            while (invalidInputCheck)
             {
-                case 1:
-                    Console.Clear();
-                    Bed();
-                    break;
-                case 2:
-                    Console.Clear();
-                    toilet();
-                    break;
-                case 3:
-                    Console.Clear();
-                    inventory();
-                    break;
-                case 4:
-                    Console.Clear();
-                    Window();
-                    break;
-                case 5:
-                    Console.Clear();
-                    Cell();
-                    break;
-                case 6:
-                    if (cross)
-                    {
+                cellchoice = Convert.ToInt32(Console.ReadLine());
+                switch (cellchoice)
+                {
+                    case 1:
                         Console.Clear();
-                        Pray();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid choice");
-                        Thread.Sleep(750);
-                        Look();
-                    }
+                        Bed();
                         break;
-                default:
-                    Console.WriteLine("Invalid choice");
-                    Thread.Sleep(750);
-                    Look();
-                    break;
+                    case 2:
+                        Console.Clear();
+                        toilet();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        inventory();
+                        break;
+                    case 4:
+                        Console.Clear();
+                        Window();
+                        break;
+                    case 5:
+                        Console.Clear();
+                        Cell();
+                        break;
+                    case 6:
+                        if (cross)
+                        {
+                            Console.Clear();
+                            Pray();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid choice");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice");
+                        break;
 
-            }
+                }
+            } 
         }
 
         public static void Pray()
@@ -751,6 +752,12 @@ namespace PB
 
                             case 4:
                                 break;
+
+                            default:
+                                Console.WriteLine("Invalid input");
+                                Thread.Sleep(750);
+                                Yard();
+                                break;
                         }
                         break;
 
@@ -763,7 +770,11 @@ namespace PB
                         inYard = false;
                         Cell();
                         break;
-
+                    default:
+                        Console.WriteLine("Invalid input");
+                        Thread.Sleep(750);
+                        Yard();
+                        break;
                 }
             }
         }
