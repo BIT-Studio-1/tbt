@@ -1926,11 +1926,13 @@ namespace PB
                     {
                         TypeText("You were not strong enough to make it through.");
                         Death();
+                        Roof();
                     }
                     break;
                 case 2:
                     TypeText("You rush through the barbed wire, cutting yourself. You bleed out.");
                     Death();
+                    Roof();
                     break;
             }
         }
